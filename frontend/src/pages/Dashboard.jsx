@@ -620,7 +620,7 @@ function Dashboard() {
                 <p className="text-xs text-[#64748B] py-2 leading-relaxed">
                   {isBn
                     ? 'এখনো কোনো ডাক্তার গাইডলাইন যুক্ত করেননি। আপনি নিচের যেকোনো সেভ করা রেকর্ডের "বিস্তারিত দেখুন" বাটনে ক্লিক করে ডাক্তারের রিভিউ অনুরোধ পাঠাতে পারেন।'
-                    : 'No doctor guidelines have been attached yet. You can open any saved screening record below and click "Ask a verified doctor" to request a clinical review.'}
+                    : 'No doctor guidelines have been attached yet. You can open any saved screening record below and click "Ask an admin-reviewed doctor" to request a review.'}
                 </p>
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

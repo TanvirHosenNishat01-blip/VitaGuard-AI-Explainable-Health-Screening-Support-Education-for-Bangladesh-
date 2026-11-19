@@ -167,7 +167,7 @@ const COPY = {
     eyebrow: 'ট্রাইনেক্সাস · নৈতিক ক্লিনিক্যাল ডিসিশন সাপোর্ট সিস্টেম',
     heroTitle: 'বাংলাদেশের জন্য দায়িত্বশীল ও ব্যাখ্যাযোগ্য স্বাস্থ্য ঝুঁকি স্ক্রিনিং',
     heroLead:
-      'ভিটাগার্ড এআই (VitaGuard AI) রোগী ও চিকিৎসকদের স্বাস্থ্য পরিমাপগুলো গুছিয়ে রাখতে, ডায়াবেটিস ও হৃদরোগের পরিসংখ্যানগত ঝুঁকি বুঝতে, ট্রি-SHAP ও মডেল ফিচার গুরুত্বের মাধ্যমে মূল প্রভাবক জানতে এবং যাচাইকৃত ডাক্তারদের সাথে যুক্ত হতে সহায়তা করে।',
+      'ভিটাগার্ড এআই (VitaGuard AI) রোগী ও চিকিৎসকদের স্বাস্থ্য পরিমাপগুলো গুছিয়ে রাখতে, ডায়াবেটিস ও হৃদরোগের পরিসংখ্যানগত ঝুঁকি বুঝতে, ট্রি-SHAP ও মডেল ফিচার গুরুত্বের মাধ্যমে মূল প্রভাবক জানতে এবং অ্যাডমিন-পর্যালোচিত ডাক্তারদের সাথে যুক্ত হতে সহায়তা করে।',
     primaryCta: 'স্বাস্থ্য মূল্যায়ন শুরু করুন',
     secondaryCta: 'কীভাবে কাজ করে জানুন',
     dashboardCta: 'আমার ড্যাশবোর্ডে যান',
@@ -189,7 +189,7 @@ const COPY = {
       },
       {
         title: 'ডাক্তারের পর্যালোচনা ও পরামর্শ',
-        desc: 'অ্যাডমিন কর্তৃক BMDC তথ্য যাচাইকৃত ডাক্তারদের কাছে আপনার সেভ করা স্ক্রিনিং রিভিউয়ের জন্য পাঠান বা অ্যাপয়েন্টমেন্টের সময় চান।',
+        desc: 'অ্যাডমিন-পর্যালোচিত ডাক্তারদের কাছে সেভ করা স্ক্রিনিং পাঠানো বা অ্যাপয়েন্টমেন্ট চাওয়া যায়। অ্যাডমিন পর্যালোচনা সরকারি BMDC যাচাই নয়।',
       },
     ],
     screeningBadge: 'স্ক্রিনিংয়ের মাধ্যমসমূহ',
@@ -382,7 +382,7 @@ function Home() {
                         {lang === 'bn' ? 'ক্লিনিক্যাল স্ক্রিনিং মডিউল' : 'Clinical Screening Modules'}
                       </h2>
                       <p className="text-xs text-[#64748B]">
-                        {lang === 'bn' ? 'ব্যাখ্যাযোগ্য এআই ও ডক্টর রিভিউ যুক্ত' : 'Explainable AI + Doctor Review Ready'}
+                        {lang === 'bn' ? 'স্ক্রিনিং সহায়তা, রোগ নির্ণয় নয়' : 'Screening support, not a diagnosis'}
                       </p>
                     </div>
                   </div>
@@ -429,21 +429,19 @@ function Home() {
                   </Link>
 
                   <Link
-                    to="/bangladesh"
+                    to="/assessment"
                     className="block p-4 rounded-xl border border-[#99F6E4] bg-[#F0FDFA] hover:bg-[#CCFBF1]/50 transition group"
                   >
                     <div className="flex items-center justify-between">
                       <span className="text-sm font-bold text-[#0F766E]">
-                        {lang === 'bn'
-                          ? '৩. বাংলাদেশ নন-ইনভেসিভ স্ক্রিনিং (DiaBD ও WHO)'
-                          : '3. Bangladesh Non-Invasive Screening (DiaBD & WHO)'}
+                        {lang === 'bn' ? '৩. চারটি আলাদা পথ দেখুন' : '3. See the four separate pathways'}
                       </span>
                       <span className="text-xs font-semibold text-[#0F766E]">→</span>
                     </div>
                     <p className="text-xs text-[#0F766E]/80 mt-1">
                       {lang === 'bn'
-                        ? 'রক্ত পরীক্ষা ছাড়াই রক্তচাপ ও বিএমআই দিয়ে প্রাথমিক ঝুঁকি অনুমান'
-                        : 'No lab blood draw required — uses blood pressure, BMI, age & history'}
+                        ? 'DiaBD, পিমা, ক্লিভল্যান্ড এবং WHO চার্ট একই ফল নয়'
+                        : 'DiaBD, Pima, Cleveland, and the WHO chart are not the same result'}
                     </p>
                   </Link>
                 </div>
@@ -457,7 +455,51 @@ function Home() {
         {/* CLINICAL DISCLAIMER BANNER */}
         <AlertBanner tone="warning" title={c.safetyNoticeTitle}>
           <p>{c.safetyNoticeBody}</p>
+          <p className="mt-2 text-sm">
+            {lang === 'bn'
+              ? 'শাসন অবস্থা: জমা দেওয়া হয়নি — অনুমোদিত নয় — নিয়োগের অনুমতি নেই। এটি কোনো প্রতিষ্ঠানের অনুমোদন নয়।'
+              : 'Governance status: NOT SUBMITTED — NOT APPROVED — NO RECRUITMENT AUTHORIZED. This is not an institutional approval.'}
+          </p>
         </AlertBanner>
+
+        <section className="space-y-6">
+          <SectionHeader
+            badge={lang === 'bn' ? 'যাচাই করা কাজ' : 'What is actually built'}
+            title={lang === 'bn' ? 'যা দাবি করা যায়' : 'Achievements that can be stated'}
+            subtitle={
+              lang === 'bn'
+                ? 'নিচের কার্ডগুলো এই রিপোজিটরিতে যা আছে তাই বলে। ক্লিনিক্যাল যাচাই, হাসপাতাল চুক্তি বা নিয়োগের অনুমতি এখানে নেই।'
+                : 'These cards describe what this repository contains. They are not clinical validation, a hospital partnership, or permission to recruit.'
+            }
+          />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {[
+              lang === 'bn'
+                ? ['চারটি আলাদা পথ', 'DiaBD, পিমা, ক্লিভল্যান্ড এবং WHO চার্ট আলাদা উদ্দেশ্যে রাখা আছে। একটি আরেকটির বদলি নয়।']
+                : ['Four separate pathways', 'DiaBD, Pima, Cleveland, and the WHO chart stay separate. One does not replace another.'],
+              lang === 'bn'
+                ? ['DiaBD-তে লোকাল TreeSHAP', 'বাংলাদেশ স্ক্রিনিং সূচকের পাশে ইনপুটের অবদান দেখা যায়। অবদান কারণ নয়।']
+                : ['Local TreeSHAP on DiaBD', 'The Bangladesh screening index shows which inputs contributed. A contribution is not a cause.'],
+              lang === 'bn'
+                ? ['সম্মতি ও ভূমিকা', 'স্ক্রিনিং চালাতে সম্মতি লাগে। ডাক্তার শুধু নিশ্চিত অ্যাপয়েন্টমেন্ট বা নিজের গাইডলাইনের পর রেকর্ড দেখেন।']
+                : ['Consent and roles', 'A screening needs consent. A doctor sees a record after a confirmed appointment or that doctor’s own guideline.'],
+              lang === 'bn'
+                ? ['লিকেজ যাচাই', 'পিমার ৮৭.৬৬ শতাংশ ফল বৈধ নয়, কারণ ইনসুলিন লেবেল দেখে ভরা হয়েছিল।']
+                : ['Leakage check', 'The Pima 87.66 percent figure is not valid, because insulin was filled using the label.'],
+              lang === 'bn'
+                ? ['প্রোডাকশন মডেল অপরিবর্তিত', 'বিকল্প মডেল পরীক্ষা হয়েছে। কোনো পরীক্ষা প্রোডাকশন আর্টিফ্যাক্ট বদলায়নি।']
+                : ['Production models unchanged', 'Alternative models were tested. No experiment replaced a protected production artifact.'],
+              lang === 'bn'
+                ? ['WHO একটি খোঁজ', 'দক্ষিণ এশিয়ার প্রকাশিত চার্ট, বয়স ৪০–৭৪। টেবিল মিল মডেল অ্যাকুরেসি নয়।']
+                : ['WHO is a lookup', 'A published South Asia chart for ages 40–74. Matching the table is not model accuracy.'],
+            ].map(([title, desc]) => (
+              <ClinicalCard key={title}>
+                <h3 className="text-base font-bold text-[#12304A]">{title}</h3>
+                <p className="text-sm text-[#475569] mt-2 leading-relaxed">{desc}</p>
+              </ClinicalCard>
+            ))}
+          </div>
+        </section>
 
         {/* PLATFORM INTRODUCTION */}
         <section className="space-y-6">

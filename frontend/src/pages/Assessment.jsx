@@ -69,16 +69,23 @@ function Assessment() {
               <Globe2 className="w-6 h-6" aria-hidden="true" />
             </div>
             <h2 className="text-xl font-bold text-[#12304A]">{text(ROWS[0].name)}</h2>
-            <p className="text-sm text-[#475569]">
-              {isBn
-                ? 'বাংলাদেশের স্ক্রিনিং টেবিলের তথ্য দিয়ে একটি ক্যালিব্রেট না করা স্ক্রিনিং সূচক দেখে। লোকাল TreeSHAP দেখায় কোন ইনপুট সেই সূচকে যোগ করেছে। এটি রোগ নির্ণয় বা ল্যাব পরীক্ষার বদলি নয়।'
-                : 'Uses the Bangladesh screening table to show an uncalibrated screening index. Local TreeSHAP shows which entered values contributed to that index. It is not a diagnosis and not a laboratory test.'}
-            </p>
-            <p className="text-xs text-[#64748B]">{text(ROWS[0].inputs)}</p>
+            <p className="text-sm font-semibold text-[#12304A]">{isBn ? 'এই পথ যা দেয়' : 'What this pathway offers'}</p>
+            <ul className="text-sm text-[#475569] list-disc pl-5 space-y-1">
+              <li>{isBn ? 'বাংলাদেশের একটি ক্লিনিক্যাল টেবিল ব্যবহার করে।' : 'Uses a Bangladesh-focused clinical table.'}</li>
+              <li>{isBn ? 'লোকাল TreeSHAP দেখায় কোন ইনপুট সূচকে যোগ করেছে।' : 'Local TreeSHAP shows which inputs contributed to the index.'}</li>
+              <li>{isBn ? 'একজন যোগ্য চিকিৎসকের সাথে আলোচনার আগে একটি প্রাথমিক স্ক্রিনিং দেখা যায়।' : 'A person can look at a preliminary screening result before talking with a qualified clinician.'}</li>
+            </ul>
+            <p className="text-sm font-semibold text-[#92400E]">{isBn ? 'গুরুত্বপূর্ণ সীমা' : 'Important limitations'}</p>
+            <ul className="text-sm text-[#475569] list-disc pl-5 space-y-1">
+              <li>{isBn ? 'পরীক্ষামূলক স্ক্রিনিং সহায়তা, রোগ নির্ণয় নয়।' : 'Experimental screening support, not a diagnosis.'}</li>
+              <li>{isBn ? 'লক করা টেস্টে প্রিসিশন ০.১১৫৯, ভুল অ্যালার্ম ২৯০, মিস ২৭। কাটঅফ ০.৫১।' : 'Locked-test precision is 0.1159, with 290 false positives and 27 misses. Cutoff 0.51.'}</li>
+              <li>{isBn ? '২১–৪০ বছরের কম রিকল ট্রেনিং আউট-অব-ফোল্ড বিশ্লেষণ, লক করা টেস্টের উপদল নয়।' : 'The lower recall around ages 21–40 is a training out-of-fold finding, not a locked-test subgroup result.'}</li>
+              <li>{isBn ? 'স্যাম্পলিং ফ্রেম ও সাইট-ভিত্তিক উৎস স্বাধীনভাবে যাচাই হয়নি।' : 'Sampling frame and site-level provenance have not been independently verified.'}</li>
+            </ul>
           </div>
           <div className="pt-6">
             <MedicalButton fullWidth onClick={() => navigate('/bangladesh')} rightIcon={<ArrowRight className="w-4 h-4" />}>
-              {isBn ? 'DiaBD স্ক্রিনিং খুলুন' : 'Open the DiaBD screening'}
+              {isBn ? 'বাংলাদেশ-কেন্দ্রিক স্ক্রিনিং দেখুন' : 'Explore Bangladesh-focused screening'}
             </MedicalButton>
           </div>
         </ClinicalCard>
@@ -90,20 +97,21 @@ function Assessment() {
               <Activity className="w-6 h-6" aria-hidden="true" />
             </div>
             <h2 className="text-xl font-bold text-[#12304A]">{text(ROWS[1].name)}</h2>
-            <p className="text-sm text-[#475569]">
-              {isBn
-                ? 'এটি রাখা হয়েছে কারণ DiaBD গ্লুকোজ, ইনসুলিন, স্কিন থিকনেস, গর্ভধারণের সংখ্যা বা পেডিগ্রি স্কোর নেয় না। এই আটটি সংখ্যা আগে থেকে থাকলে বিদ্যমান মডেল সেগুলো পড়ে। ফল একটি গবেষণা-টেবিলের স্ক্রিনিং অনুমান।'
-                : 'It stays because DiaBD does not use glucose, insulin, skin thickness, pregnancy count, or the pedigree score. When those eight numbers are already in hand, the existing model can read them. The result is a research-table screening estimate.'}
-            </p>
-            <p className="text-xs text-[#92400E]">
-              {isBn
-                ? 'সীমা: ফিনিক্সের কাছে পিমা জনগোষ্ঠীর ৭৬৮ জন নারী, বয়স ২১ থেকে ৮১। পুরুষ, শিশু বা বাংলাদেশের রোগীর মডেল নয়। রোগ নির্ণয় নয়।'
-                : 'Limit: 768 Pima women near Phoenix, aged 21 to 81. Not a model for men, children, or patients in Bangladesh. Not a diagnosis.'}
-            </p>
+            <p className="text-sm font-semibold text-[#12304A]">{isBn ? 'এই পথ যা দেয়' : 'What this pathway offers'}</p>
+            <ul className="text-sm text-[#475569] list-disc pl-5 space-y-1">
+              <li>{isBn ? 'ঐতিহাসিকভাবে পড়া একটি ডায়াবেটিস গবেষণা দল দেখা যায়।' : 'A historically studied diabetes research cohort can be explored.'}</li>
+              <li>{isBn ? 'DiaBD যে আটটি পরিমাপ নেয় না, এই পথ সেগুলো আলাদা রাখে।' : 'It keeps the eight measurements DiaBD does not use on a separate pathway.'}</li>
+            </ul>
+            <p className="text-sm font-semibold text-[#92400E]">{isBn ? 'গুরুত্বপূর্ণ সীমা' : 'Important limitations'}</p>
+            <ul className="text-sm text-[#475569] list-disc pl-5 space-y-1">
+              <li>{isBn ? 'ফিনিক্স এলাকার ঐতিহাসিক গবেষণার নারী, বয়স ২১–৮১। বাংলাদেশের সাধারণ জনগোষ্ঠী নয়।' : 'Historical Phoenix-area women, ages 21–81. Not the general Bangladesh population.'}</li>
+              <li>{isBn ? 'রোগ নির্ণয় নয়। রোগীর পথে সম্মতি লাগে।' : 'Not a diagnosis. Patient access needs consent.'}</li>
+              <li>{isBn ? '৮৭.৬৬ শতাংশ বৈধ ফল নয়। লিকেজ-মুক্ত লজিস্টিক OOF PR-AUC ০.৭১৬৬, Brier ০.১৬২৭।' : '87.66 percent is not a valid result. Leakage-free logistic OOF PR-AUC is 0.7166, Brier score 0.1627.'}</li>
+            </ul>
           </div>
           <div className="pt-6">
             <MedicalButton variant="outline" fullWidth onClick={() => navigate('/predict/diabetes')} rightIcon={<ArrowRight className="w-4 h-4" />}>
-              {isBn ? 'পিমা স্ক্রিনিং শুরু করুন' : 'Start the Pima screening'}
+              {isBn ? 'পিমা গবেষণা পথ দেখুন' : 'Explore the Pima research pathway'}
             </MedicalButton>
           </div>
         </ClinicalCard>
@@ -115,16 +123,20 @@ function Assessment() {
               <HeartPulse className="w-6 h-6" aria-hidden="true" />
             </div>
             <h2 className="text-xl font-bold text-[#12304A]">{text(ROWS[2].name)}</h2>
-            <p className="text-sm text-[#475569]">
-              {isBn
-                ? 'ক্লিভল্যান্ডের পুরোনো ক্যাথেটারাইজেশন দলের মডেল। সাধারণ জনগোষ্ঠীর স্ক্রিনিং হিসেবে যাচাই করা হয়নি। ফল হৃদরোগের রোগ নির্ণয় নয়। ব্যাখ্যা গ্লোবাল সহগ, ব্যক্তিগত SHAP নয়।'
-                : 'A model from the historical Cleveland catheterization cohort. It is not validated here as general community screening. The result is not a heart-disease diagnosis. The explanation is global coefficients, not a personal SHAP chart.'}
-            </p>
-            <p className="text-xs text-[#64748B]">{text(ROWS[2].inputs)}</p>
+            <p className="text-sm font-semibold text-[#12304A]">{isBn ? 'এই পথ যা দেয়' : 'What this pathway offers'}</p>
+            <ul className="text-sm text-[#475569] list-disc pl-5 space-y-1">
+              <li>{isBn ? 'হৃদযন্ত্রের গবেষণা ডায়াবেটিস পথ থেকে আলাদা।' : 'Cardiovascular research stays separate from the diabetes pathways.'}</li>
+              <li>{isBn ? 'ঐতিহাসিক ক্লিভল্যান্ড দলের ক্লিনিক্যাল চলক ব্যবহার করে।' : 'It uses clinical variables from the historical Cleveland cohort.'}</li>
+            </ul>
+            <p className="text-sm font-semibold text-[#92400E]">{isBn ? 'গুরুত্বপূর্ণ সীমা' : 'Important limitations'}</p>
+            <ul className="text-sm text-[#475569] list-disc pl-5 space-y-1">
+              <li>{isBn ? '১৯৮৪ সালের ক্যাথেটারাইজেশন দল। ২৯৭ সারি, লক করা টেস্ট ৬০ সারি।' : 'A 1984 catheterization cohort. 297 rows, and a 60-row locked test.'}</li>
+              <li>{isBn ? 'সেই ৬০ সারিতে অ্যাকুরেসি ০.৯১৬৭। সাধারণ জনগোষ্ঠীর স্ক্রিনিং নয়। রোগ নির্ণয় নয়।' : 'Accuracy 0.9167 is that 60-row test. Not general-population screening and not a diagnosis.'}</li>
+            </ul>
           </div>
           <div className="pt-6">
             <MedicalButton variant="secondary" fullWidth onClick={() => navigate('/predict/cardio')} rightIcon={<ArrowRight className="w-4 h-4" />}>
-              {isBn ? 'ক্লিভল্যান্ড অনুমান খুলুন' : 'Open the Cleveland estimate'}
+              {isBn ? 'হৃদযন্ত্র গবেষণা মূল্যায়ন দেখুন' : 'Explore cardiovascular research assessment'}
             </MedicalButton>
           </div>
         </ClinicalCard>
@@ -136,16 +148,20 @@ function Assessment() {
               <BookOpen className="w-6 h-6" aria-hidden="true" />
             </div>
             <h2 className="text-xl font-bold text-[#12304A]">{text(ROWS[3].name)}</h2>
-            <p className="text-sm text-[#475569]">
-              {isBn
-                ? 'প্রকাশিত WHO দক্ষিণ এশিয়া নন-ল্যাবরেটরি চার্টের একটি ঘর। এটি প্রশিক্ষিত মডেল নয়। বয়স ৪০ থেকে ৭৪। আগের হার্ট অ্যাটাক বা স্ট্রোক থাকলে চার্ট চলে না।'
-                : 'One cell from the published WHO South Asia non-laboratory chart. It is not a trained model. The age range is 40 to 74. A previous heart attack or stroke stops the lookup.'}
-            </p>
-            <p className="text-xs text-[#64748B]">{text(ROWS[3].inputs)}</p>
+            <p className="text-sm font-semibold text-[#12304A]">{isBn ? 'এই পথ যা দেয়' : 'What this pathway offers'}</p>
+            <ul className="text-sm text-[#475569] list-disc pl-5 space-y-1">
+              <li>{isBn ? 'প্রকাশিত WHO দক্ষিণ এশিয়া ঝুঁকি চার্ট ব্যবহার করে।' : 'Uses a published WHO South Asia risk chart.'}</li>
+              <li>{isBn ? 'নতুন প্রশিক্ষিত মডেলের বদলে একটি স্বচ্ছ খোঁজ।' : 'A transparent lookup, rather than a newly trained model.'}</li>
+            </ul>
+            <p className="text-sm font-semibold text-[#92400E]">{isBn ? 'গুরুত্বপূর্ণ সীমা' : 'Important limitations'}</p>
+            <ul className="text-sm text-[#475569] list-disc pl-5 space-y-1">
+              <li>{isBn ? 'বয়স ৪০–৭৪। ৩৯ ও ৭৫ এই সীমার বাইরে।' : 'Ages 40–74. Ages 39 and 75 do not resolve.'}</li>
+              <li>{isBn ? 'এটি খোঁজ, প্রশিক্ষিত মডেল নয়। চার্টের সংখ্যা রোগ নির্ণয় নয়। টেবিল মিল অ্যাকুরেসি নয়।' : 'It is a lookup, not a trained model. A chart number is not a diagnosis. Table consistency is not accuracy.'}</li>
+            </ul>
           </div>
           <div className="pt-6">
             <MedicalButton variant="outline" fullWidth onClick={() => navigate('/bangladesh')} rightIcon={<ArrowRight className="w-4 h-4" />}>
-              {isBn ? 'চার্ট খুলুন' : 'Open the chart'}
+              {isBn ? 'WHO ঝুঁকি চার্ট দেখুন' : 'Explore the WHO risk chart'}
             </MedicalButton>
           </div>
         </ClinicalCard>

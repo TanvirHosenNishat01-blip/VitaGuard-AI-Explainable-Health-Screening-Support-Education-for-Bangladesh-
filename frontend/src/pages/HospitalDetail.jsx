@@ -41,7 +41,7 @@ function HospitalDetail() {
           <div><dt className="font-semibold">{isBn ? 'মানচিত্র' : 'Map'}</dt><dd>{row.map_url || (isBn ? 'বর্তমানে নেই' : 'Currently unavailable')}</dd></div>
         </dl>
       </ClinicalCard>
-      <ClinicalCard title={isBn ? 'এই হাসপাতালে যাচাইকৃত ডাক্তার' : 'Doctors available at this hospital'}>
+      <ClinicalCard title={isBn ? 'এই হাসপাতালের তালিকাভুক্ত ডাক্তার' : 'Doctors listed at this hospital'}>
         <p className="text-sm text-[#475569]">{row.affiliation_note}</p>
         <p className="text-sm text-[#475569] mt-2">{row.appointment_note}</p>
         {(row.doctors || []).length === 0 && <p className="text-xs text-[#64748B] mt-3">{isBn ? 'কোনো যাচাইকৃত সংযুক্তি নেই।' : 'No verified affiliation is on record.'}</p>}
