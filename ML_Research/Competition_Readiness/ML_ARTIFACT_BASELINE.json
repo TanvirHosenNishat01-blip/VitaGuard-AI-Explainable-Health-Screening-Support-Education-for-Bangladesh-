@@ -1,0 +1,52 @@
+{
+  "scope": "SHA-256 of the named files only. This is not a whole-repository integrity manifest and does not cover source code, thresholds in Python, or the SQLite database.",
+  "production_runtime": [
+    {
+      "path": "backend/app/ml_models/bd_diabetes.joblib",
+      "sha256": "d9a921af71c27bafa9bace696b9c590c28dbad82e8ce2935ccdc64eb0c1f38d7",
+      "bytes": 235255
+    },
+    {
+      "path": "backend/app/ml_models/cardio_model.joblib",
+      "sha256": "d6a975625abe80eb52a66592b9a82aa35e41b4d13f593359f8aa95ac92104f5f",
+      "bytes": 975
+    },
+    {
+      "path": "backend/app/ml_models/cardio_scaler.joblib",
+      "sha256": "7cd6c5cc7050be779b783d786d974d27b071526e39c17f580fe2d7cfd47737a4",
+      "bytes": 1231
+    },
+    {
+      "path": "ML_Model/models/best_model.pkl",
+      "sha256": "b83e89714c302d128ba093cc18e0d57d988aef32d3bc9c52035852c6e802bfd5",
+      "bytes": 243636
+    },
+    {
+      "path": "ML_Model/models/imputer.pkl",
+      "sha256": "8e78a788b6012aae4b477d7aaa83efaeb5bda34ac725a716bb2deaa41dff6336",
+      "bytes": 919
+    },
+    {
+      "path": "ML_Model/models/scaler.pkl",
+      "sha256": "5e204890312672ceaeddffe679e0ad3a267e5eeff280dd59931909c6cefa70a3",
+      "bytes": 1127
+    }
+  ],
+  "research_not_loaded_by_api": [
+    {
+      "path": "ML_Research/Phase06B/Artifacts/diabd_research_calibrators.pkl",
+      "sha256": "631f113737d2d023fd3ede373f36d01e27bacbac6ca8ed92bab8df2edd8840ea",
+      "bytes": 227960
+    },
+    {
+      "path": "ML_Research/Phase06B/Artifacts/cleveland_shap_explainer.pkl",
+      "sha256": "e7593e20eaab9e73558d2c2bcdaf1314eeb7e37aed66a439e591c2356ffb2614",
+      "bytes": 24803
+    },
+    {
+      "path": "ML_Research/Phase06B/Artifacts/pima_leakage_free_pipeline.pkl",
+      "sha256": "93f5188abdc4b1bec59f0a4c4ddc3abf19ffd888dd0b2628d75d5bb307ae2c7f",
+      "bytes": 4199
+    }
+  ]
+}

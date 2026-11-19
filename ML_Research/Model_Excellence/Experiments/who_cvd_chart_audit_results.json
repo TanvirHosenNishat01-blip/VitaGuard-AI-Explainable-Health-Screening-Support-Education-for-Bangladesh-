@@ -1,0 +1,20 @@
+{
+  "service_file_hash_sha256": "6571630535f80c508acfc7172981a5784db1e281a50738cc3b28d4563cfd5d7b",
+  "total_cells": 700,
+  "expected_cells": 700,
+  "cell_count_verified": true,
+  "monotonicity_audit": {
+    "sbp_monotonicity_violations": 0,
+    "bmi_monotonicity_violations": 0,
+    "age_monotonicity_violations": 0,
+    "smoking_risk_violations": 0,
+    "overall_monotonicity_intact": true
+  },
+  "range_and_boundaries": {
+    "min_risk_percent": 1,
+    "max_risk_percent": 40,
+    "age_coverage": "40 to 74 years",
+    "prior_cvd_exclusion": "MANDATORY: Reject lookup if patient reports prior myocardial infarction or stroke."
+  },
+  "methodological_classification": "EPIDEMIOLOGICAL LOOKUP TABLE, NOT MACHINE LEARNING: Faithful implementation of the published WHO South Asia (SEAR D) non-laboratory risk charts (Lancet Global Health 2019). Internal lookup accuracy is 100% mathematically verified. External clinical calibration in Bangladesh requires prospective cohort validation."
+}

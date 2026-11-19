@@ -1,0 +1,210 @@
+{
+  "dataset_hash_sha256": "698c203a14aa31941d2251175330c9199f3ccdb31597abbba2a3e35416257a72",
+  "total_canonical_rows": 768,
+  "training_rows": 614,
+  "test_rows": 154,
+  "cv_pipeline_comparison": {
+    "Mean_LogisticRegression": {
+      "mean_cv_auroc": 0.8449,
+      "std_cv_auroc": 0.0148,
+      "calibration": {
+        "brier_score": 0.1596,
+        "brier_null": 0.22706,
+        "brier_skill_score": 0.2971,
+        "calibration_in_the_large": -0.61612,
+        "calibration_slope": 0.94466,
+        "expected_calibration_error": 0.09972,
+        "mean_predicted_prob": 0.44403,
+        "observed_prevalence": 0.34853
+      },
+      "diagnostics": {
+        "roc_auc": 0.8457,
+        "pr_auc": 0.7246,
+        "accuracy": 0.7638,
+        "sensitivity": 0.7056,
+        "specificity": 0.795,
+        "ppv": 0.6481,
+        "npv": 0.8346,
+        "f1": 0.6756,
+        "positive_likelihood_ratio": 3.442,
+        "negative_likelihood_ratio": 0.37,
+        "confusion_matrix": {
+          "tn": 318,
+          "fp": 82,
+          "fn": 63,
+          "tp": 151
+        }
+      },
+      "auroc_95_ci": [
+        0.8169,
+        0.8763
+      ],
+      "brier_95_ci": [
+        0.1436,
+        0.1742
+      ]
+    },
+    "Median_LogisticRegression": {
+      "mean_cv_auroc": 0.8444,
+      "std_cv_auroc": 0.0161,
+      "calibration": {
+        "brier_score": 0.15968,
+        "brier_null": 0.22706,
+        "brier_skill_score": 0.29673,
+        "calibration_in_the_large": -0.61514,
+        "calibration_slope": 0.9448,
+        "expected_calibration_error": 0.09634,
+        "mean_predicted_prob": 0.44385,
+        "observed_prevalence": 0.34853
+      },
+      "diagnostics": {
+        "roc_auc": 0.8453,
+        "pr_auc": 0.7242,
+        "accuracy": 0.7622,
+        "sensitivity": 0.7009,
+        "specificity": 0.795,
+        "ppv": 0.6466,
+        "npv": 0.8325,
+        "f1": 0.6726,
+        "positive_likelihood_ratio": 3.419,
+        "negative_likelihood_ratio": 0.376,
+        "confusion_matrix": {
+          "tn": 318,
+          "fp": 82,
+          "fn": 64,
+          "tp": 150
+        }
+      },
+      "auroc_95_ci": [
+        0.8166,
+        0.876
+      ],
+      "brier_95_ci": [
+        0.1438,
+        0.1744
+      ]
+    },
+    "Median_RandomForest": {
+      "mean_cv_auroc": 0.8386,
+      "std_cv_auroc": 0.0215,
+      "calibration": {
+        "brier_score": 0.16375,
+        "brier_null": 0.22706,
+        "brier_skill_score": 0.27884,
+        "calibration_in_the_large": -0.51771,
+        "calibration_slope": 1.29268,
+        "expected_calibration_error": 0.08952,
+        "mean_predicted_prob": 0.43777,
+        "observed_prevalence": 0.34853
+      },
+      "diagnostics": {
+        "roc_auc": 0.838,
+        "pr_auc": 0.7109,
+        "accuracy": 0.759,
+        "sensitivity": 0.7523,
+        "specificity": 0.7625,
+        "ppv": 0.6289,
+        "npv": 0.852,
+        "f1": 0.6851,
+        "positive_likelihood_ratio": 3.168,
+        "negative_likelihood_ratio": 0.325,
+        "confusion_matrix": {
+          "tn": 305,
+          "fp": 95,
+          "fn": 53,
+          "tp": 161
+        }
+      },
+      "auroc_95_ci": [
+        0.8065,
+        0.8687
+      ],
+      "brier_95_ci": [
+        0.1496,
+        0.177
+      ]
+    },
+    "Median_XGBoost": {
+      "mean_cv_auroc": 0.8229,
+      "std_cv_auroc": 0.0178,
+      "calibration": {
+        "brier_score": 0.16788,
+        "brier_null": 0.22706,
+        "brier_skill_score": 0.26064,
+        "calibration_in_the_large": -0.46875,
+        "calibration_slope": 0.82701,
+        "expected_calibration_error": 0.07391,
+        "mean_predicted_prob": 0.42033,
+        "observed_prevalence": 0.34853
+      },
+      "diagnostics": {
+        "roc_auc": 0.8216,
+        "pr_auc": 0.6949,
+        "accuracy": 0.7508,
+        "sensitivity": 0.729,
+        "specificity": 0.7625,
+        "ppv": 0.6215,
+        "npv": 0.8402,
+        "f1": 0.671,
+        "positive_likelihood_ratio": 3.069,
+        "negative_likelihood_ratio": 0.355,
+        "confusion_matrix": {
+          "tn": 305,
+          "fp": 95,
+          "fn": 58,
+          "tp": 156
+        }
+      },
+      "auroc_95_ci": [
+        0.7872,
+        0.8539
+      ],
+      "brier_95_ci": [
+        0.1506,
+        0.1856
+      ]
+    }
+  },
+  "sealed_test_evaluation": {
+    "clean_test_metrics": {
+      "roc_auc": 0.8117,
+      "pr_auc": 0.6702,
+      "accuracy": 0.7338,
+      "sensitivity": 0.7037,
+      "specificity": 0.75,
+      "ppv": 0.6032,
+      "npv": 0.8242,
+      "f1": 0.6496,
+      "positive_likelihood_ratio": 2.815,
+      "negative_likelihood_ratio": 0.395,
+      "confusion_matrix": {
+        "tn": 75,
+        "fp": 25,
+        "fn": 16,
+        "tp": 38
+      }
+    },
+    "clean_test_calibration": {
+      "brier_score": 0.1818,
+      "brier_null": 0.22769,
+      "brier_skill_score": 0.20156,
+      "calibration_in_the_large": -0.59835,
+      "calibration_slope": 0.7368,
+      "expected_calibration_error": 0.12412,
+      "mean_predicted_prob": 0.44551,
+      "observed_prevalence": 0.35065
+    },
+    "clean_auroc_95_ci": [
+      0.7368,
+      0.876
+    ],
+    "leakage_comparison": {
+      "historical_leaked_test_auroc": 0.9519,
+      "historical_leaked_test_accuracy": 0.8766,
+      "clean_leakage_free_test_auroc": 0.8117,
+      "clean_leakage_free_test_accuracy": 0.7338,
+      "synthetic_inflation_auroc_delta": 0.1402
+    }
+  },
+  "clinical_transportability_verdict": "NON-TRANSPORTABLE TO BANGLADESH: 1965-1992 Pima Native American female cohort. Patient-facing endpoints strictly disabled in production. Administration-only audit access preserved."
+}

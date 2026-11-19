@@ -1,0 +1,138 @@
+{
+  "production_raw": {
+    "path": "dataset/raw/diabetes.csv",
+    "sha256": "e25ebf48cce3c03cacbbdd007e356ad0a2f7818747cf471f79371f9753869697",
+    "rows": 768,
+    "columns": [
+      "Pregnancies",
+      "Glucose",
+      "BloodPressure",
+      "SkinThickness",
+      "Insulin",
+      "BMI",
+      "DiabetesPedigreeFunction",
+      "Age",
+      "Outcome"
+    ],
+    "zero_counts": {
+      "Glucose": 0,
+      "BloodPressure": 0,
+      "SkinThickness": 0,
+      "Insulin": 0,
+      "BMI": 0
+    },
+    "outcome_distribution": {
+      "0": 500,
+      "1": 268
+    }
+  },
+  "canonical_uci": {
+    "path": "ML_Research/Phase06B/Pima/pima_canonical_raw.csv",
+    "sha256": "698c203a14aa31941d2251175330c9199f3ccdb31597abbba2a3e35416257a72",
+    "rows": 768,
+    "columns": [
+      "Pregnancies",
+      "Glucose",
+      "BloodPressure",
+      "SkinThickness",
+      "Insulin",
+      "BMI",
+      "DiabetesPedigreeFunction",
+      "Age",
+      "Outcome"
+    ],
+    "zero_counts": {
+      "Glucose": 5,
+      "BloodPressure": 35,
+      "SkinThickness": 227,
+      "Insulin": 374,
+      "BMI": 11
+    },
+    "outcome_distribution": {
+      "0": 500,
+      "1": 268
+    }
+  },
+  "leakage_evidence": {
+    "Glucose": {
+      "canonical_zeros_count": 5,
+      "production_zeros_count": 0,
+      "injected_values_summary": {
+        "107": {
+          "outcome_0_count": 3,
+          "outcome_1_count": 0,
+          "total": 3
+        },
+        "140": {
+          "outcome_0_count": 0,
+          "outcome_1_count": 2,
+          "total": 2
+        }
+      }
+    },
+    "BloodPressure": {
+      "canonical_zeros_count": 35,
+      "production_zeros_count": 0,
+      "injected_values_summary": {
+        "70.0": {
+          "outcome_0_count": 19,
+          "outcome_1_count": 0,
+          "total": 19
+        },
+        "74.5": {
+          "outcome_0_count": 0,
+          "outcome_1_count": 16,
+          "total": 16
+        }
+      }
+    },
+    "SkinThickness": {
+      "canonical_zeros_count": 227,
+      "production_zeros_count": 0,
+      "injected_values_summary": {
+        "32": {
+          "outcome_0_count": 0,
+          "outcome_1_count": 88,
+          "total": 88
+        },
+        "27": {
+          "outcome_0_count": 139,
+          "outcome_1_count": 0,
+          "total": 139
+        }
+      }
+    },
+    "Insulin": {
+      "canonical_zeros_count": 374,
+      "production_zeros_count": 0,
+      "injected_values_summary": {
+        "169.5": {
+          "outcome_0_count": 0,
+          "outcome_1_count": 138,
+          "total": 138
+        },
+        "102.5": {
+          "outcome_0_count": 236,
+          "outcome_1_count": 0,
+          "total": 236
+        }
+      }
+    },
+    "BMI": {
+      "canonical_zeros_count": 11,
+      "production_zeros_count": 0,
+      "injected_values_summary": {
+        "34.3": {
+          "outcome_0_count": 0,
+          "outcome_1_count": 2,
+          "total": 2
+        },
+        "30.1": {
+          "outcome_0_count": 9,
+          "outcome_1_count": 0,
+          "total": 9
+        }
+      }
+    }
+  }
+}

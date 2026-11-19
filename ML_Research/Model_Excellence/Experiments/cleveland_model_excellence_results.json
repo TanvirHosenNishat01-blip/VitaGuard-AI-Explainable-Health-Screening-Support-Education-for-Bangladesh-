@@ -1,0 +1,205 @@
+{
+  "dataset_hash_sha256": "386015be85bcc9112cbac782dafd145aeef7abd4f8b9f2ee65f6c4c56ed82d9f",
+  "total_cleveland_rows": 297,
+  "train_rows": 237,
+  "test_rows": 60,
+  "cv_results": {
+    "LogisticRegression_Production": {
+      "mean_cv_auroc": 0.8748,
+      "std_cv_auroc": 0.0433,
+      "calibration": {
+        "brier_score": 0.14299,
+        "brier_null": 0.24839,
+        "brier_skill_score": 0.42435,
+        "calibration_in_the_large": -0.18435,
+        "calibration_slope": 0.75594,
+        "expected_calibration_error": 0.07486,
+        "mean_predicted_prob": 0.47828,
+        "observed_prevalence": 0.45992
+      },
+      "diagnostics": {
+        "roc_auc": 0.8692,
+        "pr_auc": 0.8704,
+        "accuracy": 0.8101,
+        "sensitivity": 0.789,
+        "specificity": 0.8281,
+        "ppv": 0.7963,
+        "npv": 0.8217,
+        "f1": 0.7926,
+        "positive_likelihood_ratio": 4.59,
+        "negative_likelihood_ratio": 0.255,
+        "confusion_matrix": {
+          "tn": 106,
+          "fp": 22,
+          "fn": 23,
+          "tp": 86
+        }
+      },
+      "auroc_95_ci": [
+        0.822,
+        0.9129
+      ]
+    },
+    "LogisticRegression_L1": {
+      "mean_cv_auroc": 0.8852,
+      "std_cv_auroc": 0.0467,
+      "calibration": {
+        "brier_score": 0.13562,
+        "brier_null": 0.24839,
+        "brier_skill_score": 0.45401,
+        "calibration_in_the_large": -0.16674,
+        "calibration_slope": 1.01137,
+        "expected_calibration_error": 0.05686,
+        "mean_predicted_prob": 0.48311,
+        "observed_prevalence": 0.45992
+      },
+      "diagnostics": {
+        "roc_auc": 0.8762,
+        "pr_auc": 0.8785,
+        "accuracy": 0.8228,
+        "sensitivity": 0.789,
+        "specificity": 0.8516,
+        "ppv": 0.819,
+        "npv": 0.8258,
+        "f1": 0.8037,
+        "positive_likelihood_ratio": 5.315,
+        "negative_likelihood_ratio": 0.248,
+        "confusion_matrix": {
+          "tn": 109,
+          "fp": 19,
+          "fn": 23,
+          "tp": 86
+        }
+      },
+      "auroc_95_ci": [
+        0.829,
+        0.9194
+      ]
+    },
+    "RandomForest": {
+      "mean_cv_auroc": 0.8913,
+      "std_cv_auroc": 0.04,
+      "calibration": {
+        "brier_score": 0.14402,
+        "brier_null": 0.24839,
+        "brier_skill_score": 0.42018,
+        "calibration_in_the_large": -0.08351,
+        "calibration_slope": 1.38132,
+        "expected_calibration_error": 0.07037,
+        "mean_predicted_prob": 0.47787,
+        "observed_prevalence": 0.45992
+      },
+      "diagnostics": {
+        "roc_auc": 0.8781,
+        "pr_auc": 0.8771,
+        "accuracy": 0.7975,
+        "sensitivity": 0.7706,
+        "specificity": 0.8203,
+        "ppv": 0.785,
+        "npv": 0.8077,
+        "f1": 0.7778,
+        "positive_likelihood_ratio": 4.289,
+        "negative_likelihood_ratio": 0.28,
+        "confusion_matrix": {
+          "tn": 105,
+          "fp": 23,
+          "fn": 25,
+          "tp": 84
+        }
+      },
+      "auroc_95_ci": [
+        0.8327,
+        0.9178
+      ]
+    }
+  },
+  "shap_verification": {
+    "explainer_class": "LinearExplainer",
+    "expected_value_base_logit": -0.2634,
+    "expected_value_base_prob": 0.4345,
+    "shap_additivity_verified": true,
+    "max_additivity_deviation": 0.0,
+    "features_audit": [
+      {
+        "feature": "ca",
+        "raw_log_odds_coef": 1.0641,
+        "heuristic_normalized_weight": 0.2096,
+        "true_mean_abs_shap_share": 0.2023
+      },
+      {
+        "feature": "thal",
+        "raw_log_odds_coef": 0.5738,
+        "heuristic_normalized_weight": 0.113,
+        "true_mean_abs_shap_share": 0.127
+      },
+      {
+        "feature": "thalach",
+        "raw_log_odds_coef": -0.4904,
+        "heuristic_normalized_weight": 0.0966,
+        "true_mean_abs_shap_share": 0.089
+      },
+      {
+        "feature": "cp",
+        "raw_log_odds_coef": 0.4664,
+        "heuristic_normalized_weight": 0.0919,
+        "true_mean_abs_shap_share": 0.0894
+      },
+      {
+        "feature": "exang",
+        "raw_log_odds_coef": 0.4417,
+        "heuristic_normalized_weight": 0.087,
+        "true_mean_abs_shap_share": 0.0949
+      },
+      {
+        "feature": "oldpeak",
+        "raw_log_odds_coef": 0.4045,
+        "heuristic_normalized_weight": 0.0797,
+        "true_mean_abs_shap_share": 0.0757
+      },
+      {
+        "feature": "sex",
+        "raw_log_odds_coef": 0.397,
+        "heuristic_normalized_weight": 0.0782,
+        "true_mean_abs_shap_share": 0.0884
+      },
+      {
+        "feature": "trestbps",
+        "raw_log_odds_coef": 0.3022,
+        "heuristic_normalized_weight": 0.0595,
+        "true_mean_abs_shap_share": 0.0538
+      },
+      {
+        "feature": "fbs",
+        "raw_log_odds_coef": -0.2885,
+        "heuristic_normalized_weight": 0.0568,
+        "true_mean_abs_shap_share": 0.0488
+      },
+      {
+        "feature": "slope",
+        "raw_log_odds_coef": 0.2593,
+        "heuristic_normalized_weight": 0.0511,
+        "true_mean_abs_shap_share": 0.0544
+      },
+      {
+        "feature": "chol",
+        "raw_log_odds_coef": 0.1721,
+        "heuristic_normalized_weight": 0.0339,
+        "true_mean_abs_shap_share": 0.0299
+      },
+      {
+        "feature": "restecg",
+        "raw_log_odds_coef": 0.1289,
+        "heuristic_normalized_weight": 0.0254,
+        "true_mean_abs_shap_share": 0.0295
+      },
+      {
+        "feature": "age",
+        "raw_log_odds_coef": -0.0889,
+        "heuristic_normalized_weight": 0.0175,
+        "true_mean_abs_shap_share": 0.0169
+      }
+    ],
+    "critical_distinction": "Normalized coefficients represent arbitrary relative scale of log-odds slopes, NOT patient-specific local explanations. SHAP values correctly measure individual additive contribution."
+  },
+  "spectrum_bias_warning": "CLEVELAND SELECTION BIAS: Cohort of patients referred for cardiac catheterization/coronary angiography. High disease prevalence (46.1%) and enrichment for severe stenosis. Cannot be deployed for general population CVD screening."
+}

@@ -1,0 +1,12 @@
+{
+    "source": "Pabna Diabetes Hospital, Bangladesh, public table of 465 women",
+    "rows": 465,
+    "scored": false,
+    "reason": "The current diabetes model was not run on these rows. Glucose, skin thickness, insulin, and family history are not the same measurements as the Pima table, so a score would be invented.",
+    "mismatches": {
+        "glucose": "Pabna values run from 5 to 45. This model expects plasma glucose of about 44 to 199 mg/dL.",
+        "skin_thickness_mm": "Pabna values run from 29.21 to 406.4. This model expects a triceps skinfold of about 7 to 99 mm.",
+        "insulin": "334 of 465 insulin values are 0, and the highest recorded value is 44. This model expects 2-hour serum insulin up to the Pima range.",
+        "family_history": "Pabna records a family count from 0 to 8. This model expects the Pima diabetes pedigree score, about 0.078 to 2.42."
+    }
+}

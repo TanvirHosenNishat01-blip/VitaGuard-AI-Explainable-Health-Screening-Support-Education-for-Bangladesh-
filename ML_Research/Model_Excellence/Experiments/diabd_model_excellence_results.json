@@ -1,0 +1,384 @@
+{
+  "dataset_hash_sha256": "d9f868c9ce8eefe545294156ed1626f60fdb33f507f9ca021fd34fa4b575741a",
+  "clean_rows": 5119,
+  "clean_positive": 324,
+  "prevalence": 0.06329,
+  "development_set_n": 4095,
+  "held_out_test_n": 1024,
+  "candidates_comparison": {
+    "LogisticRegression_Baseline": {
+      "mean_cv_auroc": 0.7208,
+      "std_cv_auroc": 0.011,
+      "oof_calibration": {
+        "brier_score": 0.21262,
+        "brier_null": 0.05925,
+        "brier_skill_score": -2.58869,
+        "calibration_in_the_large": -2.67938,
+        "calibration_slope": 0.89996,
+        "expected_calibration_error": 0.36818,
+        "mean_predicted_prob": 0.43143,
+        "observed_prevalence": 0.06325
+      },
+      "oof_diagnostics_tau_0_50": {
+        "roc_auc": 0.7201,
+        "pr_auc": 0.1418,
+        "accuracy": 0.665,
+        "sensitivity": 0.6641,
+        "specificity": 0.665,
+        "ppv": 0.1181,
+        "npv": 0.967,
+        "f1": 0.2005,
+        "positive_likelihood_ratio": 1.982,
+        "negative_likelihood_ratio": 0.505,
+        "confusion_matrix": {
+          "tn": 2551,
+          "fp": 1285,
+          "fn": 87,
+          "tp": 172
+        }
+      },
+      "auroc_95_ci": [
+        0.6883,
+        0.752
+      ],
+      "brier_95_ci": [
+        0.2073,
+        0.2181
+      ]
+    },
+    "LogisticRegression_L1": {
+      "mean_cv_auroc": 0.7207,
+      "std_cv_auroc": 0.0108,
+      "oof_calibration": {
+        "brier_score": 0.21264,
+        "brier_null": 0.05925,
+        "brier_skill_score": -2.58894,
+        "calibration_in_the_large": -2.67949,
+        "calibration_slope": 0.9049,
+        "expected_calibration_error": 0.36851,
+        "mean_predicted_prob": 0.43176,
+        "observed_prevalence": 0.06325
+      },
+      "oof_diagnostics_tau_0_50": {
+        "roc_auc": 0.7202,
+        "pr_auc": 0.1417,
+        "accuracy": 0.6647,
+        "sensitivity": 0.6602,
+        "specificity": 0.665,
+        "ppv": 0.1174,
+        "npv": 0.9667,
+        "f1": 0.1994,
+        "positive_likelihood_ratio": 1.971,
+        "negative_likelihood_ratio": 0.511,
+        "confusion_matrix": {
+          "tn": 2551,
+          "fp": 1285,
+          "fn": 88,
+          "tp": 171
+        }
+      },
+      "auroc_95_ci": [
+        0.6883,
+        0.7519
+      ],
+      "brier_95_ci": [
+        0.2074,
+        0.218
+      ]
+    },
+    "LogisticRegression_Interactions": {
+      "mean_cv_auroc": 0.7204,
+      "std_cv_auroc": 0.0146,
+      "oof_calibration": {
+        "brier_score": 0.20845,
+        "brier_null": 0.05925,
+        "brier_skill_score": -2.51825,
+        "calibration_in_the_large": -2.62391,
+        "calibration_slope": 0.73477,
+        "expected_calibration_error": 0.36016,
+        "mean_predicted_prob": 0.42242,
+        "observed_prevalence": 0.06325
+      },
+      "oof_diagnostics_tau_0_50": {
+        "roc_auc": 0.7183,
+        "pr_auc": 0.141,
+        "accuracy": 0.6706,
+        "sensitivity": 0.6641,
+        "specificity": 0.671,
+        "ppv": 0.1199,
+        "npv": 0.9673,
+        "f1": 0.2032,
+        "positive_likelihood_ratio": 2.019,
+        "negative_likelihood_ratio": 0.501,
+        "confusion_matrix": {
+          "tn": 2574,
+          "fp": 1262,
+          "fn": 87,
+          "tp": 172
+        }
+      },
+      "auroc_95_ci": [
+        0.6854,
+        0.7502
+      ],
+      "brier_95_ci": [
+        0.2031,
+        0.2143
+      ]
+    },
+    "RandomForest": {
+      "mean_cv_auroc": 0.7188,
+      "std_cv_auroc": 0.0201,
+      "oof_calibration": {
+        "brier_score": 0.18652,
+        "brier_null": 0.05925,
+        "brier_skill_score": -2.14823,
+        "calibration_in_the_large": -2.49918,
+        "calibration_slope": 0.90008,
+        "expected_calibration_error": 0.32819,
+        "mean_predicted_prob": 0.39144,
+        "observed_prevalence": 0.06325
+      },
+      "oof_diagnostics_tau_0_50": {
+        "roc_auc": 0.7163,
+        "pr_auc": 0.1356,
+        "accuracy": 0.6899,
+        "sensitivity": 0.6371,
+        "specificity": 0.6934,
+        "ppv": 0.123,
+        "npv": 0.9659,
+        "f1": 0.2062,
+        "positive_likelihood_ratio": 2.078,
+        "negative_likelihood_ratio": 0.523,
+        "confusion_matrix": {
+          "tn": 2660,
+          "fp": 1176,
+          "fn": 94,
+          "tp": 165
+        }
+      },
+      "auroc_95_ci": [
+        0.6822,
+        0.7479
+      ],
+      "brier_95_ci": [
+        0.1818,
+        0.192
+      ]
+    },
+    "ExtraTrees": {
+      "mean_cv_auroc": 0.7154,
+      "std_cv_auroc": 0.0191,
+      "oof_calibration": {
+        "brier_score": 0.21141,
+        "brier_null": 0.05925,
+        "brier_skill_score": -2.56829,
+        "calibration_in_the_large": -2.63548,
+        "calibration_slope": 1.27075,
+        "expected_calibration_error": 0.37924,
+        "mean_predicted_prob": 0.44249,
+        "observed_prevalence": 0.06325
+      },
+      "oof_diagnostics_tau_0_50": {
+        "roc_auc": 0.7114,
+        "pr_auc": 0.1367,
+        "accuracy": 0.6352,
+        "sensitivity": 0.668,
+        "specificity": 0.633,
+        "ppv": 0.1094,
+        "npv": 0.9658,
+        "f1": 0.188,
+        "positive_likelihood_ratio": 1.82,
+        "negative_likelihood_ratio": 0.525,
+        "confusion_matrix": {
+          "tn": 2428,
+          "fp": 1408,
+          "fn": 86,
+          "tp": 173
+        }
+      },
+      "auroc_95_ci": [
+        0.6786,
+        0.7421
+      ],
+      "brier_95_ci": [
+        0.2075,
+        0.2156
+      ]
+    },
+    "HistGradientBoosting": {
+      "mean_cv_auroc": 0.6503,
+      "std_cv_auroc": 0.0217,
+      "oof_calibration": {
+        "brier_score": 0.09997,
+        "brier_null": 0.05925,
+        "brier_skill_score": -0.68738,
+        "calibration_in_the_large": -2.11342,
+        "calibration_slope": 0.2547,
+        "expected_calibration_error": 0.11152,
+        "mean_predicted_prob": 0.15963,
+        "observed_prevalence": 0.06325
+      },
+      "oof_diagnostics_tau_0_50": {
+        "roc_auc": 0.6501,
+        "pr_auc": 0.1037,
+        "accuracy": 0.8647,
+        "sensitivity": 0.1892,
+        "specificity": 0.9103,
+        "ppv": 0.1247,
+        "npv": 0.9433,
+        "f1": 0.1503,
+        "positive_likelihood_ratio": 2.11,
+        "negative_likelihood_ratio": 0.891,
+        "confusion_matrix": {
+          "tn": 3492,
+          "fp": 344,
+          "fn": 210,
+          "tp": 49
+        }
+      },
+      "auroc_95_ci": [
+        0.6172,
+        0.6829
+      ],
+      "brier_95_ci": [
+        0.0937,
+        0.1067
+      ]
+    },
+    "XGBoost_Production": {
+      "mean_cv_auroc": 0.7177,
+      "std_cv_auroc": 0.0172,
+      "oof_calibration": {
+        "brier_score": 0.18639,
+        "brier_null": 0.05925,
+        "brier_skill_score": -2.14598,
+        "calibration_in_the_large": -2.49471,
+        "calibration_slope": 0.76189,
+        "expected_calibration_error": 0.31564,
+        "mean_predicted_prob": 0.37889,
+        "observed_prevalence": 0.06325
+      },
+      "oof_diagnostics_tau_0_50": {
+        "roc_auc": 0.7152,
+        "pr_auc": 0.1406,
+        "accuracy": 0.6943,
+        "sensitivity": 0.6448,
+        "specificity": 0.6976,
+        "ppv": 0.1258,
+        "npv": 0.9668,
+        "f1": 0.2106,
+        "positive_likelihood_ratio": 2.132,
+        "negative_likelihood_ratio": 0.509,
+        "confusion_matrix": {
+          "tn": 2676,
+          "fp": 1160,
+          "fn": 92,
+          "tp": 167
+        }
+      },
+      "auroc_95_ci": [
+        0.683,
+        0.7466
+      ],
+      "brier_95_ci": [
+        0.1811,
+        0.1924
+      ]
+    }
+  },
+  "platt_calibrator_params": {
+    "slope_a": 3.68511,
+    "intercept_b": -4.36905
+  },
+  "subgroup_fairness_analysis": {
+    "Sex_Female": {
+      "n_samples": 2850,
+      "n_positives": 166,
+      "observed_prevalence": 0.0582,
+      "uncalibrated_auroc": 0.708,
+      "uncalibrated_mean_prob": 0.3671,
+      "calibrated_mean_prob": 0.0606,
+      "calibrated_brier": 0.053
+    },
+    "Sex_Male": {
+      "n_samples": 1245,
+      "n_positives": 93,
+      "observed_prevalence": 0.0747,
+      "uncalibrated_auroc": 0.7222,
+      "uncalibrated_mean_prob": 0.4059,
+      "calibrated_mean_prob": 0.0693,
+      "calibrated_brier": 0.066
+    },
+    "Age_<40": {
+      "n_samples": 1494,
+      "n_positives": 44,
+      "observed_prevalence": 0.0295,
+      "uncalibrated_auroc": 0.6092,
+      "uncalibrated_mean_prob": 0.2367,
+      "calibrated_mean_prob": 0.0342,
+      "calibrated_brier": 0.0283
+    },
+    "Age_40-59": {
+      "n_samples": 1791,
+      "n_positives": 139,
+      "observed_prevalence": 0.0776,
+      "uncalibrated_auroc": 0.7041,
+      "uncalibrated_mean_prob": 0.4418,
+      "calibrated_mean_prob": 0.0758,
+      "calibrated_brier": 0.069
+    },
+    "Age_60+": {
+      "n_samples": 810,
+      "n_positives": 76,
+      "observed_prevalence": 0.0938,
+      "uncalibrated_auroc": 0.6452,
+      "uncalibrated_mean_prob": 0.502,
+      "calibrated_mean_prob": 0.0891,
+      "calibrated_brier": 0.0832
+    }
+  },
+  "historical_test_report": {
+    "test_n": 1024,
+    "test_positives": 65,
+    "uncalibrated_metrics": {
+      "roc_auc": 0.7092,
+      "pr_auc": 0.1715,
+      "accuracy": 0.6982,
+      "sensitivity": 0.5846,
+      "specificity": 0.7059,
+      "ppv": 0.1187,
+      "npv": 0.9616,
+      "f1": 0.1974,
+      "positive_likelihood_ratio": 1.988,
+      "negative_likelihood_ratio": 0.588,
+      "confusion_matrix": {
+        "tn": 677,
+        "fp": 282,
+        "fn": 27,
+        "tp": 38
+      }
+    },
+    "uncalibrated_calibration": {
+      "brier_score": 0.18936,
+      "brier_null": 0.05945,
+      "brier_skill_score": -2.18537,
+      "calibration_in_the_large": -2.51192,
+      "calibration_slope": 0.80039,
+      "expected_calibration_error": 0.32181,
+      "mean_predicted_prob": 0.38529,
+      "observed_prevalence": 0.06348
+    },
+    "platt_calibrated_calibration": {
+      "brier_score": 0.05732,
+      "brier_null": 0.05945,
+      "brier_skill_score": 0.03582,
+      "calibration_in_the_large": -0.06371,
+      "calibration_slope": 0.97772,
+      "expected_calibration_error": 0.00337,
+      "mean_predicted_prob": 0.064,
+      "observed_prevalence": 0.06348
+    },
+    "disclosure": "Scored once on held-out split. Subject to previous unblinding; cannot serve as independent external validation."
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "cv_results": {
+    "median_LogisticRegression": {
+      "imputation": "median",
+      "model": "LogisticRegression",
+      "mean_auroc": 0.8443812292358803,
+      "std_auroc": 0.016074151820579204,
+      "mean_auprc": 0.7476819375816531,
+      "mean_accuracy": 0.7622017859522857,
+      "mean_recall": 0.7009966777408638,
+      "mean_f1": 0.6723854281128022
+    },
+    "median_RandomForest": {
+      "imputation": "median",
+      "model": "RandomForest",
+      "mean_auroc": 0.8386378737541529,
+      "std_auroc": 0.021524589150602357,
+      "mean_auprc": 0.7273376228993105,
+      "mean_accuracy": 0.7589497534319606,
+      "mean_recall": 0.7522702104097453,
+      "mean_f1": 0.6854155912978495
+    },
+    "median_XGBoost": {
+      "imputation": "median",
+      "model": "XGBoost",
+      "mean_auroc": 0.8254152823920267,
+      "std_auroc": 0.01960608823632361,
+      "mean_auprc": 0.720851710671053,
+      "mean_accuracy": 0.7540317206450752,
+      "mean_recall": 0.5607973421926911,
+      "mean_f1": 0.6141001001001001
+    },
+    "mean_LogisticRegression": {
+      "imputation": "mean",
+      "model": "LogisticRegression",
+      "mean_auroc": 0.844858803986711,
+      "std_auroc": 0.014790430331630619,
+      "mean_auprc": 0.7480866823938062,
+      "mean_accuracy": 0.7638411302145808,
+      "mean_recall": 0.7057585825027686,
+      "mean_f1": 0.6753158310432053
+    },
+    "mean_RandomForest": {
+      "imputation": "mean",
+      "model": "RandomForest",
+      "mean_auroc": 0.8366569767441859,
+      "std_auroc": 0.02038916270109452,
+      "mean_auprc": 0.7250724150753969,
+      "mean_accuracy": 0.7638278022124483,
+      "mean_recall": 0.756921373200443,
+      "mean_f1": 0.6909932501313688
+    },
+    "mean_XGBoost": {
+      "imputation": "mean",
+      "model": "XGBoost",
+      "mean_auroc": 0.8261683277962348,
+      "std_auroc": 0.016315530586906976,
+      "mean_auprc": 0.7219750560626291,
+      "mean_accuracy": 0.750806344129015,
+      "mean_recall": 0.5607973421926911,
+      "mean_f1": 0.6100904159132008
+    },
+    "knn5_LogisticRegression": {
+      "imputation": "knn5",
+      "model": "LogisticRegression",
+      "mean_auroc": 0.8430440199335548,
+      "std_auroc": 0.016195704486365235,
+      "mean_auprc": 0.7455424152775307,
+      "mean_accuracy": 0.7589097694255631,
+      "mean_recall": 0.7056478405315615,
+      "mean_f1": 0.6708669477650594
+    },
+    "knn5_RandomForest": {
+      "imputation": "knn5",
+      "model": "RandomForest",
+      "mean_auroc": 0.8368064784053157,
+      "std_auroc": 0.01765373996404613,
+      "mean_auprc": 0.7259284856931227,
+      "mean_accuracy": 0.7556977209116353,
+      "mean_recall": 0.7617940199335548,
+      "mean_f1": 0.6849757480771816
+    },
+    "knn5_XGBoost": {
+      "imputation": "knn5",
+      "model": "XGBoost",
+      "mean_auroc": 0.8256436877076412,
+      "std_auroc": 0.01960034346303795,
+      "mean_auprc": 0.7284908108925288,
+      "mean_accuracy": 0.767093162734906,
+      "mean_recall": 0.5935769656699889,
+      "mean_f1": 0.6398962681947251
+    }
+  },
+  "champion": "mean_LogisticRegression",
+  "test_metrics": {
+    "auroc": {
+      "point": 0.8117,
+      "ci95": [
+        0.7368,
+        0.876
+      ]
+    },
+    "auprc": {
+      "point": 0.6702
+    },
+    "accuracy": {
+      "point": 0.7338,
+      "ci95": [
+        0.6623,
+        0.7987
+      ]
+    },
+    "sensitivity_recall": {
+      "point": 0.7037,
+      "ci95": [
+        0.5769,
+        0.8236
+      ]
+    },
+    "specificity": {
+      "point": 0.75,
+      "ci95": [
+        0.6666,
+        0.835
+      ]
+    },
+    "precision_ppv": {
+      "point": 0.6032
+    },
+    "npv": {
+      "point": 0.8242
+    },
+    "f1_score": {
+      "point": 0.6496
+    },
+    "brier_score": {
+      "point": 0.1818,
+      "ci95": [
+        0.1457,
+        0.2218
+      ]
+    },
+    "confusion_matrix": {
+      "tn": 75,
+      "fp": 25,
+      "fn": 16,
+      "tp": 38
+    }
+  },
+  "historical_comparison": {
+    "metric": [
+      "AUROC",
+      "Accuracy",
+      "Recall",
+      "Precision",
+      "F1-Score"
+    ],
+    "historical_leaked": [
+      0.9519,
+      0.8766,
+      0.8478,
+      0.8039,
+      0.8252
+    ],
+    "corrected_leakage_free": [
+      0.8117,
+      0.7338,
+      0.7037,
+      0.6032,
+      0.6496
+    ],
+    "inflation_delta": [
+      0.1402,
+      0.1428,
+      0.1441,
+      0.2007,
+      0.1756
+    ]
+  }
+}

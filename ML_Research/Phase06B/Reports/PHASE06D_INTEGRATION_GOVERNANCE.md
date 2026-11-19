@@ -1,0 +1,118 @@
+# Phase 06D — Controlled Production Integration Governance
+**TriNexus | VitaGuard AI — Clinical Machine Learning Division**  
+**Document Date:** November 10, 2026  
+**Auditor & Safety Reviewer:** Lead Clinical AI Architect & Systems Governance Specialist  
+**Document Status:** **PROSPECTIVE INTEGRATION GOVERNANCE SPECIFICATION**  
+**Governance State:** **LOCKED (EXECUTION CONTINGENT UPON PRIOR PHASE 06C APPROVAL)**
+
+---
+
+## 1. Executive Mandate & Prerequisites
+
+Phase 06D is designed as the future, controlled production staging and integration phase for candidate models and explainers developed in Phase 06B and validated in Phase 06C.
+
+> [!CAUTION]
+> **ABSOLUTE PREREQUISITE REQUIREMENT:**  
+> Phase 06D may **NOT** be executed, initiated, or staged until:
+> 1. Phase 06C Independent Validation is 100% completed according to `PHASE06C_VALIDATION_PROTOCOL.md`.
+> 2. Validation results and limitations are thoroughly reviewed by clinical leadership.
+> 3. Explicit human authorization specifically sanctioning Phase 06D integration is granted.
+
+---
+
+## 2. Dual-Score & Probability Semantics Architecture
+
+If the DiaBD Platt calibrator is formally authorized for integration during Phase 06D, client-facing services must implement a **dual-score presentation architecture** to avoid clinical confusion between relative screening rank and absolute calibrated probability.
+
+### 2.1 The Semantic Trap of Single Probabilities
+In an imbalanced screening population with $6.3\%$ disease prevalence, a patient with a calibrated probability of **$12.5\%$** actually faces **double the average population risk**.  
+- Presenting only "12.5% Probability" leads patients to falsely assume they are safe (since 12.5% appears low on a 0–100% scale).
+- Presenting only "High Risk" without context leads clinicians to order redundant emergency interventions.
+
+### 2.2 Dual-Representation Schema Specification
+If staged, inference responses from `backend/app/services/bd_diabetes_service.py` must provide both perspectives:
+```json
+{
+  "status": "success",
+  "prediction": {
+    "binary_classification": 1,
+    "risk_level": "ELEVATED_SCREENING_RISK",
+    "screening_risk_score": 68.4,
+    "calibrated_probability_percent": 9.4,
+    "population_baseline_prevalence_percent": 6.35,
+    "relative_risk_ratio": 1.48,
+    "semantics": {
+      "score_type": "Platt-Calibrated Empirical Probability",
+      "interpretation": "A calibrated probability of 9.4% indicates that out of 100 presenting individuals with this exact risk profile, approximately 9 to 10 have laboratory-confirmed diabetes. This is 1.48x higher than the general adult population baseline (6.35%).",
+      "clinical_next_step": "Confirmatory Fasting Plasma Glucose (FPG) or laboratory HbA1c test recommended."
+    }
+  }
+}
+```
+
+---
+
+## 3. Decision Threshold & Interactive Slider Governance
+
+### 3.1 Prohibition of Fixed 0.50 Cutoffs
+Phase 06B mathematically proved that applying a static 0.50 threshold to a calibrated $6.3\%$ model results in **0.0% sensitivity** (100% false-negative rate). Phase 06D engineering must strictly enforce:
+1. **No Hardcoded 0.50 Thresholds:** Hardcoded checks of `probability >= 0.50` must be banned from backend services.
+2. **Operational Triage Guidance:** If operational cutoffs are implemented, they must be configured dynamically based on clinical deployment tiers established in Phase 06C:
+   - *Community Screening Tier:* Low threshold ($\tau \approx 0.05$) to optimize sensitivity ($>75\%$) for outreach camps.
+   - *Outpatient Clinic Tier:* Moderate threshold ($\tau \approx 0.08$) for balanced physician review queue triage.
+   - *Resource-Constrained Tier:* High threshold ($\tau \approx 0.12$) to minimize false-positive laboratory strain.
+3. **Interactive Physician Sliders:** In doctor review interfaces, risk thresholds must be presented as interactive sensitivity/specificity sliders with real-time confusion matrix trade-off warnings, never as automated black-box diagnoses.
+
+---
+
+## 4. API Backward Compatibility & Deprecation Strategy
+
+Production contracts must be preserved to prevent breaking mobile apps, external health portal integrations, or frontend dashboards.
+
+### 4.1 Compatibility Strategy for `/api/predict` and `/api/predict/diabetes`
+1. **Preserve Legacy Fields:** To maintain 100% backward compatibility, legacy fields (`probability_percent`, `risk_score`) must remain present in response payloads.
+2. **Non-Breaking Field Extension:** New validated fields (`calibrated_probability_percent`, `decision_margin_log_odds`, `risk_tier`) must be introduced as additive properties.
+3. **HTTP Header Versioning:** Support API versioning headers:
+   - `X-VitaGuard-API-Version: 2026-11` (Legacy uncalibrated screening score)
+   - `X-VitaGuard-API-Version: 2026-12` (Validated dual-score calibrated payload)
+
+---
+
+## 5. Clinical Review Queue & Doctor Supervision Mandate
+
+Any automated prediction generated by an integrated ML model must adhere to human-in-the-loop clinical governance:
+1. **Elevated Risk Queue:** Every patient whose calibrated probability exceeds the active clinical triage threshold must be automatically enqueued into the **Doctor Review Dashboard** (`/doctor/review`).
+2. **Mandatory Doctor Attestation:** Diagnostic notification to patients must require an authorized clinician's digital signature and clinical note.
+3. **Clear Patient Disclaimers:** Patient-facing cards must prominently state:  
+   *"This assessment is an AI-assisted screening risk calculation, not a diagnostic blood test. Only a licensed physician can diagnose diabetes or heart disease."*
+
+---
+
+## 6. Rollback & Fail-Safe Runbook
+
+If any anomaly, distribution shift, or integration defect is detected post-deployment, the engineering team must follow this automated rollback runbook:
+
+```
+┌──────────────────────────────────────────────────────────────────────────────────┐
+│                             PHASE 06D ROLLBACK RUNBOOK                           │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│ TRIGGER 1: UNEXPECTED POSITIVE RATE SHIFT                                        │
+│ - Condition: Live positive screening rate deviates by >10 percentage points      │
+│   from population baseline (6.35%) over a 24-hour moving window.                 │
+│ - Action: Service immediately reverts to non-calibrated screening rank mode.     │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│ TRIGGER 2: CRYPTOGRAPHIC HASH DRIFT                                              │
+│ - Condition: Live startup SHA-256 check fails against the 19-asset registry.      │
+│ - Action: Application halts startup; triggers automated alerts to DevOps lead.    │
+├──────────────────────────────────────────────────────────────────────────────────┤
+│ TRIGGER 3: CLIENT ROLLBACK COMMAND                                               │
+│ - Command: `git checkout tags/phase06b2-reconciled`                              │
+│ - Verification: Re-hash all 19 assets against `phase06b2_baseline_hashes.txt`.    │
+└──────────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 7. Governance Lock
+
+Phase 06D integration governance is formally defined and frozen. No implementation of this document is authorized until Phase 06C validation is fully executed, reviewed, and approved.

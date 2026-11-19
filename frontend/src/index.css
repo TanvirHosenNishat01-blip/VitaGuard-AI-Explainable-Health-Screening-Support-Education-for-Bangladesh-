@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Approved VitaGuard AI Clinical Design Tokens */
+  --color-primary-navy: #12304A;
+  --color-primary-navy-light: #1E4668;
+  --color-primary-navy-dark: #0B1F31;
+  --color-medical-teal: #0D9488;
+  --color-medical-teal-hover: #0F766E;
+  --color-medical-teal-light: #F0FDFA;
+  --color-background: #F6F9FC;
+  --color-surface: #FFFFFF;
+  --color-border: #E2E8F0;
+  --color-success: #15803D;
+  --color-success-bg: #DCFCE7;
+  --color-warning: #D97706;
+  --color-warning-bg: #FEF3C7;
+  --color-critical: #DC2626;
+  --color-critical-bg: #FEE2E2;
+  --color-muted-text: #64748B;
+
+  /* Spacing Scale (4px / 8px linear grid) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+
+  /* Border Radius Tokens */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+
+  /* Transition Standard */
+  --transition-clinical: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', 'Noto Sans Bengali', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--color-primary-navy);
+    background-color: var(--color-background);
+    line-height: 1.55;
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-background);
+    color: var(--color-primary-navy);
+    font-family: 'Inter', 'Noto Sans Bengali', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Ensure Bengali vowel diacritics and conjuncts are never clipped */
+  [lang="bn"],
+  .font-bengali {
+    font-family: 'Noto Sans Bengali', 'Inter', system-ui, sans-serif;
+    line-height: 1.65;
+    letter-spacing: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', 'Inter', 'Noto Sans Bengali', system-ui, sans-serif;
+    color: var(--color-primary-navy);
+    line-height: 1.35;
+  }
+
+  /* Tabular numerals for clinical readings and scores */
+  .tabular-nums,
+  input[type="number"],
+  table td {
+    font-variant-numeric: tabular-nums;
+  }
+
+  code, pre {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  }
+
+  /* Accessible Keyboard Focus Indicator (WCAG 2.2 AA 2.4.7) */
+  :focus-visible {
+    outline: 2px solid var(--color-medical-teal);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .clinical-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 1px 2px 0 rgba(18, 48, 74, 0.05);
+  }
+
+  .clinical-focus {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0D9488] focus-visible:ring-offset-2;
+  }
+}
+
+/* Respect prefers-reduced-motion (WCAG 2.2 AA 2.3.3) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

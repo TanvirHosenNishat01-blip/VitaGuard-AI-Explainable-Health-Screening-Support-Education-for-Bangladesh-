@@ -1,0 +1,262 @@
+{
+  "global_feature_coefficients": [
+    {
+      "feature": "ca",
+      "standardized_coef_log_odds": 1.0641,
+      "unstandardized_coef_original_unit": 1.08747,
+      "odds_ratio_per_std": 2.8982,
+      "odds_ratio_per_unit": 2.9668,
+      "direction": "Risk-Increasing",
+      "absolute_importance": 1.0641
+    },
+    {
+      "feature": "thal",
+      "standardized_coef_log_odds": 0.5738,
+      "unstandardized_coef_original_unit": 0.60229,
+      "odds_ratio_per_std": 1.775,
+      "odds_ratio_per_unit": 1.8263,
+      "direction": "Risk-Increasing",
+      "absolute_importance": 0.5738
+    },
+    {
+      "feature": "thalach",
+      "standardized_coef_log_odds": -0.4904,
+      "unstandardized_coef_original_unit": -0.02184,
+      "odds_ratio_per_std": 0.6124,
+      "odds_ratio_per_unit": 0.9784,
+      "direction": "Protective",
+      "absolute_importance": 0.4904
+    },
+    {
+      "feature": "cp",
+      "standardized_coef_log_odds": 0.4664,
+      "unstandardized_coef_original_unit": 0.4801,
+      "odds_ratio_per_std": 1.5943,
+      "odds_ratio_per_unit": 1.6162,
+      "direction": "Risk-Increasing",
+      "absolute_importance": 0.4664
+    },
+    {
+      "feature": "exang",
+      "standardized_coef_log_odds": 0.4417,
+      "unstandardized_coef_original_unit": 0.93999,
+      "odds_ratio_per_std": 1.5553,
+      "odds_ratio_per_unit": 2.56,
+      "direction": "Risk-Increasing",
+      "absolute_importance": 0.4417
+    },
+    {
+      "feature": "oldpeak",
+      "standardized_coef_log_odds": 0.4045,
+      "unstandardized_coef_original_unit": 0.33743,
+      "odds_ratio_per_std": 1.4986,
+      "odds_ratio_per_unit": 1.4013,
+      "direction": "Risk-Increasing",
+      "absolute_importance": 0.4045
+    },
+    {
+      "feature": "sex",
+      "standardized_coef_log_odds": 0.397,
+      "unstandardized_coef_original_unit": 0.85998,
+      "odds_ratio_per_std": 1.4874,
+      "odds_ratio_per_unit": 2.3631,
+      "direction": "Risk-Increasing",
+      "absolute_importance": 0.397
+    },
+    {
+      "feature": "trestbps",
+      "standardized_coef_log_odds": 0.3022,
+      "unstandardized_coef_original_unit": 0.01702,
+      "odds_ratio_per_std": 1.3528,
+      "odds_ratio_per_unit": 1.0172,
+      "direction": "Risk-Increasing",
+      "absolute_importance": 0.3022
+    },
+    {
+      "feature": "fbs",
+      "standardized_coef_log_odds": -0.2885,
+      "unstandardized_coef_original_unit": -0.8229,
+      "odds_ratio_per_std": 0.7494,
+      "odds_ratio_per_unit": 0.4392,
+      "direction": "Protective",
+      "absolute_importance": 0.2885
+    },
+    {
+      "feature": "slope",
+      "standardized_coef_log_odds": 0.2593,
+      "unstandardized_coef_original_unit": 0.40588,
+      "odds_ratio_per_std": 1.296,
+      "odds_ratio_per_unit": 1.5006,
+      "direction": "Risk-Increasing",
+      "absolute_importance": 0.2593
+    },
+    {
+      "feature": "chol",
+      "standardized_coef_log_odds": 0.1721,
+      "unstandardized_coef_original_unit": 0.00334,
+      "odds_ratio_per_std": 1.1878,
+      "odds_ratio_per_unit": 1.0033,
+      "direction": "Risk-Increasing",
+      "absolute_importance": 0.1721
+    },
+    {
+      "feature": "restecg",
+      "standardized_coef_log_odds": 0.1289,
+      "unstandardized_coef_original_unit": 0.12974,
+      "odds_ratio_per_std": 1.1376,
+      "odds_ratio_per_unit": 1.1385,
+      "direction": "Risk-Increasing",
+      "absolute_importance": 0.1289
+    },
+    {
+      "feature": "age",
+      "standardized_coef_log_odds": -0.0889,
+      "unstandardized_coef_original_unit": -0.01001,
+      "odds_ratio_per_std": 0.9149,
+      "odds_ratio_per_unit": 0.99,
+      "direction": "Protective",
+      "absolute_importance": 0.0889
+    }
+  ],
+  "intercept": 0.06795077312551914,
+  "base_value_log_odds": -0.2633620379801469,
+  "max_additivity_error": 8.881784197001252e-16,
+  "case_evaluations": [
+    {
+      "profile": "Case 1: High-Risk Profile (Older male, high chest pain code, ST depression, 2 major vessels)",
+      "predicted_probability": 99.55,
+      "decision_margin_log_odds": 5.3922,
+      "base_log_odds": -0.2634,
+      "additivity_verified": true,
+      "top_contributing_factors": [
+        {
+          "feature": "ca",
+          "raw_value": 2.0,
+          "shap_attribution_log_odds": 1.5551,
+          "impact": "Increases Risk"
+        },
+        {
+          "feature": "thal",
+          "raw_value": 2.0,
+          "shap_attribution_log_odds": 0.7107,
+          "impact": "Increases Risk"
+        },
+        {
+          "feature": "thalach",
+          "raw_value": 120.0,
+          "shap_attribution_log_odds": 0.6938,
+          "impact": "Increases Risk"
+        },
+        {
+          "feature": "exang",
+          "raw_value": 1.0,
+          "shap_attribution_log_odds": 0.6392,
+          "impact": "Increases Risk"
+        },
+        {
+          "feature": "oldpeak",
+          "raw_value": 2.8,
+          "shap_attribution_log_odds": 0.5834,
+          "impact": "Increases Risk"
+        }
+      ]
+    },
+    {
+      "profile": "Case 2: Low-Risk Profile (Younger female, normal ECG, clear vessels, high heart rate)",
+      "predicted_probability": 1.36,
+      "decision_margin_log_odds": -4.2804,
+      "base_log_odds": -0.2634,
+      "additivity_verified": true,
+      "top_contributing_factors": [
+        {
+          "feature": "ca",
+          "raw_value": 0.0,
+          "shap_attribution_log_odds": -0.6199,
+          "impact": "Protective"
+        },
+        {
+          "feature": "sex",
+          "raw_value": 0.0,
+          "shap_attribution_log_odds": -0.5504,
+          "impact": "Protective"
+        },
+        {
+          "feature": "cp",
+          "raw_value": 1.0,
+          "shap_attribution_log_odds": -0.5281,
+          "impact": "Protective"
+        },
+        {
+          "feature": "thalach",
+          "raw_value": 175.0,
+          "shap_attribution_log_odds": -0.5077,
+          "impact": "Protective"
+        },
+        {
+          "feature": "thal",
+          "raw_value": 0.0,
+          "shap_attribution_log_odds": -0.4939,
+          "impact": "Protective"
+        }
+      ]
+    },
+    {
+      "profile": "Case 3: Borderline Profile (Middle-aged male, borderline BP & cholesterol, mild oldpeak)",
+      "predicted_probability": 39.86,
+      "decision_margin_log_odds": -0.4113,
+      "base_log_odds": -0.2634,
+      "additivity_verified": true,
+      "top_contributing_factors": [
+        {
+          "feature": "ca",
+          "raw_value": 0.0,
+          "shap_attribution_log_odds": -0.6199,
+          "impact": "Protective"
+        },
+        {
+          "feature": "sex",
+          "raw_value": 1.0,
+          "shap_attribution_log_odds": 0.3096,
+          "impact": "Increases Risk"
+        },
+        {
+          "feature": "exang",
+          "raw_value": 0.0,
+          "shap_attribution_log_odds": -0.3008,
+          "impact": "Protective"
+        },
+        {
+          "feature": "slope",
+          "raw_value": 1.0,
+          "shap_attribution_log_odds": 0.1786,
+          "impact": "Increases Risk"
+        },
+        {
+          "feature": "thalach",
+          "raw_value": 145.0,
+          "shap_attribution_log_odds": 0.1477,
+          "impact": "Increases Risk"
+        }
+      ]
+    }
+  ],
+  "subgroup_analysis": {
+    "overall": {
+      "n": 297,
+      "female_n": 96,
+      "male_n": 201,
+      "female_percentage": 32.32
+    },
+    "test_split": {
+      "female_count": 23,
+      "female_auroc": 0.8333333333333333,
+      "male_count": 37,
+      "male_auroc": 0.9733333333333334
+    },
+    "clinical_limitations": [
+      "Severe sex imbalance: Only 30.6% female representation in the entire cohort.",
+      "Cohort bias: 1984 Cleveland Clinic patients referred for invasive coronary angiography (symptomatic cardiac referral population).",
+      "Geographic irrelevance: Patient demographics, baseline CAD prevalence, and cardiovascular risk profiles from 1980s US tertiary care cannot represent contemporary Bangladeshi community screening."
+    ]
+  }
+}

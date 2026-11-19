@@ -1,0 +1,93 @@
+{
+  "dataset": "DiaBD",
+  "source": "Mendeley 10.17632/m8cgwxs9s6, CC BY 4.0",
+  "population": "63 Bangladesh unions, women and men, ages 21 to 80. Not a national sample and not WHO STEPS.",
+  "problem": "Supervised classification. The target is the published DiaBD diabetes label. The screen uses basic inputs only.",
+  "workflow": [
+    "Split 80/20 before exploration",
+    "Explore training rows only",
+    "Prepare derived blood-pressure features and a preprocessing pipeline",
+    "Fine-tune on stratified training folds with average precision",
+    "Choose the cutoff on those folds under the recall floor",
+    "Score the held-out test once"
+  ],
+  "training_exploration": {
+    "train_rows": 4095,
+    "positive_rate": 0.0632,
+    "missing_in_model_inputs": 0,
+    "correlation_with_label": {
+      "age": 0.1158,
+      "sex": 0.0311,
+      "bmi": 0.0846,
+      "systolic_bp": 0.1614,
+      "diastolic_bp": 0.1467,
+      "family_diabetes": -0.0225,
+      "glucose": 0.2978
+    },
+    "glucose_note": "Glucose correlation is reported from the training rows and the column stays excluded."
+  },
+  "raw_rows": 5288,
+  "clean_rows": 5119,
+  "clean_positive": 324,
+  "train_rows": 4095,
+  "test_rows": 1024,
+  "features": [
+    "age",
+    "sex",
+    "bmi",
+    "systolic_bp",
+    "diastolic_bp",
+    "family_diabetes",
+    "pulse_pressure",
+    "high_bp"
+  ],
+  "excluded_inputs": [
+    "glucose",
+    "pulse_rate",
+    "hypertensive",
+    "family_hypertension",
+    "cardiovascular_disease",
+    "stroke"
+  ],
+  "exclusion_reason": "Glucose is a laboratory value and is associated with the diabetes label. Pulse and diagnosis fields are not part of this basic screening.",
+  "selection_rule": "Replace the published model only when training-fold accuracy gains at least 0.5 points and training-fold recall stays at or above 0.648. The cutoff is chosen on training folds. The test is scored once.",
+  "selected_training_point": {
+    "model": "xgboost",
+    "threshold": 0.51,
+    "accuracy": 0.7040293040293041,
+    "recall": 0.6486486486486487,
+    "pr_auc": 0.14215027271493175,
+    "params": {
+      "subsample": 0.8,
+      "scale_pos_weight": 14.81081081081081,
+      "reg_lambda": 10,
+      "n_estimators": 200,
+      "min_child_weight": 10,
+      "max_depth": 3,
+      "learning_rate": 0.03,
+      "colsample_bytree": 0.8
+    }
+  },
+  "selected_model": "XGBClassifier",
+  "threshold": 0.51,
+  "test_metrics": {
+    "accuracy": 0.6904296875,
+    "precision": 0.11585365853658537,
+    "recall": 0.5846153846153846,
+    "f1": 0.19338422391857507,
+    "roc_auc": 0.7037940162027754,
+    "pr_auc": 0.16582053537195285,
+    "majority_no_accuracy": 0.9365234375
+  },
+  "confusion_matrix": [
+    [
+      669,
+      290
+    ],
+    [
+      27,
+      38
+    ]
+  ],
+  "note": "This is a screening estimate on cleaned DiaBD rows. It is not a diagnosis and not a national Bangladesh accuracy."
+}

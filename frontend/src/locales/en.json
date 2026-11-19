@@ -1,0 +1,15 @@
+{
+  "app_title": "VitaGuard AI",
+  "welcome": "Welcome",
+  "dashboard": "Dashboard",
+  "assessment": "Assessment",
+  "awareness_hub": "Awareness Hub",
+  "login": "Sign In",
+  "logout": "Sign Out",
+  "diabetes_assessment": "Diabetes Assessment",
+  "cardiovascular_assessment": "Cardiovascular Assessment",
+  "high_risk": "High Risk",
+  "medium_risk": "Medium Risk",
+  "low_risk": "Low Risk",
+  "sign_in_securely": "Sign in securely"
+}

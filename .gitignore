@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.pyc
+.env
+backend/.env
+*.pem
+*.key
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Node
+node_modules/
+dist/
+build/
+
+# Local databases, backups, and exports. Ignoring these does not remove
+# copies that were already committed in another repository.
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.bak
+*.dump
+backups/
+exports/
+backend/presentation/DEMO_CREDENTIALS.local.txt
+
+# Machine Learning Models
+*.pkl
+*.h5
+*.joblib
+
+# Track essential production models and preprocessors
+!ML_Model/models/best_model.pkl
+!ML_Model/models/scaler.pkl
+!ML_Model/models/imputer.pkl
+!backend/app/ml_models/bd_diabetes.joblib
+!backend/app/ml_models/cardio_model.joblib
+!backend/app/ml_models/cardio_scaler.joblib
+
+# Environment
+venv/
+backend/venv/

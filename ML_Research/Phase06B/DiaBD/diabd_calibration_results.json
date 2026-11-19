@@ -1,0 +1,487 @@
+{
+  "null_brier_score": 0.0594,
+  "evaluations": {
+    "uncalibrated": {
+      "model": "Uncalibrated_XGBoost_Baseline",
+      "auroc": 0.7059,
+      "auprc": 0.1767,
+      "mean_predicted_score": 0.3872,
+      "observed_test_prevalence": 0.0635,
+      "calibration_gap_percentage_points": 32.37,
+      "brier_score": 0.192,
+      "log_loss": 0.556,
+      "calibration_slope": 0.7658,
+      "expected_calibration_error_ece": 0.3237,
+      "reliability_bins": [
+        {
+          "bin": 1,
+          "range": [
+            0.0,
+            0.1
+          ],
+          "count": 100,
+          "mean_predicted": 0.0819,
+          "observed_prevalence": 0.0,
+          "diff": 0.0819
+        },
+        {
+          "bin": 2,
+          "range": [
+            0.1,
+            0.2
+          ],
+          "count": 164,
+          "mean_predicted": 0.1483,
+          "observed_prevalence": 0.0244,
+          "diff": 0.1239
+        },
+        {
+          "bin": 3,
+          "range": [
+            0.2,
+            0.3
+          ],
+          "count": 155,
+          "mean_predicted": 0.2538,
+          "observed_prevalence": 0.0387,
+          "diff": 0.2151
+        },
+        {
+          "bin": 4,
+          "range": [
+            0.3,
+            0.4
+          ],
+          "count": 139,
+          "mean_predicted": 0.349,
+          "observed_prevalence": 0.0719,
+          "diff": 0.277
+        },
+        {
+          "bin": 5,
+          "range": [
+            0.4,
+            0.5
+          ],
+          "count": 121,
+          "mean_predicted": 0.4474,
+          "observed_prevalence": 0.0496,
+          "diff": 0.3978
+        },
+        {
+          "bin": 6,
+          "range": [
+            0.5,
+            0.6
+          ],
+          "count": 123,
+          "mean_predicted": 0.5489,
+          "observed_prevalence": 0.0732,
+          "diff": 0.4757
+        },
+        {
+          "bin": 7,
+          "range": [
+            0.6,
+            0.7
+          ],
+          "count": 127,
+          "mean_predicted": 0.6543,
+          "observed_prevalence": 0.1181,
+          "diff": 0.5362
+        },
+        {
+          "bin": 8,
+          "range": [
+            0.7,
+            0.8
+          ],
+          "count": 83,
+          "mean_predicted": 0.7401,
+          "observed_prevalence": 0.1205,
+          "diff": 0.6197
+        },
+        {
+          "bin": 9,
+          "range": [
+            0.8,
+            0.9
+          ],
+          "count": 12,
+          "mean_predicted": 0.8303,
+          "observed_prevalence": 0.4167,
+          "diff": 0.4137
+        }
+      ]
+    },
+    "platt": {
+      "model": "Platt_Sigmoid_Calibrated",
+      "auroc": 0.7059,
+      "auprc": 0.1767,
+      "mean_predicted_score": 0.0647,
+      "observed_test_prevalence": 0.0635,
+      "calibration_gap_percentage_points": 0.12,
+      "brier_score": 0.0572,
+      "log_loss": 0.2191,
+      "calibration_slope": 0.984,
+      "expected_calibration_error_ece": 0.0038,
+      "reliability_bins": [
+        {
+          "bin": 1,
+          "range": [
+            0.0,
+            0.1
+          ],
+          "count": 799,
+          "mean_predicted": 0.0441,
+          "observed_prevalence": 0.0438,
+          "diff": 0.0003
+        },
+        {
+          "bin": 2,
+          "range": [
+            0.1,
+            0.2
+          ],
+          "count": 218,
+          "mean_predicted": 0.1346,
+          "observed_prevalence": 0.1239,
+          "diff": 0.0108
+        },
+        {
+          "bin": 3,
+          "range": [
+            0.2,
+            0.3
+          ],
+          "count": 7,
+          "mean_predicted": 0.236,
+          "observed_prevalence": 0.4286,
+          "diff": 0.1926
+        }
+      ]
+    },
+    "isotonic": {
+      "model": "Isotonic_Calibrated",
+      "auroc": 0.7045,
+      "auprc": 0.162,
+      "mean_predicted_score": 0.0645,
+      "observed_test_prevalence": 0.0635,
+      "calibration_gap_percentage_points": 0.1,
+      "brier_score": 0.0571,
+      "log_loss": 0.2213,
+      "calibration_slope": 0.8164,
+      "expected_calibration_error_ece": 0.0131,
+      "reliability_bins": [
+        {
+          "bin": 1,
+          "range": [
+            0.0,
+            0.1
+          ],
+          "count": 695,
+          "mean_predicted": 0.0316,
+          "observed_prevalence": 0.0374,
+          "diff": 0.0058
+        },
+        {
+          "bin": 2,
+          "range": [
+            0.1,
+            0.2
+          ],
+          "count": 313,
+          "mean_predicted": 0.1284,
+          "observed_prevalence": 0.1054,
+          "diff": 0.0229
+        },
+        {
+          "bin": 3,
+          "range": [
+            0.2,
+            0.3
+          ],
+          "count": 12,
+          "mean_predicted": 0.2063,
+          "observed_prevalence": 0.3333,
+          "diff": 0.127
+        },
+        {
+          "bin": 4,
+          "range": [
+            0.3,
+            0.4
+          ],
+          "count": 3,
+          "mean_predicted": 0.3381,
+          "observed_prevalence": 0.3333,
+          "diff": 0.0047
+        },
+        {
+          "bin": 5,
+          "range": [
+            0.4,
+            0.5
+          ],
+          "count": 1,
+          "mean_predicted": 0.4014,
+          "observed_prevalence": 1.0,
+          "diff": 0.5986
+        }
+      ]
+    }
+  },
+  "bootstrap_ci95": {
+    "uncalibrated": {
+      "brier_ci95": [
+        0.1812,
+        0.2031
+      ],
+      "ece_ci95": [
+        0.3062,
+        0.3419
+      ],
+      "auroc_ci95": [
+        0.6413,
+        0.7655
+      ]
+    },
+    "platt": {
+      "brier_ci95": [
+        0.0447,
+        0.069
+      ],
+      "ece_ci95": [
+        0.0024,
+        0.0219
+      ],
+      "auroc_ci95": [
+        0.6413,
+        0.7655
+      ]
+    },
+    "isotonic": {
+      "brier_ci95": [
+        0.0447,
+        0.0689
+      ],
+      "ece_ci95": [
+        0.0047,
+        0.0281
+      ],
+      "auroc_ci95": [
+        0.6386,
+        0.7678
+      ]
+    }
+  },
+  "threshold_analysis": [
+    {
+      "threshold": 0.05,
+      "calibrated_platt": {
+        "sensitivity": 0.7846,
+        "specificity": 0.5099,
+        "ppv": 0.0979,
+        "npv": 0.9722,
+        "f1": 0.1741,
+        "tp": 51,
+        "fp": 470,
+        "fn": 14,
+        "tn": 489,
+        "youden_index": 0.2945
+      },
+      "uncalibrated_raw": {
+        "sensitivity": 1.0,
+        "specificity": 0.0
+      }
+    },
+    {
+      "threshold": 0.08,
+      "calibrated_platt": {
+        "sensitivity": 0.6,
+        "specificity": 0.7049,
+        "ppv": 0.1211,
+        "npv": 0.963,
+        "f1": 0.2016,
+        "tp": 39,
+        "fp": 283,
+        "fn": 26,
+        "tn": 676,
+        "youden_index": 0.3049
+      },
+      "uncalibrated_raw": {
+        "sensitivity": 1.0,
+        "specificity": 0.0428
+      }
+    },
+    {
+      "threshold": 0.1,
+      "calibrated_platt": {
+        "sensitivity": 0.4615,
+        "specificity": 0.7967,
+        "ppv": 0.1333,
+        "npv": 0.9562,
+        "f1": 0.2069,
+        "tp": 30,
+        "fp": 195,
+        "fn": 35,
+        "tn": 764,
+        "youden_index": 0.2582
+      },
+      "uncalibrated_raw": {
+        "sensitivity": 1.0,
+        "specificity": 0.1043
+      }
+    },
+    {
+      "threshold": 0.12,
+      "calibrated_platt": {
+        "sensitivity": 0.3231,
+        "specificity": 0.854,
+        "ppv": 0.1304,
+        "npv": 0.949,
+        "f1": 0.1858,
+        "tp": 21,
+        "fp": 140,
+        "fn": 44,
+        "tn": 819,
+        "youden_index": 0.1771
+      },
+      "uncalibrated_raw": {
+        "sensitivity": 1.0,
+        "specificity": 0.1418
+      }
+    },
+    {
+      "threshold": 0.15,
+      "calibrated_platt": {
+        "sensitivity": 0.2,
+        "specificity": 0.9562,
+        "ppv": 0.2364,
+        "npv": 0.9463,
+        "f1": 0.2167,
+        "tp": 13,
+        "fp": 42,
+        "fn": 52,
+        "tn": 917,
+        "youden_index": 0.1562
+      },
+      "uncalibrated_raw": {
+        "sensitivity": 0.9538,
+        "specificity": 0.1929
+      }
+    },
+    {
+      "threshold": 0.2,
+      "calibrated_platt": {
+        "sensitivity": 0.0462,
+        "specificity": 0.9958,
+        "ppv": 0.4286,
+        "npv": 0.939,
+        "f1": 0.0833,
+        "tp": 3,
+        "fp": 4,
+        "fn": 62,
+        "tn": 955,
+        "youden_index": 0.042
+      },
+      "uncalibrated_raw": {
+        "sensitivity": 0.9385,
+        "specificity": 0.2711
+      }
+    },
+    {
+      "threshold": 0.3,
+      "calibrated_platt": {
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "ppv": 0.0,
+        "npv": 0.9365,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 65,
+        "tn": 959,
+        "youden_index": 0.0
+      },
+      "uncalibrated_raw": {
+        "sensitivity": 0.8462,
+        "specificity": 0.4265
+      }
+    },
+    {
+      "threshold": 0.4,
+      "calibrated_platt": {
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "ppv": 0.0,
+        "npv": 0.9365,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 65,
+        "tn": 959,
+        "youden_index": 0.0
+      },
+      "uncalibrated_raw": {
+        "sensitivity": 0.6923,
+        "specificity": 0.561
+      }
+    },
+    {
+      "threshold": 0.5,
+      "calibrated_platt": {
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "ppv": 0.0,
+        "npv": 0.9365,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 65,
+        "tn": 959,
+        "youden_index": 0.0
+      },
+      "uncalibrated_raw": {
+        "sensitivity": 0.6,
+        "specificity": 0.6809
+      }
+    },
+    {
+      "threshold": 0.6,
+      "calibrated_platt": {
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "ppv": 0.0,
+        "npv": 0.9365,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 65,
+        "tn": 959,
+        "youden_index": 0.0
+      },
+      "uncalibrated_raw": {
+        "sensitivity": 0.4615,
+        "specificity": 0.7998
+      }
+    }
+  ],
+  "model_metadata": {
+    "features": [
+      "age",
+      "sex",
+      "bmi",
+      "systolic_bp",
+      "diastolic_bp",
+      "family_diabetes",
+      "pulse_pressure",
+      "high_bp"
+    ],
+    "train_rows": 4095,
+    "test_rows": 1024,
+    "test_prevalence": 0.0634765625,
+    "platt_coef": 0.7680106163024902,
+    "platt_intercept": -2.49961519241333
+  }
+}

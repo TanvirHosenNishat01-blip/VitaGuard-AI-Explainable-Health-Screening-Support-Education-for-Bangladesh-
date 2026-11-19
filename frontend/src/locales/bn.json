@@ -1,0 +1,15 @@
+{
+  "app_title": "ভিটাগার্ড এআই",
+  "welcome": "স্বাগতম",
+  "dashboard": "ড্যাশবোর্ড",
+  "assessment": "স্বাস্থ্য মূল্যায়ন",
+  "awareness_hub": "সচেতনতা কেন্দ্র",
+  "login": "লগ ইন",
+  "logout": "লগআউট",
+  "diabetes_assessment": "ডায়াবেটিস মূল্যায়ন",
+  "cardiovascular_assessment": "হৃদরোগের মূল্যায়ন",
+  "high_risk": "উচ্চ ঝুঁকি",
+  "medium_risk": "মাঝারি ঝুঁকি",
+  "low_risk": "কম ঝুঁকি",
+  "sign_in_securely": "নিরাপদে লগ ইন করুন"
+}

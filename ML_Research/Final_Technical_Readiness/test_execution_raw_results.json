@@ -1,0 +1,245 @@
+[
+  {
+    "test_id": "AUTH-01",
+    "category": "Authentication",
+    "name": "Weak Password Registration Rejection",
+    "expected": "400",
+    "actual": "400",
+    "status": "PASS",
+    "evidence": "Password must include an uppercase and a lowercase letter."
+  },
+  {
+    "test_id": "AUTH-02",
+    "category": "Authentication",
+    "name": "Underage Registration Rejection (<13)",
+    "expected": "400",
+    "actual": "400",
+    "status": "PASS",
+    "evidence": "Age calculated from date of birth must be from 13 to 120."
+  },
+  {
+    "test_id": "SETUP-01",
+    "category": "Setup",
+    "name": "Synthetic User Database Seeding",
+    "expected": "6 users",
+    "actual": "6 users created",
+    "status": "PASS",
+    "evidence": "In-memory database seeded successfully"
+  },
+  {
+    "test_id": "AUTH-03",
+    "category": "Authentication",
+    "name": "Patient Password Sign-in & JWT Generation",
+    "expected": "200",
+    "actual": "200",
+    "status": "PASS",
+    "evidence": "Valid JWT token generated"
+  },
+  {
+    "test_id": "AUTH-04",
+    "category": "Authentication",
+    "name": "Doctor Password Sign-in & JWT Generation",
+    "expected": "200",
+    "actual": "200",
+    "status": "PASS",
+    "evidence": "Valid JWT token generated"
+  },
+  {
+    "test_id": "AUTH-05",
+    "category": "Authentication",
+    "name": "Admin Login Missing TOTP Rejection",
+    "expected": "401",
+    "actual": "401",
+    "status": "PASS",
+    "evidence": "Authenticator code required for administrator"
+  },
+  {
+    "test_id": "AUTH-06",
+    "category": "Authentication",
+    "name": "Admin Login Invalid TOTP Rejection",
+    "expected": "401",
+    "actual": "401",
+    "status": "PASS",
+    "evidence": "Invalid authenticator code"
+  },
+  {
+    "test_id": "AUTH-07",
+    "category": "Authentication",
+    "name": "Admin Login Valid TOTP Verification",
+    "expected": "200",
+    "actual": "200",
+    "status": "PASS",
+    "evidence": "Admin token generated"
+  },
+  {
+    "test_id": "SEC-02",
+    "category": "Authentication Security",
+    "name": "Admin TOTP Null Secret Bypass Vulnerability",
+    "expected": "Mandatory 2FA Enforcement",
+    "actual": "Bypassed: Token issued with dummy OTP",
+    "status": "FAIL",
+    "evidence": "VULNERABILITY CONFIRMED: When admin user has totp_secret=NULL, providing any arbitrary code allows full admin login because 'if user.totp_secret:' evaluates to False!"
+  },
+  {
+    "test_id": "SEC-01",
+    "category": "Backend Security",
+    "name": "Hardcoded JWT Secret Token Forgery Test",
+    "expected": "Cryptographic Token Rejection",
+    "actual": "Forged Admin Token Accepted",
+    "status": "FAIL",
+    "evidence": "CRITICAL VULNERABILITY CONFIRMED: Static SECRET_KEY ('vitaguard-ai-super-secret-key-2026') in auth.py allows offline forging of valid administrator JWT tokens, bypassing password and TOTP entirely!"
+  },
+  {
+    "test_id": "RBAC-01",
+    "category": "RBAC",
+    "name": "Guest Accessing Admin Dashboard Rejection",
+    "expected": "403",
+    "actual": "403",
+    "status": "PASS",
+    "evidence": "Admin access required"
+  },
+  {
+    "test_id": "RBAC-02",
+    "category": "RBAC",
+    "name": "Patient Accessing Admin Dashboard Rejection",
+    "expected": "403",
+    "actual": "403",
+    "status": "PASS",
+    "evidence": "Admin access required"
+  },
+  {
+    "test_id": "RBAC-03",
+    "category": "RBAC",
+    "name": "Doctor Accessing Admin Dashboard Rejection",
+    "expected": "403",
+    "actual": "403",
+    "status": "PASS",
+    "evidence": "Admin access required"
+  },
+  {
+    "test_id": "RBAC-04",
+    "category": "RBAC",
+    "name": "Admin Accessing Admin Dashboard Authorization",
+    "expected": "200",
+    "actual": "200",
+    "status": "PASS",
+    "evidence": "Admin dashboard returned successfully"
+  },
+  {
+    "test_id": "RBAC-05",
+    "category": "RBAC",
+    "name": "Pending Doctor Clinical Access Restriction",
+    "expected": "Empty Patients List",
+    "actual": "Status: pending",
+    "status": "PASS",
+    "evidence": "Unapproved doctor cannot view patient records"
+  },
+  {
+    "test_id": "PRIV-01",
+    "category": "Database Privacy",
+    "name": "Global Patient Records Exposure to Any Approved Doctor",
+    "expected": "Scoped to Assigned Patients Only",
+    "actual": "Exposes all 2 registered patients to any approved doctor",
+    "status": "FAIL",
+    "evidence": "PRIVACY DEFECT CONFIRMED: /doctor/records queries User.role == 'patient' without care-relationship or consent filtering, dumping all patient records to any approved doctor!"
+  },
+  {
+    "test_id": "IDOR-01",
+    "category": "IDOR Isolation",
+    "name": "Patient Cross-User Appointment Cancellation Attempt",
+    "expected": "404",
+    "actual": "404",
+    "status": "PASS",
+    "evidence": "Appointment not found."
+  },
+  {
+    "test_id": "IDOR-02",
+    "category": "IDOR Isolation",
+    "name": "Doctor Cross-User Appointment Confirmation Attempt",
+    "expected": "404",
+    "actual": "403",
+    "status": "PASS",
+    "evidence": "Only an admin-approved doctor can decide an appointment."
+  },
+  {
+    "test_id": "IDOR-03",
+    "category": "Ownership",
+    "name": "Patient Own Appointment Cancellation",
+    "expected": "cancelled",
+    "actual": "cancelled",
+    "status": "PASS",
+    "evidence": "Appointment cancelled cleanly"
+  },
+  {
+    "test_id": "VAL-01",
+    "category": "Input Validation",
+    "name": "DiaBD Diastolic >= Systolic BP Safety Check",
+    "expected": "400",
+    "actual": "400",
+    "status": "PASS",
+    "evidence": "Diastolic pressure must be lower than systolic pressure."
+  },
+  {
+    "test_id": "VAL-02",
+    "category": "Input Validation",
+    "name": "DiaBD Missing Consent Rejection",
+    "expected": "400",
+    "actual": "400",
+    "status": "PASS",
+    "evidence": "Consent is required before a screening estimate."
+  },
+  {
+    "test_id": "VAL-03",
+    "category": "ML Deployment Semantics",
+    "name": "DiaBD Output Semantics & Uncalibrated Disclaimer",
+    "expected": "Screening Index & Calibration Disclaimer",
+    "actual": "screening_score_index: 46.4",
+    "status": "PASS",
+    "evidence": "Verified calibration_status='uncalibrated_high_sensitivity_screening' and legacy warning note"
+  },
+  {
+    "test_id": "VAL-04",
+    "category": "Clinical Safety UX",
+    "name": "WHO CVD Prior CVD Event Safety Exclusion",
+    "expected": "400",
+    "actual": "400",
+    "status": "PASS",
+    "evidence": "This chart is for people with no previous heart attack or stroke. It will not invent a 10-year risk."
+  },
+  {
+    "test_id": "VAL-05",
+    "category": "Clinical Safety UX",
+    "name": "WHO CVD Valid Monotonic Lookup Verification",
+    "expected": "200",
+    "actual": "200",
+    "status": "PASS",
+    "evidence": "Risk band: 5_to_10 (5%)"
+  },
+  {
+    "test_id": "ARCH-01",
+    "category": "Architecture",
+    "name": "Dual Backend Entrypoint Route Registration Discrepancy",
+    "expected": "Documented Architectural Discrepancy",
+    "actual": "backend/main.py: 8 routes vs backend/app/main.py: 13 routes",
+    "status": "PASS",
+    "evidence": "CONFIRMED ARCHITECTURAL DEFECT: backend/main.py registers only 3 routers (auth, prediction, dashboard) and omits 5 routers (appointments, blood, evaluation, notices, bangladesh). However, backend/README.md instructs running 'uvicorn main:app --reload'!"
+  },
+  {
+    "test_id": "SEC-03",
+    "category": "Backend Security",
+    "name": "Insecure CORS Configuration (Wildcard Origins with Credentials)",
+    "expected": "Restricted Explicit Origins",
+    "actual": "allow_origins=['*'] with allow_credentials=True",
+    "status": "FAIL",
+    "evidence": "SECURITY MISCONFIGURATION CONFIRMED: backend/app/main.py configures allow_origins=['*'] with allow_credentials=True, violating W3C CORS standards and exposing endpoints to potential credential leakage across origins!"
+  },
+  {
+    "test_id": "ISO-01",
+    "category": "Production Isolation",
+    "name": "Production Database Immobility Verification",
+    "expected": "Production DB Untouched",
+    "actual": "vitaguard.db size: 241664 bytes",
+    "status": "PASS",
+    "evidence": "Tests executed strictly against in-memory SQLite (sqlite:///:memory:); zero production records touched."
+  }
+]
