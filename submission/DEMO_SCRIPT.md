@@ -15,8 +15,8 @@ Say that VitaGuard is a screening-support and education workspace. A score is no
 
 Stay on the introduction. Name the four tools and keep them separate:
 
-- DiaBD is an uncalibrated screening index with local TreeSHAP.
-- Pima is closed to patients.
+- DiaBD is an uncalibrated screening index with local TreeSHAP. Say the locked-test precision 0.1159, 290 false positives, 27 false negatives, and cutoff 0.51. Do not describe the sampling frame as verified. The CSV has no site column.
+- Pima stays open with consent for guests and patients. Say the cohort: historical Phoenix-area women, ages 21–81. It is not a diagnosis and not a Bangladesh model. Do not cite 87.66 percent. If a research number is needed, the leakage-free logistic out-of-fold PR-AUC is 0.7166 and the Brier score is 0.1627.
 - Cleveland is a 1984 catheterization cohort, not community screening.
 - The WHO South Asia chart is a lookup, not a trained model.
 

@@ -1,0 +1,1292 @@
+{
+  "label": "These are training-fold estimates. They are not locked-test scores.",
+  "diabd": [
+    {
+      "model": "logistic_C0.03",
+      "eligible": true,
+      "fold_pr_auc": [
+        0.1529,
+        0.1284,
+        0.1477,
+        0.1411,
+        0.1994
+      ],
+      "fold_pr_auc_mean": 0.1539,
+      "fold_pr_auc_std": 0.0271,
+      "oof_pr_auc_ci95": {
+        "metric": "pr_auc",
+        "draws": 1000,
+        "mean": 0.145,
+        "low_95": 0.1193,
+        "high_95": 0.1755
+      },
+      "oof": {
+        "threshold": 0.42,
+        "accuracy": 0.5648,
+        "recall": 0.7876,
+        "precision": 0.1056,
+        "specificity": 0.5498,
+        "f1": 0.1863,
+        "pr_auc": 0.1418,
+        "roc_auc": 0.7207,
+        "tn": 2109,
+        "fp": 1727,
+        "fn": 55,
+        "tp": 204,
+        "f2": 0.3438
+      },
+      "oof_recall_ci95": {
+        "metric": "recall",
+        "draws": 1000,
+        "mean": 0.7881,
+        "low_95": 0.7416,
+        "high_95": 0.8364
+      },
+      "features": [
+        "age",
+        "sex",
+        "bmi",
+        "systolic_bp",
+        "diastolic_bp",
+        "family_diabetes",
+        "pulse_pressure",
+        "high_bp"
+      ]
+    },
+    {
+      "model": "logistic_C0.3",
+      "eligible": true,
+      "fold_pr_auc": [
+        0.1523,
+        0.1285,
+        0.1481,
+        0.1411,
+        0.1983
+      ],
+      "fold_pr_auc_mean": 0.1536,
+      "fold_pr_auc_std": 0.0266,
+      "oof_pr_auc_ci95": {
+        "metric": "pr_auc",
+        "draws": 1000,
+        "mean": 0.1451,
+        "low_95": 0.1191,
+        "high_95": 0.1753
+      },
+      "oof": {
+        "threshold": 0.41,
+        "accuracy": 0.5514,
+        "recall": 0.8031,
+        "precision": 0.1043,
+        "specificity": 0.5344,
+        "f1": 0.1846,
+        "pr_auc": 0.1418,
+        "roc_auc": 0.7203,
+        "tn": 2050,
+        "fp": 1786,
+        "fn": 51,
+        "tp": 208,
+        "f2": 0.3432
+      },
+      "oof_recall_ci95": {
+        "metric": "recall",
+        "draws": 1000,
+        "mean": 0.8036,
+        "low_95": 0.756,
+        "high_95": 0.852
+      },
+      "features": [
+        "age",
+        "sex",
+        "bmi",
+        "systolic_bp",
+        "diastolic_bp",
+        "family_diabetes",
+        "pulse_pressure",
+        "high_bp"
+      ]
+    },
+    {
+      "model": "logistic_C3",
+      "eligible": true,
+      "fold_pr_auc": [
+        0.1521,
+        0.1283,
+        0.1483,
+        0.1411,
+        0.1983
+      ],
+      "fold_pr_auc_mean": 0.1536,
+      "fold_pr_auc_std": 0.0266,
+      "oof_pr_auc_ci95": {
+        "metric": "pr_auc",
+        "draws": 1000,
+        "mean": 0.1451,
+        "low_95": 0.1191,
+        "high_95": 0.1753
+      },
+      "oof": {
+        "threshold": 0.44,
+        "accuracy": 0.5902,
+        "recall": 0.749,
+        "precision": 0.1074,
+        "specificity": 0.5795,
+        "f1": 0.1878,
+        "pr_auc": 0.1418,
+        "roc_auc": 0.7203,
+        "tn": 2223,
+        "fp": 1613,
+        "fn": 65,
+        "tp": 194,
+        "f2": 0.3412
+      },
+      "oof_recall_ci95": {
+        "metric": "recall",
+        "draws": 1000,
+        "mean": 0.7494,
+        "low_95": 0.697,
+        "high_95": 0.8026
+      },
+      "features": [
+        "age",
+        "sex",
+        "bmi",
+        "systolic_bp",
+        "diastolic_bp",
+        "family_diabetes",
+        "pulse_pressure",
+        "high_bp"
+      ]
+    },
+    {
+      "model": "logistic_base_features_C0.3",
+      "eligible": true,
+      "fold_pr_auc": [
+        0.1543,
+        0.1262,
+        0.148,
+        0.1382,
+        0.1997
+      ],
+      "fold_pr_auc_mean": 0.1533,
+      "fold_pr_auc_std": 0.028,
+      "oof_pr_auc_ci95": {
+        "metric": "pr_auc",
+        "draws": 1000,
+        "mean": 0.1455,
+        "low_95": 0.1197,
+        "high_95": 0.1765
+      },
+      "oof": {
+        "threshold": 0.46,
+        "accuracy": 0.6144,
+        "recall": 0.7259,
+        "precision": 0.1108,
+        "specificity": 0.6069,
+        "f1": 0.1923,
+        "pr_auc": 0.1421,
+        "roc_auc": 0.7216,
+        "tn": 2328,
+        "fp": 1508,
+        "fn": 71,
+        "tp": 188,
+        "f2": 0.3441
+      },
+      "oof_recall_ci95": {
+        "metric": "recall",
+        "draws": 1000,
+        "mean": 0.7269,
+        "low_95": 0.6719,
+        "high_95": 0.7815
+      },
+      "features": [
+        "age",
+        "sex",
+        "bmi",
+        "systolic_bp",
+        "diastolic_bp",
+        "family_diabetes"
+      ]
+    },
+    {
+      "model": "logistic_interactions_C0.1",
+      "eligible": true,
+      "fold_pr_auc": [
+        0.1592,
+        0.1294,
+        0.1512,
+        0.1414,
+        0.1968
+      ],
+      "fold_pr_auc_mean": 0.1556,
+      "fold_pr_auc_std": 0.0256,
+      "oof_pr_auc_ci95": {
+        "metric": "pr_auc",
+        "draws": 1000,
+        "mean": 0.148,
+        "low_95": 0.1226,
+        "high_95": 0.1777
+      },
+      "oof": {
+        "threshold": 0.5,
+        "accuracy": 0.6791,
+        "recall": 0.668,
+        "precision": 0.1235,
+        "specificity": 0.6799,
+        "f1": 0.2084,
+        "pr_auc": 0.145,
+        "roc_auc": 0.7286,
+        "tn": 2608,
+        "fp": 1228,
+        "fn": 86,
+        "tp": 173,
+        "f2": 0.3549
+      },
+      "oof_recall_ci95": {
+        "metric": "recall",
+        "draws": 1000,
+        "mean": 0.6684,
+        "low_95": 0.6115,
+        "high_95": 0.7205
+      },
+      "features": [
+        "age",
+        "sex",
+        "bmi",
+        "systolic_bp",
+        "diastolic_bp",
+        "family_diabetes"
+      ]
+    },
+    {
+      "model": "logistic_inner_selection",
+      "eligible": true,
+      "fold_pr_auc": [
+        0.1502,
+        0.1271,
+        0.1497,
+        0.1377,
+        0.1801
+      ],
+      "fold_pr_auc_mean": 0.1489,
+      "fold_pr_auc_std": 0.0199,
+      "oof_pr_auc_ci95": {
+        "metric": "pr_auc",
+        "draws": 1000,
+        "mean": 0.1395,
+        "low_95": 0.1153,
+        "high_95": 0.1665
+      },
+      "oof": {
+        "threshold": 0.44,
+        "accuracy": 0.5868,
+        "recall": 0.7722,
+        "precision": 0.1091,
+        "specificity": 0.5743,
+        "f1": 0.1912,
+        "pr_auc": 0.137,
+        "roc_auc": 0.7201,
+        "tn": 2203,
+        "fp": 1633,
+        "fn": 59,
+        "tp": 200,
+        "f2": 0.3486
+      },
+      "oof_recall_ci95": {
+        "metric": "recall",
+        "draws": 1000,
+        "mean": 0.7721,
+        "low_95": 0.7185,
+        "high_95": 0.8222
+      },
+      "features": [
+        "age",
+        "sex",
+        "bmi",
+        "systolic_bp",
+        "diastolic_bp",
+        "family_diabetes",
+        "pulse_pressure",
+        "high_bp"
+      ]
+    },
+    {
+      "model": "extra_trees",
+      "eligible": true,
+      "fold_pr_auc": [
+        0.1567,
+        0.1353,
+        0.1163,
+        0.1476,
+        0.2106
+      ],
+      "fold_pr_auc_mean": 0.1533,
+      "fold_pr_auc_std": 0.0354,
+      "oof_pr_auc_ci95": {
+        "metric": "pr_auc",
+        "draws": 1000,
+        "mean": 0.1395,
+        "low_95": 0.1156,
+        "high_95": 0.167
+      },
+      "oof": {
+        "threshold": 0.52,
+        "accuracy": 0.6579,
+        "recall": 0.6564,
+        "precision": 0.1147,
+        "specificity": 0.658,
+        "f1": 0.1953,
+        "pr_auc": 0.1366,
+        "roc_auc": 0.7172,
+        "tn": 2524,
+        "fp": 1312,
+        "fn": 89,
+        "tp": 170,
+        "f2": 0.3376
+      },
+      "oof_recall_ci95": {
+        "metric": "recall",
+        "draws": 1000,
+        "mean": 0.6562,
+        "low_95": 0.6027,
+        "high_95": 0.7128
+      },
+      "features": [
+        "age",
+        "sex",
+        "bmi",
+        "systolic_bp",
+        "diastolic_bp",
+        "family_diabetes",
+        "pulse_pressure",
+        "high_bp"
+      ]
+    },
+    {
+      "model": "random_forest",
+      "eligible": true,
+      "fold_pr_auc": [
+        0.1626,
+        0.1428,
+        0.1292,
+        0.1415,
+        0.1697
+      ],
+      "fold_pr_auc_mean": 0.1492,
+      "fold_pr_auc_std": 0.0166,
+      "oof_pr_auc_ci95": {
+        "metric": "pr_auc",
+        "draws": 1000,
+        "mean": 0.1408,
+        "low_95": 0.1176,
+        "high_95": 0.1667
+      },
+      "oof": {
+        "threshold": 0.47,
+        "accuracy": 0.6598,
+        "recall": 0.695,
+        "precision": 0.1205,
+        "specificity": 0.6575,
+        "f1": 0.2054,
+        "pr_auc": 0.1379,
+        "roc_auc": 0.7235,
+        "tn": 2522,
+        "fp": 1314,
+        "fn": 79,
+        "tp": 180,
+        "f2": 0.3557
+      },
+      "oof_recall_ci95": {
+        "metric": "recall",
+        "draws": 1000,
+        "mean": 0.6947,
+        "low_95": 0.6411,
+        "high_95": 0.7471
+      },
+      "features": [
+        "age",
+        "sex",
+        "bmi",
+        "systolic_bp",
+        "diastolic_bp",
+        "family_diabetes",
+        "pulse_pressure",
+        "high_bp"
+      ]
+    },
+    {
+      "model": "hist_shallow",
+      "eligible": true,
+      "fold_pr_auc": [
+        0.1387,
+        0.1493,
+        0.1603,
+        0.1486,
+        0.2005
+      ],
+      "fold_pr_auc_mean": 0.1595,
+      "fold_pr_auc_std": 0.0242,
+      "oof_pr_auc_ci95": {
+        "metric": "pr_auc",
+        "draws": 1000,
+        "mean": 0.1515,
+        "low_95": 0.1229,
+        "high_95": 0.1857
+      },
+      "oof": {
+        "threshold": 0.41,
+        "accuracy": 0.5705,
+        "recall": 0.8147,
+        "precision": 0.1098,
+        "specificity": 0.554,
+        "f1": 0.1935,
+        "pr_auc": 0.1471,
+        "roc_auc": 0.7272,
+        "tn": 2125,
+        "fp": 1711,
+        "fn": 48,
+        "tp": 211,
+        "f2": 0.3567
+      },
+      "oof_recall_ci95": {
+        "metric": "recall",
+        "draws": 1000,
+        "mean": 0.8157,
+        "low_95": 0.7683,
+        "high_95": 0.86
+      },
+      "features": [
+        "age",
+        "sex",
+        "bmi",
+        "systolic_bp",
+        "diastolic_bp",
+        "family_diabetes",
+        "pulse_pressure",
+        "high_bp"
+      ]
+    },
+    {
+      "model": "hist_moderate",
+      "eligible": true,
+      "fold_pr_auc": [
+        0.1176,
+        0.1484,
+        0.1505,
+        0.1135,
+        0.1831
+      ],
+      "fold_pr_auc_mean": 0.1426,
+      "fold_pr_auc_std": 0.0283,
+      "oof_pr_auc_ci95": {
+        "metric": "pr_auc",
+        "draws": 1000,
+        "mean": 0.1338,
+        "low_95": 0.1096,
+        "high_95": 0.1601
+      },
+      "oof": {
+        "threshold": 0.38,
+        "accuracy": 0.6107,
+        "recall": 0.7181,
+        "precision": 0.109,
+        "specificity": 0.6035,
+        "f1": 0.1892,
+        "pr_auc": 0.1306,
+        "roc_auc": 0.7063,
+        "tn": 2315,
+        "fp": 1521,
+        "fn": 73,
+        "tp": 186,
+        "f2": 0.339
+      },
+      "oof_recall_ci95": {
+        "metric": "recall",
+        "draws": 1000,
+        "mean": 0.7191,
+        "low_95": 0.6644,
+        "high_95": 0.7719
+      },
+      "features": [
+        "age",
+        "sex",
+        "bmi",
+        "systolic_bp",
+        "diastolic_bp",
+        "family_diabetes",
+        "pulse_pressure",
+        "high_bp"
+      ]
+    },
+    {
+      "model": "xgb_published_config",
+      "eligible": true,
+      "fold_pr_auc": [
+        0.1525,
+        0.1476,
+        0.1505,
+        0.1382,
+        0.2028
+      ],
+      "fold_pr_auc_mean": 0.1583,
+      "fold_pr_auc_std": 0.0255,
+      "oof_pr_auc_ci95": {
+        "metric": "pr_auc",
+        "draws": 1000,
+        "mean": 0.1502,
+        "low_95": 0.1217,
+        "high_95": 0.1813
+      },
+      "oof": {
+        "threshold": 0.43,
+        "accuracy": 0.6183,
+        "recall": 0.7375,
+        "precision": 0.1133,
+        "specificity": 0.6103,
+        "f1": 0.1964,
+        "pr_auc": 0.1463,
+        "roc_auc": 0.721,
+        "tn": 2341,
+        "fp": 1495,
+        "fn": 68,
+        "tp": 191,
+        "f2": 0.3508
+      },
+      "oof_recall_ci95": {
+        "metric": "recall",
+        "draws": 1000,
+        "mean": 0.7379,
+        "low_95": 0.6856,
+        "high_95": 0.7863
+      },
+      "features": [
+        "age",
+        "sex",
+        "bmi",
+        "systolic_bp",
+        "diastolic_bp",
+        "family_diabetes",
+        "pulse_pressure",
+        "high_bp"
+      ]
+    },
+    {
+      "model": "xgb_more_regularized",
+      "eligible": true,
+      "fold_pr_auc": [
+        0.1575,
+        0.151,
+        0.1531,
+        0.1467,
+        0.2206
+      ],
+      "fold_pr_auc_mean": 0.1658,
+      "fold_pr_auc_std": 0.0309,
+      "oof_pr_auc_ci95": {
+        "metric": "pr_auc",
+        "draws": 1000,
+        "mean": 0.1541,
+        "low_95": 0.1262,
+        "high_95": 0.1855
+      },
+      "oof": {
+        "threshold": 0.48,
+        "accuracy": 0.6457,
+        "recall": 0.7259,
+        "precision": 0.1199,
+        "specificity": 0.6403,
+        "f1": 0.2058,
+        "pr_auc": 0.1501,
+        "roc_auc": 0.7304,
+        "tn": 2456,
+        "fp": 1380,
+        "fn": 71,
+        "tp": 188,
+        "f2": 0.361
+      },
+      "oof_recall_ci95": {
+        "metric": "recall",
+        "draws": 1000,
+        "mean": 0.7263,
+        "low_95": 0.672,
+        "high_95": 0.7749
+      },
+      "features": [
+        "age",
+        "sex",
+        "bmi",
+        "systolic_bp",
+        "diastolic_bp",
+        "family_diabetes",
+        "pulse_pressure",
+        "high_bp"
+      ]
+    },
+    {
+      "model": "ensemble_logistic_C0.3_extra_trees",
+      "eligible": true,
+      "features": [
+        "age",
+        "sex",
+        "bmi",
+        "systolic_bp",
+        "diastolic_bp",
+        "family_diabetes",
+        "pulse_pressure",
+        "high_bp"
+      ],
+      "fold_pr_auc": [
+        0.1595,
+        0.1321,
+        0.1329,
+        0.1432,
+        0.2137
+      ],
+      "fold_pr_auc_mean": 0.1563,
+      "fold_pr_auc_std": 0.034,
+      "oof_pr_auc_ci95": {
+        "metric": "pr_auc",
+        "draws": 1000,
+        "mean": 0.1457,
+        "low_95": 0.1195,
+        "high_95": 0.1764
+      },
+      "members": [
+        "logistic_C0.3",
+        "extra_trees"
+      ],
+      "note": "Equal average of the two out-of-fold probability vectors. The average was not refit on the locked test.",
+      "oof": {
+        "threshold": 0.47,
+        "accuracy": 0.6244,
+        "recall": 0.7104,
+        "precision": 0.1117,
+        "specificity": 0.6186,
+        "f1": 0.1931,
+        "pr_auc": 0.1424,
+        "roc_auc": 0.7221,
+        "tn": 2373,
+        "fp": 1463,
+        "fn": 75,
+        "tp": 184,
+        "f2": 0.3429
+      },
+      "oof_recall_ci95": {
+        "metric": "recall",
+        "draws": 1000,
+        "mean": 0.7103,
+        "low_95": 0.6581,
+        "high_95": 0.7615
+      }
+    }
+  ],
+  "pima": [
+    {
+      "model": "logistic_C0.1",
+      "eligible": true,
+      "fold_pr_auc": [
+        0.8638,
+        0.7939,
+        0.5834,
+        0.7543,
+        0.7269
+      ],
+      "fold_pr_auc_mean": 0.7445,
+      "fold_pr_auc_std": 0.1037,
+      "oof_pr_auc_ci95": {
+        "metric": "pr_auc",
+        "draws": 1000,
+        "mean": 0.719,
+        "low_95": 0.6508,
+        "high_95": 0.7869
+      },
+      "oof": {
+        "threshold": 0.2,
+        "accuracy": 0.5879,
+        "recall": 0.986,
+        "precision": 0.4577,
+        "specificity": 0.375,
+        "f1": 0.6252,
+        "pr_auc": 0.7145,
+        "roc_auc": 0.8404,
+        "tn": 150,
+        "fp": 250,
+        "fn": 3,
+        "tp": 211,
+        "f2": 0.8011
+      },
+      "oof_recall_ci95": {
+        "metric": "recall",
+        "draws": 1000,
+        "mean": 0.9862,
+        "low_95": 0.9679,
+        "high_95": 1.0
+      },
+      "features": [
+        "Pregnancies",
+        "Glucose",
+        "BloodPressure",
+        "SkinThickness",
+        "Insulin",
+        "BMI",
+        "DiabetesPedigreeFunction",
+        "Age"
+      ]
+    },
+    {
+      "model": "logistic_C0.3",
+      "eligible": true,
+      "fold_pr_auc": [
+        0.8611,
+        0.7905,
+        0.5957,
+        0.7561,
+        0.7331
+      ],
+      "fold_pr_auc_mean": 0.7473,
+      "fold_pr_auc_std": 0.0976,
+      "oof_pr_auc_ci95": {
+        "metric": "pr_auc",
+        "draws": 1000,
+        "mean": 0.7212,
+        "low_95": 0.6543,
+        "high_95": 0.7886
+      },
+      "oof": {
+        "threshold": 0.17,
+        "accuracy": 0.5782,
+        "recall": 0.9907,
+        "precision": 0.452,
+        "specificity": 0.3575,
+        "f1": 0.6208,
+        "pr_auc": 0.7166,
+        "roc_auc": 0.8399,
+        "tn": 143,
+        "fp": 257,
+        "fn": 2,
+        "tp": 212,
+        "f2": 0.8
+      },
+      "oof_recall_ci95": {
+        "metric": "recall",
+        "draws": 1000,
+        "mean": 0.9907,
+        "low_95": 0.976,
+        "high_95": 1.0
+      },
+      "features": [
+        "Pregnancies",
+        "Glucose",
+        "BloodPressure",
+        "SkinThickness",
+        "Insulin",
+        "BMI",
+        "DiabetesPedigreeFunction",
+        "Age"
+      ]
+    },
+    {
+      "model": "logistic_C1",
+      "eligible": true,
+      "fold_pr_auc": [
+        0.8639,
+        0.7924,
+        0.6009,
+        0.7576,
+        0.7317
+      ],
+      "fold_pr_auc_mean": 0.7493,
+      "fold_pr_auc_std": 0.0967,
+      "oof_pr_auc_ci95": {
+        "metric": "pr_auc",
+        "draws": 1000,
+        "mean": 0.7217,
+        "low_95": 0.6547,
+        "high_95": 0.7883
+      },
+      "oof": {
+        "threshold": 0.16,
+        "accuracy": 0.57,
+        "recall": 0.9907,
+        "precision": 0.4473,
+        "specificity": 0.345,
+        "f1": 0.6163,
+        "pr_auc": 0.7172,
+        "roc_auc": 0.8394,
+        "tn": 138,
+        "fp": 262,
+        "fn": 2,
+        "tp": 212,
+        "f2": 0.797
+      },
+      "oof_recall_ci95": {
+        "metric": "recall",
+        "draws": 1000,
+        "mean": 0.9907,
+        "low_95": 0.976,
+        "high_95": 1.0
+      },
+      "features": [
+        "Pregnancies",
+        "Glucose",
+        "BloodPressure",
+        "SkinThickness",
+        "Insulin",
+        "BMI",
+        "DiabetesPedigreeFunction",
+        "Age"
+      ]
+    },
+    {
+      "model": "logistic_interactions_C0.1",
+      "eligible": true,
+      "fold_pr_auc": [
+        0.8706,
+        0.7862,
+        0.5781,
+        0.7681,
+        0.7083
+      ],
+      "fold_pr_auc_mean": 0.7422,
+      "fold_pr_auc_std": 0.1086,
+      "oof_pr_auc_ci95": {
+        "metric": "pr_auc",
+        "draws": 1000,
+        "mean": 0.7132,
+        "low_95": 0.646,
+        "high_95": 0.7787
+      },
+      "oof": {
+        "threshold": 0.19,
+        "accuracy": 0.5961,
+        "recall": 0.986,
+        "precision": 0.4627,
+        "specificity": 0.3875,
+        "f1": 0.6299,
+        "pr_auc": 0.7088,
+        "roc_auc": 0.8411,
+        "tn": 155,
+        "fp": 245,
+        "fn": 3,
+        "tp": 211,
+        "f2": 0.8041
+      },
+      "oof_recall_ci95": {
+        "metric": "recall",
+        "draws": 1000,
+        "mean": 0.9862,
+        "low_95": 0.9679,
+        "high_95": 1.0
+      },
+      "features": [
+        "Pregnancies",
+        "Glucose",
+        "BloodPressure",
+        "SkinThickness",
+        "Insulin",
+        "BMI",
+        "DiabetesPedigreeFunction",
+        "Age"
+      ]
+    },
+    {
+      "model": "extra_trees",
+      "eligible": true,
+      "fold_pr_auc": [
+        0.8377,
+        0.7959,
+        0.591,
+        0.7593,
+        0.7614
+      ],
+      "fold_pr_auc_mean": 0.7491,
+      "fold_pr_auc_std": 0.0939,
+      "oof_pr_auc_ci95": {
+        "metric": "pr_auc",
+        "draws": 1000,
+        "mean": 0.7189,
+        "low_95": 0.6496,
+        "high_95": 0.7856
+      },
+      "oof": {
+        "threshold": 0.42,
+        "accuracy": 0.6547,
+        "recall": 0.9439,
+        "precision": 0.5025,
+        "specificity": 0.5,
+        "f1": 0.6558,
+        "pr_auc": 0.7155,
+        "roc_auc": 0.8402,
+        "tn": 200,
+        "fp": 200,
+        "fn": 12,
+        "tp": 202,
+        "f2": 0.8029
+      },
+      "oof_recall_ci95": {
+        "metric": "recall",
+        "draws": 1000,
+        "mean": 0.9445,
+        "low_95": 0.9132,
+        "high_95": 0.9741
+      },
+      "features": [
+        "Pregnancies",
+        "Glucose",
+        "BloodPressure",
+        "SkinThickness",
+        "Insulin",
+        "BMI",
+        "DiabetesPedigreeFunction",
+        "Age"
+      ]
+    },
+    {
+      "model": "random_forest",
+      "eligible": true,
+      "fold_pr_auc": [
+        0.8137,
+        0.7812,
+        0.5783,
+        0.7634,
+        0.719
+      ],
+      "fold_pr_auc_mean": 0.7311,
+      "fold_pr_auc_std": 0.092,
+      "oof_pr_auc_ci95": {
+        "metric": "pr_auc",
+        "draws": 1000,
+        "mean": 0.7069,
+        "low_95": 0.6388,
+        "high_95": 0.7733
+      },
+      "oof": {
+        "threshold": 0.39,
+        "accuracy": 0.7117,
+        "recall": 0.8925,
+        "precision": 0.5536,
+        "specificity": 0.615,
+        "f1": 0.6834,
+        "pr_auc": 0.7031,
+        "roc_auc": 0.8366,
+        "tn": 246,
+        "fp": 154,
+        "fn": 23,
+        "tp": 191,
+        "f2": 0.7952
+      },
+      "oof_recall_ci95": {
+        "metric": "recall",
+        "draws": 1000,
+        "mean": 0.8929,
+        "low_95": 0.8517,
+        "high_95": 0.9317
+      },
+      "features": [
+        "Pregnancies",
+        "Glucose",
+        "BloodPressure",
+        "SkinThickness",
+        "Insulin",
+        "BMI",
+        "DiabetesPedigreeFunction",
+        "Age"
+      ]
+    },
+    {
+      "model": "hist_moderate",
+      "eligible": true,
+      "fold_pr_auc": [
+        0.8034,
+        0.7807,
+        0.5988,
+        0.7623,
+        0.7781
+      ],
+      "fold_pr_auc_mean": 0.7447,
+      "fold_pr_auc_std": 0.0829,
+      "oof_pr_auc_ci95": {
+        "metric": "pr_auc",
+        "draws": 1000,
+        "mean": 0.721,
+        "low_95": 0.6548,
+        "high_95": 0.7844
+      },
+      "oof": {
+        "threshold": 0.17,
+        "accuracy": 0.5993,
+        "recall": 0.9486,
+        "precision": 0.4635,
+        "specificity": 0.4125,
+        "f1": 0.6227,
+        "pr_auc": 0.7174,
+        "roc_auc": 0.8272,
+        "tn": 165,
+        "fp": 235,
+        "fn": 11,
+        "tp": 203,
+        "f2": 0.7844
+      },
+      "oof_recall_ci95": {
+        "metric": "recall",
+        "draws": 1000,
+        "mean": 0.9491,
+        "low_95": 0.9192,
+        "high_95": 0.9746
+      },
+      "features": [
+        "Pregnancies",
+        "Glucose",
+        "BloodPressure",
+        "SkinThickness",
+        "Insulin",
+        "BMI",
+        "DiabetesPedigreeFunction",
+        "Age"
+      ]
+    },
+    {
+      "model": "xgb_regularized",
+      "eligible": true,
+      "fold_pr_auc": [
+        0.777,
+        0.7779,
+        0.6066,
+        0.7725,
+        0.7384
+      ],
+      "fold_pr_auc_mean": 0.7345,
+      "fold_pr_auc_std": 0.0733,
+      "oof_pr_auc_ci95": {
+        "metric": "pr_auc",
+        "draws": 1000,
+        "mean": 0.7125,
+        "low_95": 0.6461,
+        "high_95": 0.7788
+      },
+      "oof": {
+        "threshold": 0.15,
+        "accuracy": 0.5733,
+        "recall": 0.9626,
+        "precision": 0.4478,
+        "specificity": 0.365,
+        "f1": 0.6113,
+        "pr_auc": 0.7103,
+        "roc_auc": 0.8292,
+        "tn": 146,
+        "fp": 254,
+        "fn": 8,
+        "tp": 206,
+        "f2": 0.7827
+      },
+      "oof_recall_ci95": {
+        "metric": "recall",
+        "draws": 1000,
+        "mean": 0.9632,
+        "low_95": 0.9358,
+        "high_95": 0.9859
+      },
+      "features": [
+        "Pregnancies",
+        "Glucose",
+        "BloodPressure",
+        "SkinThickness",
+        "Insulin",
+        "BMI",
+        "DiabetesPedigreeFunction",
+        "Age"
+      ]
+    },
+    {
+      "model": "ensemble_logistic_C0.3_extra_trees",
+      "eligible": true,
+      "features": [
+        "Pregnancies",
+        "Glucose",
+        "BloodPressure",
+        "SkinThickness",
+        "Insulin",
+        "BMI",
+        "DiabetesPedigreeFunction",
+        "Age"
+      ],
+      "fold_pr_auc": [
+        0.8568,
+        0.7964,
+        0.5884,
+        0.7618,
+        0.745
+      ],
+      "fold_pr_auc_mean": 0.7497,
+      "fold_pr_auc_std": 0.0998,
+      "oof_pr_auc_ci95": {
+        "metric": "pr_auc",
+        "draws": 1000,
+        "mean": 0.7218,
+        "low_95": 0.6538,
+        "high_95": 0.7905
+      },
+      "members": [
+        "logistic_C0.3",
+        "extra_trees"
+      ],
+      "note": "Equal average of the two out-of-fold probability vectors. The average was not refit on the locked test.",
+      "oof": {
+        "threshold": 0.29,
+        "accuracy": 0.5945,
+        "recall": 0.9813,
+        "precision": 0.4615,
+        "specificity": 0.3875,
+        "f1": 0.6278,
+        "pr_auc": 0.7174,
+        "roc_auc": 0.8423,
+        "tn": 155,
+        "fp": 245,
+        "fn": 4,
+        "tp": 210,
+        "f2": 0.8009
+      },
+      "oof_recall_ci95": {
+        "metric": "recall",
+        "draws": 1000,
+        "mean": 0.9818,
+        "low_95": 0.9613,
+        "high_95": 0.9956
+      }
+    }
+  ],
+  "cleveland": {
+    "protocol": "RepeatedStratifiedKFold 5x10 on the training split only. Thresholds are chosen inside each repeat.",
+    "candidates": [
+      {
+        "model": "logistic_C0.1",
+        "eligible_repeats": 10,
+        "pr_auc_mean": 0.8807,
+        "pr_auc_std": 0.007,
+        "pr_auc_low": 0.8716,
+        "pr_auc_high": 0.8931,
+        "recall_mean": 0.9624,
+        "precision_mean": 0.587,
+        "accuracy_mean": 0.6662,
+        "default_0_5_accuracy_mean": 0.8207,
+        "default_0_5_recall_mean": 0.7927,
+        "paired_pr_auc_difference_vs_logistic_C1": {
+          "mean": 0.011,
+          "low": 0.0049,
+          "high": 0.0179
+        },
+        "clears_training_bar": false
+      },
+      {
+        "model": "logistic_C1",
+        "eligible_repeats": 10,
+        "pr_auc_mean": 0.8697,
+        "pr_auc_std": 0.0101,
+        "pr_auc_low": 0.8544,
+        "pr_auc_high": 0.8875,
+        "recall_mean": 0.9468,
+        "precision_mean": 0.6124,
+        "accuracy_mean": 0.6937,
+        "default_0_5_accuracy_mean": 0.8105,
+        "default_0_5_recall_mean": 0.7835,
+        "paired_pr_auc_difference_vs_logistic_C1": {
+          "mean": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "clears_training_bar": false
+      },
+      {
+        "model": "extra_trees",
+        "eligible_repeats": 10,
+        "pr_auc_mean": 0.8789,
+        "pr_auc_std": 0.005,
+        "pr_auc_low": 0.8715,
+        "pr_auc_high": 0.8857,
+        "recall_mean": 0.967,
+        "precision_mean": 0.5927,
+        "accuracy_mean": 0.6768,
+        "default_0_5_accuracy_mean": 0.8068,
+        "default_0_5_recall_mean": 0.7807,
+        "paired_pr_auc_difference_vs_logistic_C1": {
+          "mean": 0.0092,
+          "low": -0.0041,
+          "high": 0.022
+        },
+        "clears_training_bar": false
+      },
+      {
+        "model": "random_forest",
+        "eligible_repeats": 10,
+        "pr_auc_mean": 0.8795,
+        "pr_auc_std": 0.0037,
+        "pr_auc_low": 0.8727,
+        "pr_auc_high": 0.8842,
+        "recall_mean": 0.9679,
+        "precision_mean": 0.6034,
+        "accuracy_mean": 0.6903,
+        "default_0_5_accuracy_mean": 0.8072,
+        "default_0_5_recall_mean": 0.789,
+        "paired_pr_auc_difference_vs_logistic_C1": {
+          "mean": 0.0098,
+          "low": -0.0063,
+          "high": 0.0267
+        },
+        "clears_training_bar": false
+      },
+      {
+        "model": "hist_shallow",
+        "eligible_repeats": 10,
+        "pr_auc_mean": 0.8662,
+        "pr_auc_std": 0.0073,
+        "pr_auc_low": 0.8561,
+        "pr_auc_high": 0.8769,
+        "recall_mean": 0.9615,
+        "precision_mean": 0.5939,
+        "accuracy_mean": 0.6764,
+        "default_0_5_accuracy_mean": 0.7962,
+        "default_0_5_recall_mean": 0.7569,
+        "paired_pr_auc_difference_vs_logistic_C1": {
+          "mean": -0.0035,
+          "low": -0.0169,
+          "high": 0.0144
+        },
+        "clears_training_bar": false
+      }
+    ],
+    "review_candidate": null,
+    "coefficient_sign_stability": {
+      "features": [
+        "age",
+        "sex",
+        "cp",
+        "trestbps",
+        "chol",
+        "fbs",
+        "restecg",
+        "thalach",
+        "exang",
+        "oldpeak",
+        "slope",
+        "ca",
+        "thal"
+      ],
+      "sign_agreement_with_full_training_fit": {
+        "age": 0.8,
+        "sex": 1.0,
+        "cp": 1.0,
+        "trestbps": 1.0,
+        "chol": 1.0,
+        "fbs": 1.0,
+        "restecg": 0.8,
+        "thalach": 1.0,
+        "exang": 1.0,
+        "oldpeak": 1.0,
+        "slope": 1.0,
+        "ca": 1.0,
+        "thal": 1.0
+      },
+      "note": "Signs come from training folds only. The locked test was not used."
+    },
+    "locked_test_used_for_selection": false
+  }
+}

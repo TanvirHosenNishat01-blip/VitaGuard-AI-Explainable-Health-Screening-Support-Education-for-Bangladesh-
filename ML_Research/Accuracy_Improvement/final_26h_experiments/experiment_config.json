@@ -1,0 +1,13 @@
+{
+  "seed": 42,
+  "started_at": "2026-11-19T13:14:20.599456+00:00",
+  "production_promotion": false,
+  "catboost": "unavailable, not installed",
+  "selection": {
+    "diabd": "Highest out-of-fold PR-AUC among models whose F2 cutoff keeps recall at or above 0.648, precision at or above 0.10, PR-AUC at least 0.01 above xgb_published_config, and fold PR-AUC standard deviation no more than 0.02 above that reference. Glucose is excluded.",
+    "pima": "Same F2 rule with a fixed recall floor of 0.55. The reference is logistic_C0.3. Margin is 0.01 PR-AUC. Imputation stays inside the fold. The leaked 87.66 percent model is not a reference.",
+    "cleveland": "Repeated stratified 5x10 on the training split. A candidate must beat logistic_C1 by 0.02 mean PR-AUC and the 2.5 percentile of the paired repeat differences must be above zero, with mean recall at or above 0.70. The 60-row test cannot select the model.",
+    "who": "Lookup integrity only.",
+    "locked_test_rule": "Score a new candidate on the locked test only if it cleared the training bar. Do not score the runners-up."
+  }
+}

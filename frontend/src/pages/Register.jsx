@@ -450,7 +450,11 @@ function Register() {
                     ? 'এই কপিতে Google এখনো চালু নেই। ইমেইল দিয়ে অ্যাকাউন্ট তৈরি করুন।'
                     : 'Google sign-up is not turned on for this copy yet. Create the account with email.')}
                 />
-                <p className="text-[11px] text-slate-500">Email registration keeps a password on this server. Google sign-up never replaces an existing password account, and it can only create a patient.</p>
+                <p className="text-[11px] text-slate-500">
+                  {lang === 'bn'
+                    ? 'যেকোনো ইমেইল দিয়ে অ্যাকাউন্ট তৈরি করা যায়। Google সাইন-আপ শুধু Google Cloud-এ যোগ করা অ্যাকাউন্টে কাজ করে, এবং সেটা শুধু পেশেন্ট অ্যাকাউন্ট তৈরি করে।'
+                    : 'Anyone can create an account with an email. Google sign-up works only for the accounts added in Google Cloud, and it can only create a patient.'}
+                </p>
               </div>
             )}
 

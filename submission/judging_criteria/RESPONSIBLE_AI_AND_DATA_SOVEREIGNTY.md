@@ -17,10 +17,10 @@
 
 | Pathway | What the screen is allowed to say |
 | --- | --- |
-| DiaBD | Local TreeSHAP contributions. Not causes. Not a calibrated personal probability. |
+| DiaBD | Local TreeSHAP contributions. Not causes. Not a calibrated personal probability. The sampling frame is not independently verified. |
 | Cleveland | Global coefficients. Not an individual explanation. |
 | WHO chart | The lookup rule, including the age band and the prior-event stop. |
-| Pima | The patient path is closed. No invented patient explanation. |
+| Pima | The existing model output, with the Phoenix-area cohort limit on screen. Consented access is open. Not a diagnosis. The 87.66 percent claim is invalid. |
 
 The explainability page reads `GET /api/ai/explain`, which repeats `pathway_lineage` and the SHA-256 values already stored for trained artifacts.
 

@@ -103,7 +103,7 @@ def governance_snapshot() -> dict:
                 "name": "Pima",
                 "source": "docs/governance/DATA_CARDS.md",
                 "license": "NOT VERIFIED",
-                "intended_use": "Admin or research only",
+                "intended_use": "Consented guests and patients. Historical Phoenix-area women, ages 21-81. Not a diagnosis.",
                 "redistribution": "NOT VERIFIED",
             },
             {

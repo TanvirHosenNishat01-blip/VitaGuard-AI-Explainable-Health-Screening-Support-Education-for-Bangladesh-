@@ -1,0 +1,104 @@
+{
+  "production_files_changed": false,
+  "diabd": {
+    "rows": 5119,
+    "prevalence": 0.0633,
+    "majority_class_accuracy": 0.9367,
+    "recall_floor": 0.648,
+    "glucose_excluded": true,
+    "training_comparison": [
+      {
+        "model": "logistic",
+        "training_folds": {
+          "threshold": 0.51,
+          "accuracy": 0.6761904761904762,
+          "recall": 0.6525096525096525
+        },
+        "oof_auroc": 0.7201
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "training_folds": {
+          "threshold": 0.43,
+          "accuracy": 0.6588522588522588,
+          "recall": 0.6486486486486487
+        },
+        "oof_auroc": 0.6886
+      }
+    ],
+    "selected_on_training_folds": "logistic",
+    "locked_test": {
+      "candidate_accuracy": 0.6777,
+      "candidate_recall": 0.5538,
+      "published_model_accuracy": 0.6904,
+      "published_model_recall": 0.5846
+    },
+    "promoted_to_production": false
+  },
+  "pima": {
+    "source": "canonical Pima rows, biological zeros set to missing inside the pipeline",
+    "rows": 768,
+    "recall_floor_from_logistic_minus_0_02": 0.5921,
+    "training_comparison": [
+      {
+        "model": "logistic",
+        "training_folds": {
+          "threshold": 0.64,
+          "accuracy": 0.7915309446254072,
+          "recall": 0.5981308411214953
+        },
+        "oof_auroc": 0.8456
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "training_folds": {
+          "threshold": 0.45,
+          "accuracy": 0.758957654723127,
+          "recall": 0.6308411214953271
+        },
+        "oof_auroc": 0.8163
+      }
+    ],
+    "selected_on_training_folds": "logistic",
+    "locked_test_accuracy": 0.7078,
+    "locked_test_recall": 0.5185,
+    "not_compared_with_leaked_87_percent": "The old 87.66 percent figure used label-conditional insulin fills. It is not a valid baseline.",
+    "promoted_to_production": false
+  },
+  "cleveland": {
+    "rows": 297,
+    "test_rows": 60,
+    "training_comparison": [
+      {
+        "model": "logistic",
+        "training_folds": {
+          "threshold": 0.47,
+          "accuracy": 0.8185654008438819,
+          "recall": 0.8073394495412844
+        },
+        "oof_auroc": 0.8692
+      },
+      {
+        "model": "hist_gradient_boosting",
+        "training_folds": {
+          "threshold": 0.65,
+          "accuracy": 0.810126582278481,
+          "recall": 0.7064220183486238
+        },
+        "oof_auroc": 0.8507
+      }
+    ],
+    "selected_on_training_folds": "logistic",
+    "locked_test_accuracy": 0.9167,
+    "locked_test_recall": 0.8214,
+    "note": "Sixty test rows cannot support a stable accuracy claim. The training-fold number is the comparison.",
+    "promoted_to_production": false
+  },
+  "who_chart": {
+    "kind": "published lookup table",
+    "trainable": false,
+    "cells_checked_in_this_run": 2240,
+    "reason": "There is no local labeled cohort for this chart. Changing the table would no longer be the published WHO chart.",
+    "promoted_to_production": false
+  }
+}

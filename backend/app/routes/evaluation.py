@@ -27,8 +27,15 @@ def _rate(numerator: int, denominator: int):
     return round(numerator / denominator, 4)
 
 
+def _matrix_payload(source: dict):
+    raw = source["confusion_matrix"]
+    if isinstance(raw, dict) and "matrix" in raw:
+        return raw
+    return {"labels": ["actual_negative", "actual_positive"], "matrix": raw}
+
+
 def clinical_counts(metrics: dict):
-    matrix = metrics["confusion_matrix"]["matrix"]
+    matrix = _matrix_payload(metrics)["matrix"]
     true_negative, false_positive = matrix[0]
     false_negative, true_positive = matrix[1]
     total = true_negative + false_positive + false_negative + true_positive
@@ -61,33 +68,33 @@ def clinical_counts(metrics: dict):
 
 @router.get("/evaluation")
 def get_evaluation():
-    diabetes = json.loads((ROOT / "ML_Model" / "evaluation" / "metrics.json").read_text(encoding="utf-8"))
+    diabd = json.loads((ROOT / "ML_Model" / "evaluation" / "bd_diabetes_metrics.json").read_text(encoding="utf-8"))
     cardio = json.loads((ROOT / "ML_Model" / "evaluation" / "cardio_metrics.json").read_text(encoding="utf-8"))
-    xgb = diabetes["model_evaluations"]["XGBoost"]
-    forest = diabetes["model_evaluations"]["RandomForest"]
-    specs = diabetes["metadata"]["training_specs"]
+    diabd_metrics = dict(diabd["test_metrics"])
+    diabd_metrics["confusion_matrix"] = _matrix_payload(diabd)
+    cardio_metrics = dict(cardio["test_metrics"])
+    cardio_metrics["confusion_matrix"] = _matrix_payload(cardio["test_metrics"])
     return {
         "disclaimer_code": "screening_only",
+        "research_conclusion": "No experimental candidate met the predefined improvement criteria. Existing production pathways remain unchanged.",
+        "pima_historical_file": {
+            "displayed_as_performance": False,
+            "reason": "The older Pima metrics file reports 87.66 percent accuracy after target-conditional insulin fills. That figure is not shown as a result.",
+        },
         "bangladesh_external": json.loads((ROOT / "ML_Model" / "evaluation" / "pabna_external.json").read_text(encoding="utf-8")),
-        "reading": "Counts come from the held-out test matrix. Intervals are Wilson 95% ranges. They are not a Bangladesh patient result.",
+        "reading": "Counts come from the held-out test matrix. Intervals are Wilson 95% ranges. They are not a Bangladesh patient result. Table consistency for the WHO chart is not model accuracy.",
         "diabetes": {
-            "model": "XGBoost",
-            "trained_on": "Pima women near Phoenix, Arizona, USA. Not India",
+            "pathway": "diabd",
+            "model": diabd["selected_model"],
+            "trained_on": "Cleaned DiaBD rows, ages 21 to 80. A published data article (Mendeley DOI 10.17632/m8cgwxs9s6) describes 63 unions. This CSV has no site column. Dataset sampling frame and site-level provenance have not been independently verified from the available source documentation. Not a national sample and not a diagnosis.",
             "validated_on_bangladesh": False,
-            "features": specs["features"],
-            "split": specs["cv_strategy"],
-            "selection_rule": specs["champion_selection_rule"],
-            "test_metrics": xgb["test_metrics"],
-            "clinical": clinical_counts(xgb["test_metrics"]),
-            "cross_validation_roc_auc": xgb["cv_best_roc_auc"],
-            "compared_with": {
-                "model": "RandomForest",
-                "accuracy": forest["test_metrics"]["accuracy"],
-                "roc_auc": forest["test_metrics"]["roc_auc"],
-                "f1_score": forest["test_metrics"]["f1_score"],
-                "recall": forest["test_metrics"]["recall"],
-                "cross_validation_roc_auc": forest["cv_best_roc_auc"],
-            },
+            "threshold": diabd["threshold"],
+            "features": diabd["features"],
+            "split": "Stratified 80/20 holdout, random_state 42",
+            "selection_rule": diabd["selection_rule"],
+            "test_metrics": diabd_metrics,
+            "clinical": clinical_counts(diabd_metrics),
+            "note": diabd["note"],
         },
         "cardio": {
             "model": cardio["model"],
@@ -101,8 +108,8 @@ def get_evaluation():
             "model_settings": cardio.get("model_settings"),
             "selection_rule": cardio.get("selection_rule"),
             "compared_with": cardio.get("compared_with"),
-            "test_metrics": cardio["test_metrics"],
-            "clinical": clinical_counts(cardio["test_metrics"]),
+            "test_metrics": cardio_metrics,
+            "clinical": clinical_counts(cardio_metrics),
             "note": cardio["note"],
         },
     }

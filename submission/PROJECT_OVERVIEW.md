@@ -35,8 +35,8 @@ No real patient recruitment and no real donor recruitment are authorized.
 
 ## AI components
 
-- Bangladesh DiaBD: uncalibrated screening index with the existing local TreeSHAP.
-- Pima: patient-facing path stays disabled.
+- Bangladesh DiaBD: uncalibrated screening index with the existing local TreeSHAP. Clean rows 5,119, 324 positives. Locked-test accuracy 0.6904, precision 0.1159, recall 0.5846, 290 false positives, 27 false negatives, cutoff 0.51. Dataset sampling frame and site-level provenance have not been independently verified from the available source documentation.
+- Pima: consented access is open for guests and patients. The cohort is historical Phoenix-area women, ages 21–81. Not a diagnosis and not a Bangladesh model. The 87.66 percent figure is invalid. The leakage-free logistic out-of-fold PR-AUC is 0.7166, with Brier score 0.1627.
 - Cleveland: historical catheterization cohort, global coefficients, not community screening.
 - WHO South Asia chart: deterministic lookup for ages 40–74, not a trained model.
 - Knowledge search quotes project notes. It does not generate a diagnosis.

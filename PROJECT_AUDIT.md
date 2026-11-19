@@ -153,10 +153,10 @@ TriNexus-VitaGuard-AI-Cursor-Backup/
    - **Algorithm:** XGBoost Classifier (`n_estimators=200`, `max_depth=3`, `learning_rate=0.01`, `scale_pos_weight=1.87`).
    - **Dataset:** Pima Indians Diabetes Dataset (768 females aged 21–81, Phoenix, Arizona).
    - **Preprocessing:** Median imputation for invalid biological zeros (`imputer.pkl`), StandardScaler (`scaler.pkl`).
-   - **Metrics:** Locked Test Accuracy: 87.01%, ROC-AUC: 0.9459, Recall: 85.19%.
-   - **Population Disclaimer:** Specifically not representative of South Asian male/female populations.
+   - **Metrics:** An older line in this audit reported locked-test accuracy 87.01%, ROC-AUC 0.9459, and recall 85.19%. Those figures are not the leakage-free result. `ML_Model/evaluation/metrics.json` reports 87.66 percent accuracy after insulin values were imputed using the label. That figure is invalid. The leakage-free logistic out-of-fold PR-AUC is 0.7166, with Brier score 0.1627.
+   - **Population Disclaimer:** Historical Phoenix-area women, ages 21–81. Not a model for men, children, or patients in Bangladesh. Consented access is open.
 2. **Bangladesh Diabetes Model (`backend/app/ml_models/bd_diabetes.joblib`)**:
-   - **Algorithm:** Tuned Supervised Classifier with class-balancing on the **DiaBD dataset** (Mendeley, 5,119 cleaned patient records across 63 unions in Bangladesh).
+   - **Algorithm:** Tuned Supervised Classifier with class-balancing on the **DiaBD dataset** (5,119 cleaned rows, 324 positives). Dataset sampling frame and site-level provenance have not been independently verified from the available source documentation. The metrics file cites Mendeley DOI 10.17632/m8cgwxs9s6. The CSV has no site column.
    - **Features:** Age, Sex, BMI, Systolic BP, Diastolic BP, Family Diabetes History, Pulse Pressure, High BP flag. (Excludes blood glucose to enable true non-invasive screening).
    - **Explainability:** Employs **Local SHAP (`shap.TreeExplainer`)** inside `bd_diabetes_service.py` to calculate exact directional contributions per patient.
 3. **Cardiovascular Model (`backend/app/ml_models/cardio_model.joblib`)**:

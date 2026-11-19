@@ -1,0 +1,444 @@
+{
+  "promoted_to_production": false,
+  "protected_files_changed": [],
+  "diabd": {
+    "published_locked_test": {
+      "threshold": 0.51,
+      "accuracy": 0.6904,
+      "recall": 0.5846,
+      "precision": 0.1159,
+      "specificity": 0.6976,
+      "f1": 0.1934,
+      "pr_auc": 0.1658,
+      "roc_auc": 0.7038,
+      "tn": 669,
+      "fp": 290,
+      "fn": 27,
+      "tp": 38
+    },
+    "published_training_point_from_existing_report": {
+      "model": "xgboost",
+      "accuracy": 0.704,
+      "recall": 0.6486,
+      "pr_auc": 0.1422,
+      "threshold": 0.51
+    },
+    "selection": {
+      "reference": "xgb_published_config",
+      "reference_oof_pr_auc": 0.1463,
+      "ranked": [
+        {
+          "model": "xgb_more_regularized",
+          "oof_pr_auc": 0.1501,
+          "oof_recall": 0.7259,
+          "oof_precision": 0.1199,
+          "fold_pr_auc_std": 0.0309,
+          "clears_training_bar": false,
+          "reasons": [
+            "OOF PR-AUC did not clear the pre-registered margin over the reference."
+          ]
+        },
+        {
+          "model": "hist_shallow",
+          "oof_pr_auc": 0.1471,
+          "oof_recall": 0.8147,
+          "oof_precision": 0.1098,
+          "fold_pr_auc_std": 0.0242,
+          "clears_training_bar": false,
+          "reasons": [
+            "OOF PR-AUC did not clear the pre-registered margin over the reference."
+          ]
+        },
+        {
+          "model": "xgb_published_config",
+          "oof_pr_auc": 0.1463,
+          "oof_recall": 0.7375,
+          "oof_precision": 0.1133,
+          "fold_pr_auc_std": 0.0255,
+          "clears_training_bar": false,
+          "reasons": [
+            "OOF PR-AUC did not clear the pre-registered margin over the reference."
+          ]
+        },
+        {
+          "model": "logistic_interactions_C0.1",
+          "oof_pr_auc": 0.145,
+          "oof_recall": 0.668,
+          "oof_precision": 0.1235,
+          "fold_pr_auc_std": 0.0256,
+          "clears_training_bar": false,
+          "reasons": [
+            "OOF PR-AUC did not clear the pre-registered margin over the reference."
+          ]
+        },
+        {
+          "model": "ensemble_logistic_C0.3_extra_trees",
+          "oof_pr_auc": 0.1424,
+          "oof_recall": 0.7104,
+          "oof_precision": 0.1117,
+          "fold_pr_auc_std": 0.034,
+          "clears_training_bar": false,
+          "reasons": [
+            "OOF PR-AUC did not clear the pre-registered margin over the reference."
+          ]
+        },
+        {
+          "model": "logistic_base_features_C0.3",
+          "oof_pr_auc": 0.1421,
+          "oof_recall": 0.7259,
+          "oof_precision": 0.1108,
+          "fold_pr_auc_std": 0.028,
+          "clears_training_bar": false,
+          "reasons": [
+            "OOF PR-AUC did not clear the pre-registered margin over the reference."
+          ]
+        },
+        {
+          "model": "logistic_C0.3",
+          "oof_pr_auc": 0.1418,
+          "oof_recall": 0.8031,
+          "oof_precision": 0.1043,
+          "fold_pr_auc_std": 0.0266,
+          "clears_training_bar": false,
+          "reasons": [
+            "OOF PR-AUC did not clear the pre-registered margin over the reference."
+          ]
+        },
+        {
+          "model": "logistic_C0.03",
+          "oof_pr_auc": 0.1418,
+          "oof_recall": 0.7876,
+          "oof_precision": 0.1056,
+          "fold_pr_auc_std": 0.0271,
+          "clears_training_bar": false,
+          "reasons": [
+            "OOF PR-AUC did not clear the pre-registered margin over the reference."
+          ]
+        },
+        {
+          "model": "logistic_C3",
+          "oof_pr_auc": 0.1418,
+          "oof_recall": 0.749,
+          "oof_precision": 0.1074,
+          "fold_pr_auc_std": 0.0266,
+          "clears_training_bar": false,
+          "reasons": [
+            "OOF PR-AUC did not clear the pre-registered margin over the reference."
+          ]
+        },
+        {
+          "model": "random_forest",
+          "oof_pr_auc": 0.1379,
+          "oof_recall": 0.695,
+          "oof_precision": 0.1205,
+          "fold_pr_auc_std": 0.0166,
+          "clears_training_bar": false,
+          "reasons": [
+            "OOF PR-AUC did not clear the pre-registered margin over the reference."
+          ]
+        },
+        {
+          "model": "logistic_inner_selection",
+          "oof_pr_auc": 0.137,
+          "oof_recall": 0.7722,
+          "oof_precision": 0.1091,
+          "fold_pr_auc_std": 0.0199,
+          "clears_training_bar": false,
+          "reasons": [
+            "OOF PR-AUC did not clear the pre-registered margin over the reference."
+          ]
+        },
+        {
+          "model": "extra_trees",
+          "oof_pr_auc": 0.1366,
+          "oof_recall": 0.6564,
+          "oof_precision": 0.1147,
+          "fold_pr_auc_std": 0.0354,
+          "clears_training_bar": false,
+          "reasons": [
+            "OOF PR-AUC did not clear the pre-registered margin over the reference."
+          ]
+        },
+        {
+          "model": "hist_moderate",
+          "oof_pr_auc": 0.1306,
+          "oof_recall": 0.7181,
+          "oof_precision": 0.109,
+          "fold_pr_auc_std": 0.0283,
+          "clears_training_bar": false,
+          "reasons": [
+            "OOF PR-AUC did not clear the pre-registered margin over the reference."
+          ]
+        }
+      ],
+      "review_candidate": null
+    },
+    "locked_test": {
+      "new_candidate_scored": false
+    }
+  },
+  "pima": {
+    "leaked_87_66_used_as_baseline": false,
+    "previous_leakage_free_locked_test_accuracy": 0.7078,
+    "previous_leakage_free_locked_test_recall": 0.5185,
+    "selection": {
+      "reference": "logistic_C0.3",
+      "reference_oof_pr_auc": 0.7166,
+      "ranked": [
+        {
+          "model": "ensemble_logistic_C0.3_extra_trees",
+          "oof_pr_auc": 0.7174,
+          "oof_recall": 0.9813,
+          "oof_precision": 0.4615,
+          "fold_pr_auc_std": 0.0998,
+          "clears_training_bar": false,
+          "reasons": [
+            "OOF PR-AUC did not clear the pre-registered margin over the reference."
+          ]
+        },
+        {
+          "model": "hist_moderate",
+          "oof_pr_auc": 0.7174,
+          "oof_recall": 0.9486,
+          "oof_precision": 0.4635,
+          "fold_pr_auc_std": 0.0829,
+          "clears_training_bar": false,
+          "reasons": [
+            "OOF PR-AUC did not clear the pre-registered margin over the reference."
+          ]
+        },
+        {
+          "model": "logistic_C1",
+          "oof_pr_auc": 0.7172,
+          "oof_recall": 0.9907,
+          "oof_precision": 0.4473,
+          "fold_pr_auc_std": 0.0967,
+          "clears_training_bar": false,
+          "reasons": [
+            "OOF PR-AUC did not clear the pre-registered margin over the reference."
+          ]
+        },
+        {
+          "model": "logistic_C0.3",
+          "oof_pr_auc": 0.7166,
+          "oof_recall": 0.9907,
+          "oof_precision": 0.452,
+          "fold_pr_auc_std": 0.0976,
+          "clears_training_bar": false,
+          "reasons": [
+            "OOF PR-AUC did not clear the pre-registered margin over the reference."
+          ]
+        },
+        {
+          "model": "extra_trees",
+          "oof_pr_auc": 0.7155,
+          "oof_recall": 0.9439,
+          "oof_precision": 0.5025,
+          "fold_pr_auc_std": 0.0939,
+          "clears_training_bar": false,
+          "reasons": [
+            "OOF PR-AUC did not clear the pre-registered margin over the reference."
+          ]
+        },
+        {
+          "model": "logistic_C0.1",
+          "oof_pr_auc": 0.7145,
+          "oof_recall": 0.986,
+          "oof_precision": 0.4577,
+          "fold_pr_auc_std": 0.1037,
+          "clears_training_bar": false,
+          "reasons": [
+            "OOF PR-AUC did not clear the pre-registered margin over the reference."
+          ]
+        },
+        {
+          "model": "xgb_regularized",
+          "oof_pr_auc": 0.7103,
+          "oof_recall": 0.9626,
+          "oof_precision": 0.4478,
+          "fold_pr_auc_std": 0.0733,
+          "clears_training_bar": false,
+          "reasons": [
+            "OOF PR-AUC did not clear the pre-registered margin over the reference."
+          ]
+        },
+        {
+          "model": "logistic_interactions_C0.1",
+          "oof_pr_auc": 0.7088,
+          "oof_recall": 0.986,
+          "oof_precision": 0.4627,
+          "fold_pr_auc_std": 0.1086,
+          "clears_training_bar": false,
+          "reasons": [
+            "OOF PR-AUC did not clear the pre-registered margin over the reference."
+          ]
+        },
+        {
+          "model": "random_forest",
+          "oof_pr_auc": 0.7031,
+          "oof_recall": 0.8925,
+          "oof_precision": 0.5536,
+          "fold_pr_auc_std": 0.092,
+          "clears_training_bar": false,
+          "reasons": [
+            "OOF PR-AUC did not clear the pre-registered margin over the reference."
+          ]
+        }
+      ],
+      "review_candidate": null
+    },
+    "locked_test": {
+      "new_candidate_scored": false
+    }
+  },
+  "cleveland": {
+    "published_artifact_locked_test": {
+      "threshold": 0.5,
+      "accuracy": 0.9167,
+      "recall": 0.8214,
+      "precision": 1.0,
+      "specificity": 1.0,
+      "f1": 0.902,
+      "pr_auc": 0.9626,
+      "roc_auc": 0.9542,
+      "tn": 32,
+      "fp": 0,
+      "fn": 5,
+      "tp": 23,
+      "artifact_predict_accuracy": 0.9167,
+      "artifact_predict_recall": 0.8214,
+      "artifact_tn": 32,
+      "artifact_fp": 0,
+      "artifact_fn": 5,
+      "artifact_tp": 23
+    },
+    "selection": {
+      "review_candidate": null,
+      "candidates": [
+        {
+          "model": "logistic_C0.1",
+          "eligible_repeats": 10,
+          "pr_auc_mean": 0.8807,
+          "pr_auc_std": 0.007,
+          "pr_auc_low": 0.8716,
+          "pr_auc_high": 0.8931,
+          "recall_mean": 0.9624,
+          "precision_mean": 0.587,
+          "accuracy_mean": 0.6662,
+          "default_0_5_accuracy_mean": 0.8207,
+          "default_0_5_recall_mean": 0.7927,
+          "paired_pr_auc_difference_vs_logistic_C1": {
+            "mean": 0.011,
+            "low": 0.0049,
+            "high": 0.0179
+          },
+          "clears_training_bar": false
+        },
+        {
+          "model": "logistic_C1",
+          "eligible_repeats": 10,
+          "pr_auc_mean": 0.8697,
+          "pr_auc_std": 0.0101,
+          "pr_auc_low": 0.8544,
+          "pr_auc_high": 0.8875,
+          "recall_mean": 0.9468,
+          "precision_mean": 0.6124,
+          "accuracy_mean": 0.6937,
+          "default_0_5_accuracy_mean": 0.8105,
+          "default_0_5_recall_mean": 0.7835,
+          "paired_pr_auc_difference_vs_logistic_C1": {
+            "mean": 0.0,
+            "low": 0.0,
+            "high": 0.0
+          },
+          "clears_training_bar": false
+        },
+        {
+          "model": "extra_trees",
+          "eligible_repeats": 10,
+          "pr_auc_mean": 0.8789,
+          "pr_auc_std": 0.005,
+          "pr_auc_low": 0.8715,
+          "pr_auc_high": 0.8857,
+          "recall_mean": 0.967,
+          "precision_mean": 0.5927,
+          "accuracy_mean": 0.6768,
+          "default_0_5_accuracy_mean": 0.8068,
+          "default_0_5_recall_mean": 0.7807,
+          "paired_pr_auc_difference_vs_logistic_C1": {
+            "mean": 0.0092,
+            "low": -0.0041,
+            "high": 0.022
+          },
+          "clears_training_bar": false
+        },
+        {
+          "model": "random_forest",
+          "eligible_repeats": 10,
+          "pr_auc_mean": 0.8795,
+          "pr_auc_std": 0.0037,
+          "pr_auc_low": 0.8727,
+          "pr_auc_high": 0.8842,
+          "recall_mean": 0.9679,
+          "precision_mean": 0.6034,
+          "accuracy_mean": 0.6903,
+          "default_0_5_accuracy_mean": 0.8072,
+          "default_0_5_recall_mean": 0.789,
+          "paired_pr_auc_difference_vs_logistic_C1": {
+            "mean": 0.0098,
+            "low": -0.0063,
+            "high": 0.0267
+          },
+          "clears_training_bar": false
+        },
+        {
+          "model": "hist_shallow",
+          "eligible_repeats": 10,
+          "pr_auc_mean": 0.8662,
+          "pr_auc_std": 0.0073,
+          "pr_auc_low": 0.8561,
+          "pr_auc_high": 0.8769,
+          "recall_mean": 0.9615,
+          "precision_mean": 0.5939,
+          "accuracy_mean": 0.6764,
+          "default_0_5_accuracy_mean": 0.7962,
+          "default_0_5_recall_mean": 0.7569,
+          "paired_pr_auc_difference_vs_logistic_C1": {
+            "mean": -0.0035,
+            "low": -0.0169,
+            "high": 0.0144
+          },
+          "clears_training_bar": false
+        }
+      ]
+    },
+    "locked_test_of_new_candidate": null,
+    "reason_new_test_not_used_for_selection": "The protocol forbids choosing a Cleveland model from the 60-row test."
+  },
+  "who": {
+    "trainable": false,
+    "intact": true
+  },
+  "conclusions": {
+    "diabd": {
+      "code": "B",
+      "text": "No candidate cleared the pre-registered training-fold bar. The current model stays."
+    },
+    "pima": {
+      "code": "B",
+      "text": "No leakage-free candidate cleared the training-fold bar against regularized logistic regression. The leaked 87.66 percent model stays unused as a baseline."
+    },
+    "cleveland": {
+      "code": "B",
+      "text": "No repeated-CV candidate cleared the paired PR-AUC bar. The 60-row test was not used to shop for a replacement. The current logistic model stays."
+    },
+    "who": {
+      "code": "B",
+      "text": "The published table is intact. There is no labeled cohort to train, and the table was not changed."
+    }
+  },
+  "overall": {
+    "code": "B",
+    "text": "No reliable leakage-free improvement was found. Retain the current models and the published WHO chart."
+  }
+}

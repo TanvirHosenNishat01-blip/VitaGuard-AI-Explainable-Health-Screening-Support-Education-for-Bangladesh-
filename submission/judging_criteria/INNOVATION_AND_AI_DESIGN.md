@@ -15,8 +15,8 @@ People can mistake a statistical screen for a diagnosis when the dataset, the me
 
 A conventional app often shows one risk percentage and a call to action. This build does four narrower things:
 
-1. Bangladesh DiaBD returns an uncalibrated screening index and local TreeSHAP. The status string is `uncalibrated_high_sensitivity_screening`. A feature contribution is not presented as a cause.
-2. The Pima patient path returns 403. The dataset is a Native American community cohort and is not offered as a Bangladesh model.
+1. Bangladesh DiaBD returns an uncalibrated screening index and local TreeSHAP. The status string is `uncalibrated_high_sensitivity_screening`. A feature contribution is not presented as a cause. The locked test is accuracy 0.6904, precision 0.1159, recall 0.5846, 290 false positives, and 27 false negatives at cutoff 0.51. Dataset sampling frame and site-level provenance have not been independently verified from the available source documentation.
+2. Pima stays open after consent, for guests and patients. The cohort is historical Phoenix-area women, ages 21–81, and is not offered as a Bangladesh model. The leaked 87.66 percent file is invalid. The leakage-free logistic out-of-fold PR-AUC is 0.7166, with Brier score 0.1627.
 3. Cleveland is labeled as a 1984 catheterization cohort. The screen uses global coefficients, not an individual SHAP story.
 4. The WHO South Asia chart is a deterministic lookup for ages 40–74. A prior heart attack or stroke stops the lookup. It is not described as a trained model.
 

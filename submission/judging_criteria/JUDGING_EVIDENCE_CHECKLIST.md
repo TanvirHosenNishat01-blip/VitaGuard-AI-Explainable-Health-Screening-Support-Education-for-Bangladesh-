@@ -8,7 +8,7 @@
 | --- | --- |
 | Four pathways and their limits | `backend/app/services/lineage.py`, `submission/AI_METHODOLOGY_AND_LIMITATIONS.md` |
 | DiaBD TreeSHAP and uncalibrated status | `backend/app/services/bd_diabetes_service.py` |
-| Pima patient refusal | Patient prediction route returns 403. Covered by existing pathway tests and the explain page. |
+| Pima with a stated cohort limit | Consented `POST /api/predict` returns 200. Phase E expects `patient_access: allowed_with_stated_limits`. The 87.66 percent file is not shown as accuracy. |
 | WHO lookup, not a trained model | `backend/app/services/bd_cvd_chart.py` |
 | Lexical knowledge search and empty answers | `backend/app/services/knowledge.py`, `backend/tests/test_phase_e_intelligence.py` |
 | Graph sources and no causal flag | `GET /api/knowledge/graph` |
@@ -17,6 +17,8 @@
 | Test counts 14, 6, 7, 4, 7, 4 and a passing frontend build | `submission/FINAL_READINESS_REPORT.md` |
 | Consent, deletion limits, doctor access | `docs/governance/DATA_RETENTION_AND_DELETION.md`, `backend/app/services/care_access.py` |
 | Licenses NOT VERIFIED | `docs/governance/DATA_CARDS.md` |
+| DiaBD sampling frame unverified | The CSV has no site column. The metrics file and an older inventory disagree. Dataset sampling frame and site-level provenance have not been independently verified from the available source documentation. |
+| Pima leakage-free research result | Out-of-fold PR-AUC 0.7166 and Brier score 0.1627. Not the invalid 87.66 percent file. |
 | No partnership claim | `PHASE06C1_INSTITUTIONAL_COLLABORATION_FRAMEWORK.md` |
 | Pitch | `docs/presentation/TriNexus_VitaGuard_AIBC_2026.pptx` and `/pitchdeck` |
 | Judging notes | `submission/judging_criteria/` |
@@ -35,6 +37,8 @@ Do not screenshot a signed-in dashboard unless the account is synthetic and the 
 ## Claims that must not be made
 
 - Clinical validation, BMRC approval, DGHS approval, or ethics approval.
+- A verified DiaBD sampling frame, hospital catchment, or national sample.
+- That 87.66 percent is a valid Pima accuracy.
 - A hospital, university, NRB, or commercial partnership.
 - User counts, revenue, market size, cost savings, or jobs created.
 - That the fairness page completed a bias audit.

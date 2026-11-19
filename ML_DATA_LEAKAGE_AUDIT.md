@@ -114,7 +114,7 @@ We audited whether identical rows existed within or across train/test splits:
   - Test rows identical across all columns to training rows: **0**
 
 ### 4.2 Geographic and Household Clustering Risks (DiaBD)
-- **Reported Provenance:** Project documentation references "63 unions across Bangladesh".
+- **Reported Provenance:** `ML_Model/evaluation/bd_diabetes_metrics.json` cites Mendeley DOI 10.17632/m8cgwxs9s6 and says "63 Bangladesh unions." The data article for that DOI describes community-health-worker collection across 63 unions. An older inventory, `PHASE06C0_DATASET_INVENTORY.md`, instead describes a BIRDEM Dhaka and Mymensingh outpatient catchment. Dataset sampling frame and site-level provenance have not been independently verified from the available source documentation.
 - **Dataset Column Audit:** Examination of the raw DiaBD CSV showed the following columns:  
   `age, gender, pulse_rate, systolic_bp, diastolic_bp, glucose, height, weight, bmi, family_diabetes, hypertensive, family_hypertension, cardiovascular_disease, stroke, diabetic`.
 - **Finding:** **Zero geographic, union, upazila, district, household, or patient identification columns exist in the file.**

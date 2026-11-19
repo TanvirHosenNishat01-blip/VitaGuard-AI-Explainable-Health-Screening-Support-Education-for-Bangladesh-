@@ -1,0 +1,203 @@
+{
+  "recommendation": "NO IMPROVEMENT FOUND",
+  "production_changes": [],
+  "diabd_published_locked": {
+    "threshold": 0.51,
+    "n": 1024,
+    "accuracy": 0.6904,
+    "precision": 0.1159,
+    "recall": 0.5846,
+    "specificity": 0.6976,
+    "f1": 0.1934,
+    "pr_auc": 0.1658,
+    "roc_auc": 0.7038,
+    "brier": 0.1921,
+    "tn": 669,
+    "fp": 290,
+    "fn": 27,
+    "tp": 38
+  },
+  "diabd_reference_oof_at_0_51": {
+    "threshold": 0.51,
+    "n": 4095,
+    "accuracy": 0.6969,
+    "precision": 0.1246,
+    "recall": 0.6293,
+    "specificity": 0.7015,
+    "f1": 0.208,
+    "pr_auc": 0.1463,
+    "roc_auc": 0.721,
+    "brier": 0.1871,
+    "tn": 2691,
+    "fp": 1145,
+    "fn": 96,
+    "tp": 163
+  },
+  "diabd_recall_floor": 0.5793,
+  "diabd_winner": null,
+  "diabd_decision": [
+    {
+      "model": "logistic_C0.3",
+      "fp_reduction": 95,
+      "clears": false,
+      "reasons": [
+        "False positives were not at least 15 percent lower."
+      ],
+      "fp_ci95": {
+        "low": 994.0,
+        "high": 1107.0,
+        "draws": 800
+      }
+    },
+    {
+      "model": "logistic_inner_selection",
+      "fp_reduction": 99,
+      "clears": false,
+      "reasons": [
+        "False positives were not at least 15 percent lower."
+      ],
+      "fp_ci95": {
+        "low": 990.975,
+        "high": 1101.0,
+        "draws": 800
+      }
+    },
+    {
+      "model": "random_forest",
+      "fp_reduction": 93,
+      "clears": false,
+      "reasons": [
+        "False positives were not at least 15 percent lower."
+      ],
+      "fp_ci95": {
+        "low": 993.975,
+        "high": 1109.025,
+        "draws": 800
+      }
+    },
+    {
+      "model": "hist_gradient_boosting",
+      "fp_reduction": 166,
+      "clears": false,
+      "reasons": [
+        "False positives were not at least 15 percent lower."
+      ],
+      "fp_ci95": {
+        "low": 924.95,
+        "high": 1031.0,
+        "draws": 800
+      }
+    },
+    {
+      "model": "xgb_more_regularized",
+      "fp_reduction": 163,
+      "clears": false,
+      "reasons": [
+        "False positives were not at least 15 percent lower."
+      ],
+      "fp_ci95": {
+        "low": 928.975,
+        "high": 1036.025,
+        "draws": 800
+      }
+    }
+  ],
+  "pima_reference_oof": {
+    "threshold": 0.5,
+    "n": 614,
+    "accuracy": 0.7606,
+    "precision": 0.6379,
+    "recall": 0.7243,
+    "specificity": 0.78,
+    "f1": 0.6783,
+    "pr_auc": 0.7166,
+    "roc_auc": 0.8399,
+    "brier": 0.1627,
+    "tn": 312,
+    "fp": 88,
+    "fn": 59,
+    "tp": 155
+  },
+  "pima_winner": null,
+  "pima_decision": [
+    {
+      "model": "logistic_C1",
+      "clears": false,
+      "reasons": [
+        "PR-AUC did not clear +0.02."
+      ]
+    },
+    {
+      "model": "random_forest",
+      "clears": false,
+      "reasons": [
+        "PR-AUC did not clear +0.02."
+      ]
+    },
+    {
+      "model": "hist_gradient_boosting",
+      "clears": false,
+      "reasons": [
+        "PR-AUC did not clear +0.02."
+      ]
+    },
+    {
+      "model": "xgb_regularized",
+      "clears": false,
+      "reasons": [
+        "PR-AUC did not clear +0.02."
+      ]
+    }
+  ],
+  "cleveland_published": {
+    "threshold": 0.5,
+    "n": 60,
+    "accuracy": 0.9167,
+    "precision": 1.0,
+    "recall": 0.8214,
+    "specificity": 1.0,
+    "f1": 0.902,
+    "pr_auc": 0.9626,
+    "roc_auc": 0.9542,
+    "brier": 0.0797,
+    "tn": 32,
+    "fp": 0,
+    "fn": 5,
+    "tp": 23,
+    "artifact_tn": 32,
+    "artifact_fp": 0,
+    "artifact_fn": 5,
+    "artifact_tp": 23
+  },
+  "cleveland_winner": null,
+  "cleveland_decision": [
+    {
+      "model": "logistic_C0.1",
+      "clears": false,
+      "paired_mean": 0.011,
+      "paired_low": 0.0049,
+      "paired_high": 0.0179
+    },
+    {
+      "model": "random_forest",
+      "clears": false,
+      "paired_mean": 0.013,
+      "paired_low": -0.0023,
+      "paired_high": 0.0314
+    },
+    {
+      "model": "hist_gradient_boosting",
+      "clears": false,
+      "paired_mean": 0.0029,
+      "paired_low": -0.0119,
+      "paired_high": 0.02
+    }
+  ],
+  "who_intact": true,
+  "locked_new_candidates": {
+    "diabd": null,
+    "pima": null,
+    "cleveland": null
+  },
+  "shap_note": "Mean absolute SHAP on 120 training rows of the published-config XGBoost refit. This is not a cause and not a clinical proof."
+}

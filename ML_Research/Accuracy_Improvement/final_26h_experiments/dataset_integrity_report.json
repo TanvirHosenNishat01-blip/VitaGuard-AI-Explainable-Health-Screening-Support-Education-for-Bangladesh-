@@ -1,0 +1,203 @@
+{
+  "dataset_hashes": {
+    "diabd_raw": {
+      "path": "ML_Research/Phase06B/DiaBD/diabd_raw.csv",
+      "sha256": "d9f868c9ce8eefe545294156ed1626f60fdb33f507f9ca021fd34fa4b575741a",
+      "bytes": 286998
+    },
+    "pima_canonical": {
+      "path": "ML_Research/Phase06B/Pima/pima_canonical_raw.csv",
+      "sha256": "698c203a14aa31941d2251175330c9199f3ccdb31597abbba2a3e35416257a72",
+      "bytes": 23873
+    },
+    "cleveland_raw": {
+      "path": "dataset/raw/heart_cleveland_upload.csv",
+      "sha256": "386015be85bcc9112cbac782dafd145aeef7abd4f8b9f2ee65f6c4c56ed82d9f",
+      "bytes": 11106
+    }
+  },
+  "split_index_hashes": {
+    "diabd_train": "a0e03d0620a79cf2fca2fe25ab661fb39348d829635f270f38836b3c0d519a4c",
+    "diabd_test": "b85625301171ccb774eef093b861d6c4a572a4a8c0768fc8cc8add6d30648319",
+    "pima_train": "beca94d1e9c31a3fba0bd4979e601e1fe85d0461edf0453e1bc5ac3901c89612",
+    "pima_test": "6f1e42657bd8da9155db9b91d377375a188123e004664bf97950138d73a494a2",
+    "cleveland_train": "62ee3e84c626751ba39f542556f495220c046f54e4dd1c9ccdda7bf180763181",
+    "cleveland_test": "fccc8b7ef35ffe1fb7282e792615bbc47cf7c78c6e42511c9869803236cea97e",
+    "sizes": {
+      "diabd_train": 4095,
+      "diabd_test": 1024,
+      "pima_train": 614,
+      "pima_test": 154,
+      "cleveland_train": 237,
+      "cleveland_test": 60
+    }
+  },
+  "diabd": {
+    "raw_rows": 5288,
+    "clean_rows": 5119,
+    "positives": 324,
+    "prevalence": 0.0633,
+    "majority_class_accuracy": 0.9367,
+    "missing_in_model_features": 0,
+    "duplicates": {
+      "exact_duplicate_rows": 3,
+      "rows_with_repeated_features": 3,
+      "feature_patterns_with_conflicting_labels": 0
+    },
+    "glucose_excluded_from_every_candidate": true,
+    "glucose_correlation_on_training_rows_only": 0.2978,
+    "feature_correlation_training_rows_only": {
+      "age": {
+        "age": 1.0,
+        "sex": 0.2301,
+        "bmi": -0.1559,
+        "systolic_bp": 0.3484,
+        "diastolic_bp": 0.1102,
+        "family_diabetes": -0.1559,
+        "pulse_pressure": 0.4009,
+        "high_bp": 0.2546
+      },
+      "sex": {
+        "age": 0.2301,
+        "sex": 1.0,
+        "bmi": -0.0894,
+        "systolic_bp": -0.0038,
+        "diastolic_bp": -0.0335,
+        "family_diabetes": 0.0908,
+        "pulse_pressure": 0.0209,
+        "high_bp": -0.0232
+      },
+      "bmi": {
+        "age": -0.1559,
+        "sex": -0.0894,
+        "bmi": 1.0,
+        "systolic_bp": 0.1371,
+        "diastolic_bp": 0.2377,
+        "family_diabetes": 0.0414,
+        "pulse_pressure": 0.0053,
+        "high_bp": 0.1554
+      },
+      "systolic_bp": {
+        "age": 0.3484,
+        "sex": -0.0038,
+        "bmi": 0.1371,
+        "systolic_bp": 1.0,
+        "diastolic_bp": 0.7162,
+        "family_diabetes": -0.0554,
+        "pulse_pressure": 0.8369,
+        "high_bp": 0.7672
+      },
+      "diastolic_bp": {
+        "age": 0.1102,
+        "sex": -0.0335,
+        "bmi": 0.2377,
+        "systolic_bp": 0.7162,
+        "diastolic_bp": 1.0,
+        "family_diabetes": 0.0005,
+        "pulse_pressure": 0.2173,
+        "high_bp": 0.7011
+      },
+      "family_diabetes": {
+        "age": -0.1559,
+        "sex": 0.0908,
+        "bmi": 0.0414,
+        "systolic_bp": -0.0554,
+        "diastolic_bp": 0.0005,
+        "family_diabetes": 1.0,
+        "pulse_pressure": -0.0778,
+        "high_bp": -0.0373
+      },
+      "pulse_pressure": {
+        "age": 0.4009,
+        "sex": 0.0209,
+        "bmi": 0.0053,
+        "systolic_bp": 0.8369,
+        "diastolic_bp": 0.2173,
+        "family_diabetes": -0.0778,
+        "pulse_pressure": 1.0,
+        "high_bp": 0.5232
+      },
+      "high_bp": {
+        "age": 0.2546,
+        "sex": -0.0232,
+        "bmi": 0.1554,
+        "systolic_bp": 0.7672,
+        "diastolic_bp": 0.7011,
+        "family_diabetes": -0.0373,
+        "pulse_pressure": 0.5232,
+        "high_bp": 1.0
+      }
+    },
+    "pulse_pressure_equals_systolic_minus_diastolic": true,
+    "leakage_audit": "Passed. Glucose, pulse rate, and diagnosis fields are absent from the candidate matrices. Derived blood-pressure features are deterministic functions of the allowed inputs."
+  },
+  "pima": {
+    "rows": 768,
+    "positives": 268,
+    "zero_as_missing_counts": {
+      "Glucose": 5,
+      "BloodPressure": 35,
+      "SkinThickness": 227,
+      "Insulin": 374,
+      "BMI": 11
+    },
+    "duplicates": {
+      "exact_duplicate_rows": 0,
+      "rows_with_repeated_features": 0,
+      "feature_patterns_with_conflicting_labels": 0
+    },
+    "imputation": "Median imputation is inside each training fold. Outcome-conditional medians were not computed.",
+    "processed_train_csv_used": false,
+    "leakage_audit": "Passed. The leaked insulin fill is not in this table and was not applied."
+  },
+  "cleveland": {
+    "rows": 297,
+    "positives": 137,
+    "missing": 0,
+    "duplicates": {
+      "exact_duplicate_rows": 0,
+      "rows_with_repeated_features": 0,
+      "feature_patterns_with_conflicting_labels": 0
+    },
+    "label": "condition",
+    "published_locked_test_reproduced": true,
+    "leakage_audit": "Passed. The same seed-42 stratified split reproduces the published confusion matrix. Test rows were not used to choose the repeated-CV candidate."
+  },
+  "who_chart": {
+    "kind": "published lookup table",
+    "trainable": false,
+    "table_modified": false,
+    "unique_cells": 700,
+    "expected_cells": 700,
+    "min_percent": 1,
+    "max_percent": 40,
+    "in_range_lookups_missing": [],
+    "boundaries": {
+      "age_39": null,
+      "age_40": {
+        "chart_percent": 3,
+        "band": "under_5"
+      },
+      "age_74": {
+        "chart_percent": 33,
+        "band": "30_or_more"
+      },
+      "age_75": null,
+      "sbp_119_band": "lt120",
+      "sbp_120_band": "120",
+      "sbp_140_band": "140",
+      "sbp_160_band": "160",
+      "sbp_180_band": "ge180",
+      "bmi_19_9_band": "lt20",
+      "bmi_20_band": "20",
+      "bmi_25_band": "25",
+      "bmi_30_band": "30",
+      "bmi_35_band": "ge35"
+    },
+    "repeated_lookup_stable": true,
+    "route_rejects_prior_cvd_and_limits_age_40_to_74": true,
+    "intact": true
+  },
+  "production_prediction_endpoints_modified": false,
+  "patient_access_changed_by_this_run": false
+}

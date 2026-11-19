@@ -1,3 +1,5 @@
+> **Historical record, labeled 2026-11-19.** This file is preserved as an earlier research note. It is not the current description of the application. Dataset sampling frame and site-level provenance have not been independently verified from the available source documentation. Statements in this file that name a verified hospital catchment, or that say the Pima path returns HTTP 403 or is closed, describe an earlier note or an earlier design. The current consented Pima route is open, with the Phoenix-area cohort limit. See submission/final_readiness/DOCUMENTATION_CONSISTENCY_AUDIT.md.
+
 # TriNexus | VitaGuard AI — Probability Calibration & Bootstrap Validation Audit
 **Project:** TriNexus | VitaGuard AI  
 **Division:** Clinical Machine Learning Safety & Biostatistics Governance  

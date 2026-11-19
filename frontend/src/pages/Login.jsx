@@ -368,6 +368,11 @@ function Login() {
                   ? 'এই কপিতে Google এখনো চালু নেই। ইমেইল দিয়ে সাইন ইন করুন।'
                   : 'Google sign-in is not turned on for this copy yet. Use your email or username.')}
               />
+              <p className="mt-3 text-[11px] leading-relaxed text-slate-500">
+                {lang === 'bn'
+                  ? 'যেকোনো ইমেইল দিয়ে অ্যাকাউন্ট তৈরি করা যায়। Google সাইন-ইন শুধু Google Cloud-এ যোগ করা অ্যাকাউন্টে কাজ করে।'
+                  : 'Anyone can create an account with an email. Google sign-in works only for the accounts added in Google Cloud.'}
+              </p>
 
               <div className="flex items-center justify-between mt-6 pt-4 border-t border-gray-100 text-xs">
                 <button

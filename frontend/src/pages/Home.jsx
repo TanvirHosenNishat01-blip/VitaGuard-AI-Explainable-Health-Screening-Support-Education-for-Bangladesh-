@@ -128,7 +128,7 @@ const COPY = {
     transparencyBadge: 'Scientific Honesty',
     transparencyTitle: 'Clinical Transparency & Published Model Evaluation',
     transparencyBody:
-      'A responsible Clinical Decision Support System never hides missed cases behind a single accuracy number. Our public Model Evaluation page reports held-out test confusion matrices, sensitivity, specificity, and dataset cohort limitations (Pima, Cleveland Clinic, DiaBD, and Pabna hospital comparison).',
+      'The model evaluation page shows the DiaBD held-out test: precision 0.1159, 290 false positives, and 27 false negatives. The heart accuracy is a 60-row Cleveland locked test. An older Pima figure of 87.66 percent is not shown, because that file filled insulin from the label.',
     transparencyBtn: 'Inspect Model Evaluation & Test Counts',
     doctorBadge: 'Clinician Collaboration',
     doctorTitle: 'How Doctors Participate in VitaGuard AI',
@@ -266,7 +266,7 @@ const COPY = {
     transparencyBadge: 'বৈজ্ঞানিক সততা',
     transparencyTitle: 'ক্লিনিক্যাল স্বচ্ছতা ও প্রকাশিত মডেল মূল্যায়ন',
     transparencyBody:
-      'একটি দায়িত্বশীল ক্লিনিক্যাল ডিসিশন সাপোর্ট সিস্টেম কখনো শুধু একটি অ্যাকুরেসি সংখ্যা দেখিয়ে মিস হওয়া কেস লুকায় না। আমাদের মডেল মূল্যায়ন পাতায় টেস্ট কনফিউশন ম্যাট্রিক্স, সেন্সিটিভিটি, স্পেসিফিসিটি এবং ডেটাসেটের সীমাবদ্ধতা (পিমা, ক্লিভল্যান্ড ক্লিনিক, DiaBD ও পাবনা হাসপাতাল তুলনা) উন্মুক্তভাবে প্রকাশ করা হয়েছে।',
+      'মডেল মূল্যায়ন পাতায় DiaBD-র আলাদা টেস্ট দেখায়: প্রিসিশন ০.১১৫৯, ভুল অ্যালার্ম ২৯০, এবং মিস হওয়া কেস ২৭। হার্টের অ্যাকুরেসি ক্লিভল্যান্ডের ৬০ সারির লক করা টেস্ট। পুরোনো পিমা ৮৭.৬৬ শতাংশ দেখানো হয় না, কারণ সেই ফাইলে ইনসুলিন লেবেল দেখে ভরা হয়েছিল।',
     transparencyBtn: 'মডেল মূল্যায়ন ও টেস্ট ফলাফল দেখুন',
     doctorBadge: 'চিকিৎসকের সম্পৃক্ততা',
     doctorTitle: 'ভিটাগার্ড এআই-তে ডাক্তারদের ভূমিকা',

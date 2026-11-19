@@ -8,7 +8,9 @@
 
 ## 1. Innovation, 20 points
 
-“We did not build one universal risk engine. Four tools stay separate. DiaBD has local TreeSHAP and is uncalibrated. Pima is closed to patients. Cleveland is a historical cohort with global coefficients. The WHO chart is a lookup. If our knowledge notes do not contain an answer, the page stays empty.”
+“We did not build one universal risk engine. Four tools stay separate. DiaBD has local TreeSHAP, is uncalibrated, and its locked test precision is 0.1159 with 290 false positives and 27 false negatives. Pima stays open with a cohort limit, and we do not cite the leaked 87.66 percent file. Cleveland is a historical cohort, and 91.7 percent is 55 of 60 locked-test rows. The WHO chart is a lookup, not a trained model. No experiment replaced a production model. If our knowledge notes do not contain an answer, the page stays empty.”
+
+Do not say the DiaBD sampling frame is verified. Dataset sampling frame and site-level provenance have not been independently verified from the available source documentation. If asked for the Pima research number, say leakage-free logistic out-of-fold PR-AUC 0.7166 and Brier score 0.1627, and say 87.66 percent is invalid.
 
 Show `/explain` and `/knowledge`.
 

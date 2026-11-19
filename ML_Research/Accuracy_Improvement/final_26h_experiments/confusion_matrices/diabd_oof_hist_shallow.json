@@ -1,0 +1,18 @@
+{
+  "labels": [
+    "actual_negative",
+    "actual_positive"
+  ],
+  "matrix": [
+    [
+      2125,
+      1711
+    ],
+    [
+      48,
+      211
+    ]
+  ],
+  "false_negatives": 48,
+  "false_positives": 1711
+}

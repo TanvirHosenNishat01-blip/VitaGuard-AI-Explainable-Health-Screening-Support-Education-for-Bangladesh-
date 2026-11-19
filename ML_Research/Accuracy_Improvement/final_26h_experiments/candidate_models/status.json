@@ -1,0 +1,5 @@
+{
+  "promoted_to_production": false,
+  "saved_models": [],
+  "note": "Any joblib in this folder is an experiment. The API does not load it."
+}

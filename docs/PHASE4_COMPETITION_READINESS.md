@@ -74,7 +74,7 @@ All paths below are mounted under `/api` except `GET /`.
 | GET | `/api/doctor/records` | Approved doctor |
 | GET | `/api/doctor/reviews` | Approved doctor |
 | POST | `/api/doctor/reviews/{review_id}/seen` | Approved doctor |
-| POST | `/api/predict` and `/api/predict/diabetes` | Signed-in patient path is refused; admin research path remains |
+| POST | `/api/predict` and `/api/predict/diabetes` | Open to guests and patients when `screening_consent` is true. Cohort limit: historical Phoenix-area women, ages 21–81. Not a diagnosis. A missing consent returns 400. |
 | POST | `/api/predict/cardio` | Consent required |
 | GET | `/api/shap-importance` | Public global importance for the existing diabetes artifact |
 | POST | `/api/reviews` | Signed in |
@@ -104,7 +104,7 @@ Request bodies are the Pydantic models in those route files. An unknown or missi
 
 ## Data
 
-Dataset cards, lineage, and retention already live in `docs/governance/`. External licenses for DiaBD, Pima, Cleveland, and the WHO chart text remain **NOT VERIFIED**.
+Dataset cards, lineage, and retention already live in `docs/governance/`. External licenses for DiaBD, Pima, Cleveland, and the WHO chart text remain **NOT VERIFIED**. Dataset sampling frame and site-level provenance have not been independently verified from the available source documentation. The DiaBD locked test remains accuracy 0.6904, precision 0.1159, recall 0.5846, 290 false positives, 27 false negatives, cutoff 0.51, on 5,119 clean rows and 324 positives. The invalid Pima figure is 87.66 percent. The leakage-free logistic out-of-fold PR-AUC is 0.7166, with Brier score 0.1627.
 
 Deletion is `POST /api/patient/deletion-request`. It does not promise complete erasure. File backups of the database are kept. Encryption is not implemented. See `docs/security/ENCRYPTION_PROPOSAL.md`.
 

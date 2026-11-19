@@ -18,7 +18,8 @@ CHUNKS = [
         "text": (
             "DiaBD is the Bangladesh diabetes screening pathway. The score is not a calibrated "
             "personal probability and is not a diagnosis. External license is NOT VERIFIED. "
-            "No BMRC or DGHS approval is claimed."
+            "Dataset sampling frame and site-level provenance have not been independently verified "
+            "from the available source documentation. No BMRC or DGHS approval is claimed."
         ),
     },
     {

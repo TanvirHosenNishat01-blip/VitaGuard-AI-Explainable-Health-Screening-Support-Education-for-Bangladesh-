@@ -1,5 +1,7 @@
 \# 🩺 TriNexus | VitaGuard AI
 
+**Current limits.** Governance: NOT SUBMITTED — NOT APPROVED — NO RECRUITMENT AUTHORIZED. DiaBD uses 5,119 clean rows and 324 positives. The locked test is accuracy 0.6904, precision 0.1159, recall 0.5846, 290 false positives, 27 false negatives, cutoff 0.51. Dataset sampling frame and site-level provenance have not been independently verified from the available source documentation. Consented Pima access is open. The cohort is historical Phoenix-area women, ages 21–81. It is not a diagnosis and not a Bangladesh model. The 87.66 percent figure is invalid because insulin values were imputed using the label. The leakage-free logistic out-of-fold PR-AUC is 0.7166, with Brier score 0.1627.
+
 
 
 <p align="center">

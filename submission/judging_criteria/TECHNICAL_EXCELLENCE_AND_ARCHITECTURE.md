@@ -30,9 +30,9 @@ Prediction routes do not call knowledge search. Knowledge search does not read p
 
 ## AI method that is actually wired
 
-- DiaBD: `predict_bd_diabetes` loads `bd_diabetes.joblib`, scales with the bundled scaler, and explains with TreeSHAP.
-- Cleveland: `model_service.py` loads `cardio_model.joblib` and `cardio_scaler.joblib`.
-- Pima artifacts exist under `ML_Model/models/`. The patient endpoint is refused.
+- DiaBD: `predict_bd_diabetes` loads `bd_diabetes.joblib`, scales with the bundled scaler, and explains with TreeSHAP. Locked-test accuracy 0.6904, precision 0.1159, recall 0.5846, 290 false positives, 27 false negatives, cutoff 0.51. Dataset sampling frame and site-level provenance have not been independently verified from the available source documentation.
+- Cleveland: `model_service.py` loads `cardio_model.joblib` and `cardio_scaler.joblib`. The 0.9167 accuracy is a 60-row locked test on a historical catheterization cohort.
+- Pima artifacts exist under `ML_Model/models/`. Consented guests and patients can run the existing model. The cohort is historical Phoenix-area women, ages 21–81. The endpoint was not retrained. The 87.66 percent file is invalid and is not served as the evaluation result. The leakage-free logistic out-of-fold PR-AUC is 0.7166, with Brier score 0.1627.
 - WHO: `lookup_chart` in `bd_cvd_chart.py`.
 - Retrieval: token overlap in `search_knowledge`. No embedding package is installed.
 - Graph: the `GRAPH` structure in `knowledge.py`, rendered in `KnowledgeGraph.jsx`.

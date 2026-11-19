@@ -10,7 +10,7 @@ VitaGuard AI is a local workspace for screening support and health education. It
 
 ## What is distinctive
 
-The product treats explanation and limits as part of the screen. DiaBD shows local TreeSHAP and an uncalibrated index. Cleveland is labeled as a historical cohort. The WHO chart is labeled as a lookup. Pima stays closed to patients. Knowledge answers are quoted project passages, or they are left empty.
+The product treats explanation and limits as part of the screen. DiaBD shows local TreeSHAP, an uncalibrated index, locked-test accuracy 0.6904, precision 0.1159, recall 0.5846, 290 false positives, 27 false negatives, and cutoff 0.51 on 5,119 clean rows with 324 positives. Dataset sampling frame and site-level provenance have not been independently verified from the available source documentation. Cleveland is labeled as a historical catheterization cohort whose 0.9167 accuracy is a 60-row locked test. The WHO chart is labeled as a lookup for ages 40–74, not a trained model. Pima stays open with consent. The cohort is historical Phoenix-area women, ages 21–81. The 87.66 percent figure is invalid. The leakage-free logistic out-of-fold PR-AUC is 0.7166, with Brier score 0.1627. Knowledge answers are quoted project passages, or they are left empty. No experimental candidate replaced a production model.
 
 ## What is implemented
 
