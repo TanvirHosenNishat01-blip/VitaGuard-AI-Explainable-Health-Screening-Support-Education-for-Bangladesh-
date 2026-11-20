@@ -9,7 +9,7 @@
 VitaGuard AI is a local screening-support and health-education workspace. It helps a person see what a screening score is, which dataset it came from, and what the score cannot decide. It is not a diagnostic system, not a prescription system, and not a hospital service.
 
 ## Problem
-
+ 
 A number on a health screen is easy to treat as a diagnosis when the source, the limit, and the need for a clinician are hidden.
 
 ## Proposed solution
