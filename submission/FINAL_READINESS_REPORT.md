@@ -1,6 +1,6 @@
 # Final readiness report
 
-**Date of this check:** 19 November 2026  
+**Date of this check:** 19 November 2026 
 **Governance:** NOT SUBMITTED — NOT APPROVED — NO RECRUITMENT AUTHORIZED
 
 ## What was inspected
