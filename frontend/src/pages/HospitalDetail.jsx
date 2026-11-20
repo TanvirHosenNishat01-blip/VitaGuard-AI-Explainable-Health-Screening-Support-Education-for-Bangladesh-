@@ -9,7 +9,7 @@ import AlertBanner from '../components/ui/AlertBanner';
 function HospitalDetail() {
   const { hospitalId } = useParams();
   const { lang } = useLanguage();
-  const isBn = lang === 'bn';
+  const isBn = lang === 'bn'; 
   const [row, setRow] = useState(null);
   const [error, setError] = useState('');
 
