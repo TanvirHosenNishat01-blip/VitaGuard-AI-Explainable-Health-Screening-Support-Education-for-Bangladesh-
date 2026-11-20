@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import API from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import { useLanguage } from '../context/LanguageContext';
-
+ 
 function HealthNotice() {
   const { t } = useLanguage();
   const { token, user } = useAuth();
