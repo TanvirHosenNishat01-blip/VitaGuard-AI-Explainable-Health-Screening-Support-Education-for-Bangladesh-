@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 // Awareness Section Component for health education, risk classifications, and WHO/CDC resource guides
 function AwarenessSection() {
   const [activeTab, setActiveTab] = useState('diabetes');
-
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-6">
       {/* Header Section */}
