@@ -129,7 +129,7 @@ We audited whether identical rows existed within or across train/test splits:
   - DiaBD: Candidates tuned via 5-fold CV using `average_precision`. The winner was selected based on CV accuracy and recall floor before scoring the locked test set.
   - Cardio: Logistic regression won the training-fold comparison over Random Forest and XGBoost. The locked test was evaluated only after selection.
   - **Audit Verdict:** Test set integrity was maintained during model selection in Phase 03/04 code.
-
+docs: clarify DiaBD dataset provenance and geographic limitations
 ---
 
 ## 6. DATA LEAKAGE REMEDIATION REQUIREMENTS (FOR FUTURE PHASES)
