@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <title>Actual Prototype Flow (1:00 - 2:00)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 1920px;
+      height: 1080px;
+      background: linear-gradient(135deg, #0b1926 0%, #12304a 50%, #0d2338 100%);
+      font-family: 'Plus Jakarta Sans', 'Hind Siliguri', sans-serif;
+      color: #FFFFFF;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 60px 80px;
+      position: relative;
+    }
+
+    /* Ambient background glows */
+    .glow-1 {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(13, 148, 136, 0.25) 0%, transparent 70%);
+      top: -150px;
+      left: 100px;
+      pointer-events: none;
+    }
+    .glow-2 {
+      position: absolute;
+      width: 650px;
+      height: 650px;
+      background: radial-gradient(circle, rgba(14, 116, 144, 0.22) 0%, transparent 70%);
+      bottom: -100px;
+      right: 150px;
+      pointer-events: none;
+    }
+
+    /* Header */
+    .header {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding-bottom: 28px;
+    }
+
+    .badge-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .time-badge {
+      background: linear-gradient(135deg, #0d9488, #0e7490);
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 16px;
+      letter-spacing: 1.5px;
+      padding: 6px 18px;
+      border-radius: 30px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 15px rgba(13, 148, 136, 0.35);
+    }
+
+    .topic-tag {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #99f6e4;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 5px 16px;
+      border-radius: 20px;
+    }
+
+    .governance-pill {
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      color: #fca5a5;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 8px 20px;
+      border-radius: 8px;
+    }
+
+    .header-title {
+      font-size: 38px;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+
+    .header-subtitle {
+      font-size: 17px;
+      color: #cbd5e1;
+      margin-top: 6px;
+      font-weight: 400;
+    }
+
+    /* Main Workflow Area */
+    .workflow-container {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+      margin: 36px 0;
+    }
+
+    .step-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 30px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .step-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 30px;
+      right: 30px;
+      height: 3px;
+      background: linear-gradient(90deg, #0d9488, #38bdf8);
+      border-radius: 0 0 4px 4px;
+    }
+
+    .step-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .step-num {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(13, 148, 136, 0.2);
+      border: 1px solid #0d9488;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 800;
+      color: #5eead4;
+    }
+
+    .step-icon-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-title-en {
+      font-size: 19px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+
+    .step-title-bn {
+      font-size: 16px;
+      font-weight: 600;
+      color: #5eead4;
+      margin-bottom: 14px;
+    }
+
+    .step-desc {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #94a3b8;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    /* Mock UI preview inside each card */
+    .mock-box {
+      background: rgba(11, 25, 38, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 16px;
+      font-size: 13px;
+    }
+
+    .mock-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .tag-blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
+    .tag-green { background: rgba(52, 211, 153, 0.15); color: #34d399; }
+    .tag-amber { background: rgba(251, 191, 36, 0.15); color: #fbbf24; }
+    .tag-purple { background: rgba(167, 139, 250, 0.15); color: #a78bfa; }
+
+    .mock-query {
+      color: #f1f5f9;
+      font-weight: 500;
+      font-style: italic;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .mock-meta {
+      color: #64748b;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Connector arrow */
+    .arrow-icon {
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 28px;
+      height: 28px;
+      background: #12304a;
+      border: 1px solid #0d9488;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #5eead4;
+      font-size: 14px;
+    }
+
+    /* Fallback banner bar */
+    .bottom-strip {
+      position: relative;
+      z-index: 2;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 16px;
+      padding: 18px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .strip-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .safe-badge {
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid #f59e0b;
+      color: #fcd34d;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .strip-text {
+      font-size: 14px;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+
+    .strip-text strong {
+      color: #FFFFFF;
+    }
+
+    .tech-stack {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+
+    .pill-mini {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-weight: 600;
+      color: #99f6e4;
+    }
+  </style>
+</head>
+<body>
+  <div class="glow-1"></div>
+  <div class="glow-2"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div>
+      <div class="badge-row">
+        <span class="time-badge">⏱ 1:00 – 2:00</span>
+        <span class="topic-tag">Topic 03: Actual Prototype Flow</span>
+        <span class="topic-tag">TriNexus | VitaGuard AI</span>
+      </div>
+      <h1 class="header-title">End-to-End Clinical Navigation & Screening Flow</h1>
+      <p class="header-subtitle">Demonstrating bilingual interaction, grounded healthcare retrieval, safety fallback, and bounded appointment request</p>
+    </div>
+    <div>
+      <div class="governance-pill">
+        ⚠ SYNTHETIC DATA • NON-DIAGNOSTIC PROTOTYPE
+      </div>
+    </div>
+  </header>
+
+  <!-- 4 Step Workflow Cards -->
+  <main class="workflow-container">
+    <!-- Step 1 -->
+    <div class="step-card">
+      <div class="arrow-icon">➔</div>
+      <div>
+        <div class="step-header">
+          <div class="step-num">01</div>
+          <div class="step-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5eead4" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          </div>
+        </div>
+        <div class="step-title-en">Bangla Query & Input</div>
+        <div class="step-title-bn">বাংলা প্রশ্ন ও তথ্য প্রদান</div>
+        <div class="step-desc">
+          User asks in Bangla or English (e.g. finding a cardiology department or running non-invasive screening) with mandatory consent agreement.
+        </div>
+      </div>
+      <div class="mock-box">
+        <span class="mock-tag tag-blue">Patient Query</span>
+        <div class="mock-query">"হৃদরোগ বা ডায়াবেটিসের ঝুঁকি যাচাই এবং বিশেষজ্ঞ ডাক্তার খুঁজছি..."</div>
+        <div class="mock-meta">✓ Language: Bengali • Consent: Checked</div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step-card">
+      <div class="arrow-icon">➔</div>
+      <div>
+        <div class="step-header">
+          <div class="step-num">02</div>
+          <div class="step-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </div>
+        </div>
+        <div class="step-title-en">Retrieved Information</div>
+        <div class="step-title-bn">তথ্য অনুসন্ধান ও সংগ্রহ</div>
+        <div class="step-desc">
+          AI searches verified hospital database, knowledge catalog, and executes isolated screening inference (DiaBD TreeSHAP / WHO CVD chart).
+        </div>
+      </div>
+      <div class="mock-box">
+        <span class="mock-tag tag-green">Grounded Retrieval</span>
+        <div class="mock-query">DiaBD: 12.8% (Low band) • WHO 10-Yr: 7%</div>
+        <div class="mock-meta">✓ Sources: Project Notes & WHO Matrix</div>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step-card">
+      <div class="arrow-icon">➔</div>
+      <div>
+        <div class="step-header">
+          <div class="step-num">03</div>
+          <div class="step-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          </div>
+        </div>
+        <div class="step-title-en">Department Details</div>
+        <div class="step-title-bn">বিভাগ ও হাসপাতাল বিবরণ</div>
+        <div class="step-desc">
+          Displays structured department services, verified clinical education, and directory status. Address/specialty explicitly marked where unverified.
+        </div>
+      </div>
+      <div class="mock-box">
+        <span class="mock-tag tag-amber">Hospital Directory</span>
+        <div class="mock-query">Cardiology & Diabetology Dept.</div>
+        <div class="mock-meta">✓ 50 Curated Hospitals (Honesty Flags)</div>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step-card">
+      <div>
+        <div class="step-header">
+          <div class="step-num">04</div>
+          <div class="step-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          </div>
+        </div>
+        <div class="step-title-en">Appointment Request</div>
+        <div class="step-title-bn">অ্যাপয়েন্টমেন্ট বুকিং ফ্লো</div>
+        <div class="step-desc">
+          Patients book 30-min doctor slots. Strict privacy: doctor accesses patient chart ONLY after confirmation or authored clinical guideline.
+        </div>
+      </div>
+      <div class="mock-box">
+        <span class="mock-tag tag-purple">Clinical Coordination</span>
+        <div class="mock-query">Dr. DR Jamil • Confirmed Visit</div>
+        <div class="mock-meta">✓ Pending Request = No Chart Access</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Bottom Safety & Fallback Strip -->
+  <footer class="bottom-strip">
+    <div class="strip-left">
+      <span class="safe-badge">Safe Fallback Protocol</span>
+      <div class="strip-text">
+        <strong>তথ্য অনুপস্থিত থাকলে নিরাপদ ফলব্যাক:</strong> কোনো তথ্যসূত্র বা ডেটাসেট না মিললে সিস্টেম কোনো অনুমান না করে খালি উত্তর বা রেফারেন্স নির্দেশনা দেয়। 
+        স্ক্রিনিং স্কোর কোনো ডায়াগনোসিস বা প্রেসক্রিপশন নয়।
+      </div>
+    </div>
+    <div class="tech-stack">
+      <span>Framework:</span>
+      <span class="pill-mini">FastAPI</span>
+      <span class="pill-mini">React 18</span>
+      <span class="pill-mini">SQLite</span>
+      <span class="pill-mini">TreeSHAP</span>
+    </div>
+  </footer>
+</body>
+</html>
