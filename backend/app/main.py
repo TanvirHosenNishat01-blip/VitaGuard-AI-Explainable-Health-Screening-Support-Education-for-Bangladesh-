@@ -72,6 +72,7 @@ app = FastAPI(title="VitaGuard AI Backend", version="1.0.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=cors_origins(),
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
