@@ -52,10 +52,14 @@ def cors_origins() -> list:
     raw = os.getenv("CORS_ORIGINS", "").strip()
     if raw:
         origins = [item.strip() for item in raw.split(",") if item.strip()]
-    elif app_env() != "production":
-        origins = ["http://127.0.0.1:5173", "http://localhost:5173"]
     else:
-        raise RuntimeError("CORS_ORIGINS is required when VITAGUARD_ENV=production.")
+        origins = [
+            "http://127.0.0.1:5173",
+            "http://localhost:5173",
+            "https://vita-guard-ai-explainable-health-sc.vercel.app",
+            "https://vita-guard-ai-explainable-health-screening.vercel.app",
+            "https://vitaguard-ai-explainable-health-sc.vercel.app",
+        ]
     if any(origin == "*" for origin in origins):
         raise RuntimeError("Wildcard CORS origins are not permitted.")
     return origins
