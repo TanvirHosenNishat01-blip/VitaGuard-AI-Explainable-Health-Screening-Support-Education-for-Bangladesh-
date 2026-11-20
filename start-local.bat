@@ -9,17 +9,23 @@ if errorlevel 1 (
   exit /b 1
 )
 
-where py >nul 2>&1
-if errorlevel 1 (
-  where python >nul 2>&1
-  if errorlevel 1 (
-    echo Python is not installed. Install Python 3.10 or newer and run this file again.
-    pause
-    exit /b 1
-  )
-  set "PY=python"
+py -3.14 -c "import sys" >nul 2>&1
+if not errorlevel 1 (
+  set "PY=py -3.14"
 ) else (
-  set "PY=py"
+  where py >nul 2>&1
+  if errorlevel 1 (
+    where python >nul 2>&1
+    if errorlevel 1 (
+      echo Python 3.14 is not installed. Install Python 3.14 and run this file again.
+      echo Python 3.15 cannot install numba from requirements.txt.
+      pause
+      exit /b 1
+    )
+    set "PY=python"
+  ) else (
+    set "PY=py"
+  )
 )
 
 if not exist "backend\venv\Scripts\python.exe" (
