@@ -3,7 +3,7 @@ import API from '../services/api';
 import { useLanguage } from '../context/LanguageContext';
 import { useAuth } from '../context/AuthContext';
 
-function BloodNetwork() {
+function BloodNetwork() { 
   const [activeTab, setActiveTab] = useState('requests');
   const [requests, setRequests] = useState([]);
   const [donors, setDonors] = useState([]);
